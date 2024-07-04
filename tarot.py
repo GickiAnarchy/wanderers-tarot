@@ -30,11 +30,16 @@ class TarotCard:
                     print(f"{t}::")
                     print(f"\t{m}")
 
+    def showKeywords(self):
+        for k in self.keywords:
+            print(f"{k:<4}", end = "\t")
+
 
 
 class TarotDeck:
     def __init__(self, deck):
         self.deck = deck
+        self.chosen = []
     
     def __iter__(self):
         return iter(self.deck)
@@ -54,7 +59,7 @@ class TarotDeck:
         return moons
 
     def getStones(self):
-        majors = []
+        stones = []
         for c in self.deck:
             if c.suit == "Stones":
                 stones.append(c)
@@ -75,19 +80,21 @@ class TarotDeck:
         return knives
     
     def chooseStack(self):
+        self.chosen = []
         stack = []
         card = None
         while True:
+            print("\n")
             print("Lets search for a card.")
             print(f"\tMA: Sesrch the Major Arcana.")
-            print(f"S: Search Stones")
-            print(f"F: Search Feathers")
-            print(f"M: Search Moons")
-            print(f"K: Search Knives")
+            print(f"\tS: Search Stones")
+            print(f"\tF: Search Feathers")
+            print(f"\tM: Search Moons")
+            print(f"\tK: Search Knives")
             suit = input("What is your choice?")
-            if suit.lower() not in ["s","f","m","k","ma"]:
+            if suit.lower() not in ["s","f","m","k","ma","x"]:
                 print("suit not a valid choice")
-                break
+                continue
             match suit.lower():
                 case "ma":
                     stack = self.getMajors()
@@ -99,6 +106,10 @@ class TarotDeck:
                     stack = self.getFeathers()
                 case "k":
                     stack = self.getKnives()
+                case "x":
+                    break
+                case _:
+                    print("OOOOOPPPPPPPPPSSSSSSS")
             print("Choose a card:")
             self.listSuit(stack)
             print("Enter the number. 'x' to exit. 'b' to go back.")
@@ -109,13 +120,14 @@ class TarotDeck:
                 break
             try:
                 card = stack[int(card_no) - 1]
+                self.chosen.append(card)
             except:
                 print("Card choice was not valid")
                 break
             card.showMeanings()
+        self.showChosen()
         return
     
-        
     def listSuit(self, stack):
         # Define the number of columns
         num_columns = 3
@@ -127,3 +139,13 @@ class TarotDeck:
                 if index < len(stack):
                     print(f"{index+1}. {stack[index].name:<10}", end='\t')
             print()
+
+    def showChosen(self):
+        if len(self.chosen) == 0:
+            return
+        else:
+            i = 0
+            for c in self.chosen:
+                i += 1
+                print(f"{str(i)}-{c.name}::\n")
+                print(f"\t{c.showKeywords()}", end = "\n")

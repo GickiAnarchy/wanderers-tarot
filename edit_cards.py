@@ -24,6 +24,5 @@ def searchCards():
     deck.chooseStack()
 
 if __name__ == "__main__":
-    print("EDIT IS BROKEN")
     #one_by_one()
     searchCards()
