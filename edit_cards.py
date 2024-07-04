@@ -1,7 +1,8 @@
-from tarot import TarotCard
+from tarot import TarotCard, TarotDeck
 from serialize import *
 
-deck = load_tarot_deck()
+deck = TarotDeck(deck=load_tarot_deck())
+
 
 def one_by_one():
     for card in deck:
@@ -17,8 +18,28 @@ def one_by_one():
 
 def testPrint():
     for c in deck:
-        c.display()
+        c.showMeanings()
 
+def searchCards():
+    while True:
+        print("Lets search for a card.")
+        print(f"\tMA: Sesrch the Major Arcana.")
+        print(f"S: Search Stones")
+        print(f"F: Search Feathers")
+        print(f"M: Search Moons")
+        print(f"K: Search Knives")
+        s1 = input("What is your choice?")
+        match s1.lower():
+            case "ma":
+                pass
+            case "s":
+                pass
+            case "f":
+                pass
+            case "m":
+                pass
+            case "k":
+s                pass
 
 
 if __name__ == "__main__":
