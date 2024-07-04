@@ -1,0 +1,27 @@
+from tarot import TarotCard
+from serialize import *
+
+deck = load_tarot_deck()
+
+def one_by_one():
+    for card in deck:
+        card.display()
+        inp = input("\nEdit this card? \n\tEnter \"y\" to edit meaning.\n\tEnter \"x\" to exit and save.")
+        if inp.lower() == "y":
+            card.change_meaning()
+        elif inp.lower() == "x":
+            save_tarot_deck(deck)
+            break
+        else:
+            continue
+
+def testPrint():
+    for c in deck:
+        c.display()
+
+
+
+if __name__ == "__main__":
+    print("EDIT IS BROKEN")
+    #one_by_one()
+    testPrint()
