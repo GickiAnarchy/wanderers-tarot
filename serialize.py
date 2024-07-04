@@ -8,10 +8,8 @@ def load_tarot_deck():
     with open("tarot_deck.json","r") as file:
         data = json.load(file)
         for card_details in data:
-            print(card_details)
             c = TarotCard(**card_details)
             deck.append(c)
-            c.display()
         file.close()
     return deck
 

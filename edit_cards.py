@@ -21,28 +21,9 @@ def testPrint():
         c.showMeanings()
 
 def searchCards():
-    while True:
-        print("Lets search for a card.")
-        print(f"\tMA: Sesrch the Major Arcana.")
-        print(f"S: Search Stones")
-        print(f"F: Search Feathers")
-        print(f"M: Search Moons")
-        print(f"K: Search Knives")
-        s1 = input("What is your choice?")
-        match s1.lower():
-            case "ma":
-                pass
-            case "s":
-                pass
-            case "f":
-                pass
-            case "m":
-                pass
-            case "k":
-s                pass
-
+    deck.chooseStack()
 
 if __name__ == "__main__":
     print("EDIT IS BROKEN")
     #one_by_one()
-    testPrint()
+    searchCards()
