@@ -1,6 +1,5 @@
 import json
 import os
-from tarot import TarotCard
 from cardsjson import number_strings
 
 def load_tarot_deck():
@@ -8,10 +7,8 @@ def load_tarot_deck():
     with open("tarot_deck.json","r") as file:
         data = json.load(file)
         for card_details in data:
-            c = TarotCard(**card_details)
-            deck.append(c)
+            yield card_details
         file.close()
-    return deck
 
 def save_tarot_deck(deck_to_save):
     deck = []

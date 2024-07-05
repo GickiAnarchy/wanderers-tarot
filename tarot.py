@@ -1,49 +1,99 @@
+import random
 from cardsjson import number_strings, major_cards
+from serialize import *
 
 
 class TarotCard:
     def __init__(self, **kwargs):
         for k,v in kwargs.items():
             setattr(self,k,v)
+            self.isReversed = None
     
     def __str__(self):
         return self.name
+
     def __repr__(self):
         return self.name
+
+    def drawn(self):
+        self.isReversed = random.choice(["u","r"])
+
+    def lay_down(self):
+        if self.isReversed:
+            rev = "Reversed"
+        else:
+            rev = " "
+        ret = f"{str(self.number)}::{self.name}::{rev:<15}\n"
+        r2 = f"Keywords{self.retKeywords()}"
+        r3 = f"Meaning: {self.showMeanings()}"
+        return ret+r2+r3
 
     def display(self):
         for k,v in self.__dict__.items():
             print(f"{k}:\n\t{v}")
 
     def getDict(self,exclude_attributes=None):
-        if exclude_attributes is None:
-            exclude_attributes = []
+        exclude_attributes = ["isReversed"]
         return {key: value for key, value in self.__dict__.items() if key not in exclude_attributes}
     
     def showMeanings(self):
         print("\n")
         print(self.name)
         print(f"\t{self.keywords}")
+        ret = ""
         for k,v in self.__dict__.items():
             if k.lower() == "meanings":
-                for t,m in self.meanings.items():
-                    print(f"{t}::")
-                    print(f"\t{m}")
-
+                if self.isReversed == "r":
+                    ret = f"Reversed:\n\t{self.meanings['shadow']}"
+                if self.isReversed == "u":
+                    ret = f"Upright:\n\t{self.meanings['light']}"
+                if self.isReversed == None:
+                    print("Card hasnt been pulled")
+        print(ret)
+        return ret
+                
     def showKeywords(self):
         for k in self.keywords:
             print(f"{k:<4}", end = "\t")
+    
+    def retKeywords(self):
+        ret = ""
+        for k in self.keywords:
+            ret += f"{k:<2}"
+        return ret
 
-
-
+#
+#
+#
 class TarotDeck:
-    def __init__(self, deck):
-        self.deck = deck
+    def __init__(self):
+        self.deck = []
+        self.createDeck()
         self.chosen = []
     
     def __iter__(self):
         return iter(self.deck)
-    
+
+    def createDeck(self):
+        for details in load_tarot_deck():
+            self.deck.append(TarotCard(**details))
+
+    def shuffle(self):
+        for c in self.chosen:
+            self.deck.append(c)
+        random.shuffle(self.deck)
+        print(str(len(self.deck)) + " cards")
+        print("Shuffled")
+        
+    def pullCard(self):
+        if not self.deck:
+            print("No more cards in the deck")
+            return
+        else:
+            c = self.deck.pop(0)
+            c.drawn()
+            return c
+
     def getMajors(self):
         majors = []
         for c in self.deck:
@@ -120,10 +170,10 @@ class TarotDeck:
                 break
             try:
                 card = stack[int(card_no) - 1]
-                self.chosen.append(card)
             except:
                 print("Card choice was not valid")
                 break
+            self.addChosen(card)
             card.showMeanings()
         self.showChosen()
         return
@@ -140,6 +190,10 @@ class TarotDeck:
                     print(f"{index+1}. {stack[index].name:<10}", end='\t')
             print()
 
+    def addChosen(self, card):
+        card.drawn()
+        self.chosen.append(card)
+
     def showChosen(self):
         if len(self.chosen) == 0:
             return
@@ -148,4 +202,32 @@ class TarotDeck:
             for c in self.chosen:
                 i += 1
                 print(f"{str(i)}-{c.name}::\n")
+                print(f"{c.showMeanings()}\n")
                 print(f"\t{c.showKeywords()}", end = "\n")
+                
+#
+#
+#
+class Spread:
+    def __init__(self):
+        self.deck = TarotDeck()
+        self.pulled_cards = []
+
+    def draw_cards(self, amount, reshuffle = True):
+        if reshuffle:
+            for c in self.pulled_cards:
+                self.deck.append(c)
+            self.deck.shuffle()
+        for i in range(amount):
+            self.pulled_cards.append(self.deck.pullCard())
+            
+    def read_cards(self):
+        if not self.pulled_cards:
+            print("No cards are pulled")
+        for card in self.pulled_cards:
+            card.lay_down()
+            cont = input("...")
+            if cont in [""," "]:
+                continue
+            if cont.lower() == "x":
+                break
