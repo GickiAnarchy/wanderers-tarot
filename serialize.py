@@ -26,8 +26,8 @@ def save_tarot_deck(deck_to_save):
 readfile = r"past_readings.json"
 def save_readings(reading):
     with open(readfile,"a") as f:
-        #json.dump(reading, f, indent = 2)
-        f.write(reading)
+        json.dump(reading, f, indent = 2)
+        #f.write(reading)
         f.close()
 
 def load_readings():

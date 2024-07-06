@@ -4,36 +4,50 @@ from cardsjson import number_strings, major_cards
 from serialize import *
 
 
+
 class TarotCard:
+    count = 0
+    
     def __init__(self, **kwargs):
         for k,v in kwargs.items():
             setattr(self,k,v)
-            self.isReversed = None
+        self.isReversed = None
+        TarotCard.count += 1
     
     def __str__(self):
         return self.name
 
     def __repr__(self):
         return self.name
+    
+    @classmethod
+    def getCount(cls):
+        return cls.count
 
     def drawn(self):
         self.isReversed = random.choice(["u","r"])
 
     def lay_down(self):
+        #Init
+        ret = []
+        #Card name and number
+        ret.append(f"{str(self.number)}::{self.name}")
+        #Keywords
+        delim = " : "
+        ret.append(f"Keywords:\n{delim.join(self.keywords)}")
+        #Meaning
         delimiter = " : "
         mean = ""
-        if self.isReversed:
+        if self.isReversed == "r":
             mean = f"(Reversed):\n\t"
             mean = mean + delimiter.join(self.meanings["shadow"])
-        else:
+        elif self.isReversed == "u":
             mean = f"(Upright):\n\t"
             mean = mean + delimiter.join(self.meanings["light"])
-        ret = f"{str(self.number)}::{self.name}"
-        r2 = f"Keywords:\n{delimiter.join(self.keywords)}"
-        r3 = f"Meaning{mean}"
-        tot = f"{ret}\n{r2}\n{r3}"
+        ret.append(f"Meaning{mean}")
+        #Print name to console and return
         print(self.name)
-        return tot
+        return ret
 
     def display(self):
         for k,v in self.__dict__.items():
@@ -211,56 +225,59 @@ class TarotDeck:
                 i += 1
                 print(f"{str(i)}-{c.name}::\n")
                 print(f"\t{c.showKeywords()}", end = "\n")
-                
-#
-#
-class Spread:
-    def __init__(self):
-        self.deck = TarotDeck()
-        self.pulled_cards = []
-        self.reading = None
-
-    def draw_cards(self, amount, reshuffle = True):
-        if reshuffle:
-            for c in self.pulled_cards:
-                self.deck.append(c)
-            self.deck.shuffle()
-        for i in range(amount):
-            self.pulled_cards.append(self.deck.pullCard())
-            
-    def read_cards(self):
-        self.reading = Reading(self.pulled_cards)
-        if not self.pulled_cards:
-            print("No cards are pulled")
-        for card in self.pulled_cards:
-            card.lay_down()
-            print(f"\n")
-            cont = input("...")
-            if cont in [""," "]:
-                continue
-            if cont.lower() == "x":
-                break
 
 #
 #
 class Reading:
-    def __init__(self, cards, saving = None):
-        self.cards = cards
-        self.saving = saving
-    
+    def __init__(self):
+        self.deck = TarotDeck()
+        self.cards = []
+
+    def ask_amount(self):
+        print("How many cards are you wanting to draw?")
+        while True:
+            try:
+                answer = int(input(f"Enter amount. (no more than {str(TarotCard.getCount())}."))
+                return answer
+            except ValueError:
+                print("That's not an integer!")
+
+    def draw_cards(self, amount, reshuffle = True):
+        if reshuffle:
+            for c in self.cards:
+                self.deck.append(c)
+            self.deck.shuffle()
+        for i in range(amount):
+            self.cards.append(self.deck.pullCard())
+
     def get_reading(self):
+        if not self.cards:
+            print("No cards have been pulled")
+            return
+        reading = []
+        time_now = self.getTime()
+        for card in self.cards:
+            reading.append(card.lay_down())
+        #reading.append(f"\n")
+        #delimiter = "\n"
+        #read_str = delimiter.join(reading)
+        reading_dict = {f"{time_now}":reading}
+        if self.ask_save():
+            self.save_reading(reading_dict)
+        return reading
+    
+    def save_reading(self, reading):
+        save_readings(reading)
+
+    def getTime(self):
         now = datetime.datetime.now()
         formatted_date = now.strftime("%m/%d/%Y %H:%M")
-        self.saving = []
-        self.saving.append(f"{formatted_date}")
-        for card in self.cards:
-            self.saving.append(card.lay_down())
-        self.save_reading()
-        return self.saving
-    
-    def save_reading(self):
-        delimiter = "\n"
-        read_str = delimiter.join(self.saving)
-        save_readings(read_str)
-        
-        
+        return formatted_date
+
+    def ask_save(self):
+        print("Do you want to save this reading?")
+        answer = input("'y' for Yes. Any other key to skip.")
+        if answer.lower() in ["y","yes","yea","yeah"]:
+            return True
+        else:
+            return False
