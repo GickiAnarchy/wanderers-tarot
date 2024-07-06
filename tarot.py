@@ -1,4 +1,5 @@
 import random
+import datetime
 from cardsjson import number_strings, major_cards
 from serialize import *
 
@@ -19,23 +20,30 @@ class TarotCard:
         self.isReversed = random.choice(["u","r"])
 
     def lay_down(self):
+        delimiter = " : "
+        mean = ""
         if self.isReversed:
-            rev = "Reversed"
+            mean = f"(Reversed):\n\t"
+            mean = mean + delimiter.join(self.meanings["shadow"])
         else:
-            rev = " "
-        ret = f"{str(self.number)}::{self.name}::{rev:<15}\n"
-        r2 = f"Keywords{self.retKeywords()}"
-        r3 = f"Meaning: {self.showMeanings()}"
-        return ret+r2+r3
+            mean = f"(Upright):\n\t"
+            mean = mean + delimiter.join(self.meanings["light"])
+        ret = f"{str(self.number)}::{self.name}"
+        r2 = f"Keywords:\n{delimiter.join(self.keywords)}"
+        r3 = f"Meaning{mean}"
+        tot = f"{ret}\n{r2}\n{r3}"
+        print(self.name)
+        return tot
 
     def display(self):
         for k,v in self.__dict__.items():
             print(f"{k}:\n\t{v}")
 
     def getDict(self,exclude_attributes=None):
-        exclude_attributes = ["isReversed"]
+        exclude_attributes = []
         return {key: value for key, value in self.__dict__.items() if key not in exclude_attributes}
     
+    """
     def showMeanings(self):
         print("\n")
         print(self.name)
@@ -44,13 +52,15 @@ class TarotCard:
         for k,v in self.__dict__.items():
             if k.lower() == "meanings":
                 if self.isReversed == "r":
-                    ret = f"Reversed:\n\t{self.meanings['shadow']}"
+                    pos = "Reversed"
+                    ret = f"{pos}\n{self.meanings['shadow']}"
                 if self.isReversed == "u":
-                    ret = f"Upright:\n\t{self.meanings['light']}"
+                    pos = "Upright"
+                    ret = f"{pos}\n{self.meanings['light']}"
                 if self.isReversed == None:
                     print("Card hasnt been pulled")
-        print(ret)
         return ret
+    """
                 
     def showKeywords(self):
         for k in self.keywords:
@@ -62,7 +72,6 @@ class TarotCard:
             ret += f"{k:<2}"
         return ret
 
-#
 #
 #
 class TarotDeck:
@@ -174,7 +183,6 @@ class TarotDeck:
                 print("Card choice was not valid")
                 break
             self.addChosen(card)
-            card.showMeanings()
         self.showChosen()
         return
     
@@ -202,16 +210,15 @@ class TarotDeck:
             for c in self.chosen:
                 i += 1
                 print(f"{str(i)}-{c.name}::\n")
-                print(f"{c.showMeanings()}\n")
                 print(f"\t{c.showKeywords()}", end = "\n")
                 
-#
 #
 #
 class Spread:
     def __init__(self):
         self.deck = TarotDeck()
         self.pulled_cards = []
+        self.reading = None
 
     def draw_cards(self, amount, reshuffle = True):
         if reshuffle:
@@ -222,12 +229,38 @@ class Spread:
             self.pulled_cards.append(self.deck.pullCard())
             
     def read_cards(self):
+        self.reading = Reading(self.pulled_cards)
         if not self.pulled_cards:
             print("No cards are pulled")
         for card in self.pulled_cards:
             card.lay_down()
+            print(f"\n")
             cont = input("...")
             if cont in [""," "]:
                 continue
             if cont.lower() == "x":
                 break
+
+#
+#
+class Reading:
+    def __init__(self, cards, saving = None):
+        self.cards = cards
+        self.saving = saving
+    
+    def get_reading(self):
+        now = datetime.datetime.now()
+        formatted_date = now.strftime("%m/%d/%Y %H:%M")
+        self.saving = []
+        self.saving.append(f"{formatted_date}")
+        for card in self.cards:
+            self.saving.append(card.lay_down())
+        self.save_reading()
+        return self.saving
+    
+    def save_reading(self):
+        delimiter = "\n"
+        read_str = delimiter.join(self.saving)
+        save_readings(read_str)
+        
+        

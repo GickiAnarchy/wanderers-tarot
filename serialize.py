@@ -18,5 +18,23 @@ def save_tarot_deck(deck_to_save):
         deck.append(card.getDict(exclude_attributes =["Questions to Ask","img","Hebrew Alphabet","Mythical/Spiritual"]))
         print(str(i))
     with open("tarot_deck.json","w") as file:
+        
         json.dump(deck, file, indent = 2)
     print("Tarot Deck Saved")
+    
+
+readfile = r"past_readings.json"
+def save_readings(reading):
+    with open(readfile,"a") as f:
+        #json.dump(reading, f, indent = 2)
+        f.write(reading)
+        f.close()
+
+def load_readings():
+    if not os.path.exists(readfile):
+        return
+    with open(readfile, "r") as f:
+        #data = json.load(f)
+        data = f.read()
+        f.close()
+    return data
