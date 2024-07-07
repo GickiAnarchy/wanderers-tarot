@@ -1,4 +1,4 @@
-from tarot import Reading, SearchCard
+from src.tarot import Reading, SearchCard
 
 
 def main_menu():
