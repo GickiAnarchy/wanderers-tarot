@@ -1,6 +1,8 @@
 import json
 
 
+__all__ = ["major_cards","number_strings","suit_options"]
+
 major_cards = [
     {"name":"The Fool","number":0,"suit":"None"},
     {"name":"The Magician","number":1,"suit":"None"},
@@ -26,7 +28,6 @@ major_cards = [
     {"name":"The World","number":21,"suit":"None"}
     ]
     
-
 number_strings = {
     0:"Zero",
     1:"Ace",
@@ -44,3 +45,13 @@ number_strings = {
     13:"Goddess",
     14:"Philosopher"
 }
+
+suit_options = {
+    "moons":["moons","m"],
+    "knives":["knives","k","knife"],
+    "stones":["stone","stones","s"],
+    "feathers":["f","feathers","feather"],
+    "trump":["t","trump","major","maj"]
+    }
+
+

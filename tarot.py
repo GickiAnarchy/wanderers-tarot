@@ -1,10 +1,10 @@
 import random
 import datetime
-from cardsjson import number_strings, major_cards
+import cardsjson 
 from serialize import *
 
-
-
+#
+#
 class TarotCard:
     count = 0
     
@@ -56,25 +56,6 @@ class TarotCard:
     def getDict(self,exclude_attributes=None):
         exclude_attributes = []
         return {key: value for key, value in self.__dict__.items() if key not in exclude_attributes}
-    
-    """
-    def showMeanings(self):
-        print("\n")
-        print(self.name)
-        print(f"\t{self.keywords}")
-        ret = ""
-        for k,v in self.__dict__.items():
-            if k.lower() == "meanings":
-                if self.isReversed == "r":
-                    pos = "Reversed"
-                    ret = f"{pos}\n{self.meanings['shadow']}"
-                if self.isReversed == "u":
-                    pos = "Upright"
-                    ret = f"{pos}\n{self.meanings['light']}"
-                if self.isReversed == None:
-                    print("Card hasnt been pulled")
-        return ret
-    """
                 
     def showKeywords(self):
         for k in self.keywords:
@@ -258,9 +239,6 @@ class Reading:
         time_now = self.getTime()
         for card in self.cards:
             reading.append(card.lay_down())
-        #reading.append(f"\n")
-        #delimiter = "\n"
-        #read_str = delimiter.join(reading)
         reading_dict = {f"{time_now}":reading}
         if self.ask_save():
             self.save_reading(reading_dict)
@@ -281,3 +259,38 @@ class Reading:
             return True
         else:
             return False
+
+#
+#
+class SearchCard:
+    def __init__(self):
+        self.deck = TarotDeck()
+        self.chosen_card = None
+        self
+        self.suit_options = cardsjson.suit_options
+    
+    def search(self):
+        pass
+
+    def gather_options(self):
+        ret = []
+        for k in self.suit_options.keys():
+            for v in self.suit_options[k]:
+                print(f"{k}: {v}")
+                ret.append(v)
+        return ret
+
+    def yes_or_no(self):
+        print("(Y)es or (N)o?")
+        while True:
+            sele = input("Choice: ")
+            if sele.lower() not in ["n","y"]:
+                continue
+            if sele.lower() == "y":
+                ret = True
+                break
+            if sele.lower() == "n":
+                ret = False
+                break
+        return ret
+
