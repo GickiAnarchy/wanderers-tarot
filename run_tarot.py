@@ -33,7 +33,7 @@ def tarot_reading():
 #
 def search_card():
     se  = SearchCard()
-    print(se.yes_or_no())
+    se.search()
 
 
 if __name__ == "__main__":

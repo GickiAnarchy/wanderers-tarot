@@ -178,8 +178,9 @@ class TarotDeck:
                 print("Card choice was not valid")
                 break
             self.addChosen(card)
+            break
         self.showChosen()
-        return
+        return card
     
     def listSuit(self, stack):
         # Define the number of columns
@@ -270,7 +271,41 @@ class SearchCard:
         self.suit_options = cardsjson.suit_options
     
     def search(self):
-        pass
+        self.chosen_card = self.deck.chooseStack()
+        print(f"Chose {self.chosen_card.name}!")
+        input("")
+        self.show_card()
+        
+        """
+        print("Lets choose a card.")
+        print("Lets first choose the suit the card is in.")
+        print("(M)oons, (S)tones, (K)nives, (F)eathers")
+        print("The Major Arcana is known as (t)rump suit")
+        #Choose the suit
+        while True:
+            sele = input("Choose Suit: ")
+            if sele.lower() in self.gather_options():
+                for k,v in self.suit_options.items():
+                    if sele.lower() in v:
+                        chosen_suit = k
+                        print(f"{k} suit chosen."
+        #Choose the number.
+        num_columns = 3
+        num_rows = (len(stack) + num_columns - 1) // num_columns
+        for row in range(num_rows):
+            for col in range(num_columns):
+                index = row + col * num_rows
+                if index < len(stack):
+                    print(f"{index+1}. {stack[index].name:<15}", end=' | ')
+            """
+
+    def show_card(self):
+        if self.chosen_card == None:
+            print("No chosen card")
+            return
+        info = json.dumps(self.chosen_card.getDict(), indent = 4)
+        print(info)
+        
 
     def gather_options(self):
         ret = []
