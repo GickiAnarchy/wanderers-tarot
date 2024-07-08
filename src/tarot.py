@@ -211,9 +211,10 @@ class TarotDeck:
 #
 #
 class Reading:
-    def __init__(self):
+    def __init__(self,cards=[],form_date=None):
         self.deck = TarotDeck()
-        self.cards = []
+        self.cards = cards
+        self.formatted_date = form_date
 
     def ask_amount(self):
         print("How many cards are you wanting to draw?")
@@ -232,7 +233,7 @@ class Reading:
         for i in range(amount):
             self.cards.append(self.deck.pullCard())
 
-    def get_reading(self):
+    def show_reading(self):
         if not self.cards:
             print("No cards have been pulled")
             return
@@ -247,11 +248,28 @@ class Reading:
     
     def save_reading(self, reading):
         save_readings(reading)
-
+    
+    def load_reading(self, past_read):
+        self.formatted_date = past_read.keys[0]
+        self.cards = past_read[f"{self.formatted_date}"]
+    
+    def view_past(self):
+        p_read = load_readings()
+        for k,v in p_read.items():
+            print(f"{k}: {str(len(v))} cards.")
+            stop = input("View Reading?")
+            if stop.lower() in ["y","yea","yes",]:
+                self.load_reading(p_read[f"{k}"])
+            if stop.lower() in ["n","no","nah","nope"]:
+                continue
+            if stop.lower() in ["x","exit","stop"]:
+                break
+        
     def getTime(self):
-        now = datetime.datetime.now()
-        formatted_date = now.strftime("%m/%d/%Y %H:%M")
-        return formatted_date
+        if self.formatted_date == None:
+            now = datetime.datetime.now()
+            self.formatted_date = now.strftime("%m/%d/%Y %H:%M")
+        return self.formatted_date
 
     def ask_save(self):
         print("Do you want to save this reading?")
@@ -267,7 +285,6 @@ class SearchCard:
     def __init__(self):
         self.deck = TarotDeck()
         self.chosen_card = None
-        self
         self.suit_options = cardsjson.suit_options
     
     def search(self):

@@ -29,14 +29,13 @@ readfile = r"src/past_readings.json"
 def save_readings(reading):
     with open(readfile,"a") as f:
         json.dump(reading, f, indent = 2)
-        #f.write(reading)
         f.close()
 
 def load_readings():
     if not os.path.exists(readfile):
         return
     with open(readfile, "r") as f:
-        #data = json.load(f)
-        data = f.read()
+        data = json.load(f)
+        #data = f.read()
         f.close()
     return data

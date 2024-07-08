@@ -26,7 +26,7 @@ def main_menu():
 def tarot_reading():
     reading = Reading()
     reading.draw_cards(reading.ask_amount())
-    print(reading.get_reading())
+    print(reading.show_reading())
 
 #
 #
