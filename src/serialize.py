@@ -1,9 +1,15 @@
 import json
 import os
+import base64
+from PIL import Image
 from .cardsjson import number_strings
 
 
 deck_json = r"src/tarot_deck.json"
+
+#
+#
+#TAROT DECK I/O
 def load_tarot_deck():
     deck = []
     with open(deck_json,"r") as file:
@@ -23,8 +29,11 @@ def save_tarot_deck(deck_to_save):
         
         json.dump(deck, file, indent = 2)
     print("Tarot Deck Saved")
-    
 
+
+#
+#
+# READINGS I/O
 readfile = r"src/past_readings.json"
 def save_readings(reading):
     with open(readfile,"a") as f:
@@ -39,3 +48,43 @@ def load_readings():
         #data = f.read()
         f.close()
     return data
+
+
+#
+#
+#IMAGE COBVERSION
+img_path = r"img/"
+
+def encode_img():
+    for file in os.listdir(img_path):
+        name = ""
+        en_str = ""
+        if file.endswith(".png"):
+            name = file[:-4]
+    #Open the image:
+        with open(f"{img_path}{file}", "rb") as image_file:
+            #image = Image.open(image_file)
+            #Encode to base64:
+            en_str = base64.b64encode(image_file.read())
+        with open(f"img/.{name}.b64","w") as f:
+            f.write(en_str.decode("utf-8"))
+            f.close()
+    """
+with open("food.jpeg", "rb") as image2string: 
+    converted_string = base64.b64encode(image2string.read()) 
+print(converted_string) 
+  
+with open('encode.bin', "wb") as file: 
+    file.write(converted_string)
+    """
+        
+
+def decode_img():
+    for k in os.listdir(img_path):
+        if not k.endswith(".b64"):
+            continue
+        with open(f"{img_path}{k}","rb") as f:
+            decoded = f.read()
+            f.close()
+            decodeit = open(f"{img_path}{k[1:-4]}.png", "wb")
+            decodeit.write(base64.b64decode((decoded)))

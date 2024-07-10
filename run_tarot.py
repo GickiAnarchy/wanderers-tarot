@@ -1,5 +1,5 @@
 from src.tarot import Reading, SearchCard
-
+from src.serialize import encode_img, decode_img
 
 def main_menu():
     while True:
@@ -37,4 +37,5 @@ def search_card():
 
 
 if __name__ == "__main__":
-    main_menu()
+    decode_img()
+    #main_menu()
