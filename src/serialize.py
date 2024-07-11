@@ -27,7 +27,6 @@ def save_tarot_deck(deck_to_save):
         deck.append(card.getDict(exclude_attributes =["Questions to Ask","img","Hebrew Alphabet","Mythical/Spiritual"]))
         print(str(i))
     with open(deck_json,"w") as file:
-        
         json.dump(deck, file, indent = 2)
     print("Tarot Deck Saved")
 
@@ -41,10 +40,8 @@ def save_readings(reading):
         f.close()
 
 def save_ai_reading(reading):
-    now = datetime.datetime.now()
-    formatted_date = now.strftime("%m%d%Y_%H%M")
-    with open(f"src/readings/reading_{formatted_date}.txt", "w") as f:
-        f.write(reading)
+    with open(f"src/readings/reading.json", "a") as f:
+        json.dump(reading, f, indent = 2)
         f.close()
 
 def load_readings():

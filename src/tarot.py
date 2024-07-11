@@ -50,15 +50,13 @@ class TarotCard:
         return ret
 
     def getAIInfo(self):
-        ret = []
         mean = ""
         if self.isReversed == "r":
             mean = ",Reversed"
         elif self.isReversed == "u":
             pass
-        ret.append(f"{self.name}{mean}")
+        ret = f"{self.name}{mean}"
         return ret
-
 
     def display(self):
         for k,v in self.__dict__.items():

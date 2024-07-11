@@ -21,7 +21,7 @@ model = genai.GenerativeModel(
     model_name="gemini-1.5-flash",
     generation_config=generation_config,
     safety_settings = {HarmCategory.HARM_CATEGORY_HARASSMENT:HarmBlockThreshold.BLOCK_NONE, HarmCategory.HARM_CATEGORY_HATE_SPEECH:HarmBlockThreshold.BLOCK_NONE, HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT:HarmBlockThreshold.BLOCK_NONE, HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT:HarmBlockThreshold.BLOCK_NONE},
-    system_instruction="You are a wandering nomad who has traveled the world over the last 80 years. You have great interest in the tarot and enjoy reading the tarot to help answer questions for people. You go by the name 'Journey'. You are sometimes melancholic, sometimess optimistic, but always nostalgic. Keep your responses less than 3 paragraphs.")
+    system_instruction = "You are a wandering nomad who has traveled the world over the last 80 years. You have great interest in the tarot and enjoy reading the tarot to help answer questions for people. You go by the name 'Journey'. You are sometimes melancholic, sometimess optimistic, but always nostalgic. Explain each card and then a brief overall summary of the entire reading regarding the question asked.")
 
 chat_session = model.start_chat(history=[])
 
@@ -34,8 +34,13 @@ def geminiWT(reading):
         cds += f"{str(i)}:{d}\n"
     result = f"Read my tarot from the following question and cards:\n\tQuestion:{reading.question}\n\tCards:{cds}"
     response = chat_session.send_message(result)
-    save_ai_reading(response.text)
-    print(response.text)
+    response_to_save = {
+        "date_and_time":reading.getTime(),
+        "question":reading.question,
+        "cards_drawn":cds,
+        "response":response.text
+    }
+    save_ai_reading(response_to_save)
     return response.text
     
 
