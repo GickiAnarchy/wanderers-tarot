@@ -1,6 +1,8 @@
 from src.tarot import Reading, SearchCard
 from src.serialize import encode_img, decode_img
 from src.geminiRequest import geminiWT
+from google.generativeai.types import HarmCategory, HarmBlockThreshold
+
 
 def main_menu():
     while True:
