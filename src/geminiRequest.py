@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 import os
 from google.generativeai.types import HarmCategory, HarmBlockThreshold
+from src.serialize import save_ai_reading
 
 load_dotenv()
 

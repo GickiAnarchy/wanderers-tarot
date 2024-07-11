@@ -43,5 +43,4 @@ def search_card():
 #
 #
 if __name__ == "__main__":
-    #decode_img()
     main_menu()
