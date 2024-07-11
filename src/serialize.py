@@ -1,6 +1,7 @@
 import json
 import os
 import base64
+import datetime
 from PIL import Image
 from .cardsjson import number_strings
 
@@ -30,7 +31,6 @@ def save_tarot_deck(deck_to_save):
         json.dump(deck, file, indent = 2)
     print("Tarot Deck Saved")
 
-
 #
 #
 # READINGS I/O
@@ -38,6 +38,13 @@ readfile = r"src/past_readings.json"
 def save_readings(reading):
     with open(readfile,"a") as f:
         json.dump(reading, f, indent = 2)
+        f.close()
+
+def save_ai_reading(reading):
+    now = datetime.datetime.now()
+    formatted_date = now.strftime("%m%d%Y_%H%M")
+    with open(f"src/readings/reading_{formatted_date}.txt", "w") as f:
+        f.write(reading)
         f.close()
 
 def load_readings():
@@ -48,7 +55,6 @@ def load_readings():
         #data = f.read()
         f.close()
     return data
-
 
 #
 #
@@ -78,7 +84,6 @@ with open('encode.bin', "wb") as file:
     file.write(converted_string)
     """
         
-
 def decode_img():
     for k in os.listdir(img_path):
         if not k.endswith(".b64"):

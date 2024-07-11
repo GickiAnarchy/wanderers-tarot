@@ -49,6 +49,17 @@ class TarotCard:
         print(self.name)
         return ret
 
+    def getAIInfo(self):
+        ret = []
+        mean = ""
+        if self.isReversed == "r":
+            mean = ",Reversed"
+        elif self.isReversed == "u":
+            pass
+        ret.append(f"{self.name}{mean}")
+        return ret
+
+
     def display(self):
         for k,v in self.__dict__.items():
             print(f"{k}:\n\t{v}")
@@ -215,12 +226,31 @@ class Reading:
         self.deck = TarotDeck()
         self.cards = cards
         self.formatted_date = form_date
+        self.question = ""
 
+    def getCards(self):
+        stuff = []
+        if len(self.cards) > 0:
+            for c in self.cards:
+                stuff.append(f"{c.getAIInfo()}")
+            return stuff
+        else:
+            print("No cards in reading")
+ 
+    def go(self):
+        self.askQuestion()
+        amount = self.ask_amount()
+        self.draw_cards(amount=amount)
+            
+    def askQuestion(self):
+        print("What is the question you are seeking the answer for?")
+        self.question = input("Ask the universe: ")
+            
     def ask_amount(self):
         print("How many cards are you wanting to draw?")
         while True:
             try:
-                answer = int(input(f"Enter amount. (no more than {str(TarotCard.getCount())}."))
+                answer = int(input(f"Enter amount. (no more than {str(TarotCard.getCount())})"))
                 return answer
             except ValueError:
                 print("That's not an integer!")

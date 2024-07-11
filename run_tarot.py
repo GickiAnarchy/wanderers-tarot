@@ -1,5 +1,6 @@
 from src.tarot import Reading, SearchCard
 from src.serialize import encode_img, decode_img
+from src.textPrompt import getGemReading
 
 def main_menu():
     while True:
@@ -25,8 +26,9 @@ def main_menu():
 #
 def tarot_reading():
     reading = Reading()
-    reading.draw_cards(reading.ask_amount())
-    print(reading.show_reading())
+    reading.go()
+    ai_reading = getGemReading(reading)
+    print(ai_reading)
 
 #
 #
@@ -35,7 +37,9 @@ def search_card():
     se  = SearchCard()
     se.search()
 
-
+#
+#
+#
 if __name__ == "__main__":
-    decode_img()
-    #main_menu()
+    #decode_img()
+    main_menu()
