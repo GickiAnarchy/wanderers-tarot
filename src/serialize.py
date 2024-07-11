@@ -75,14 +75,6 @@ def encode_img():
         with open(f"img/.{name}.b64","w") as f:
             f.write(en_str.decode("utf-8"))
             f.close()
-    """
-with open("food.jpeg", "rb") as image2string: 
-    converted_string = base64.b64encode(image2string.read()) 
-print(converted_string) 
-  
-with open('encode.bin', "wb") as file: 
-    file.write(converted_string)
-    """
         
 def decode_img():
     for k in os.listdir(img_path):

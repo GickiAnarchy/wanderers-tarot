@@ -1,6 +1,6 @@
 from src.tarot import Reading, SearchCard
 from src.serialize import encode_img, decode_img
-from src.textPrompt import getGemReading
+from src.geminiRequest import geminiWT
 
 def main_menu():
     while True:
@@ -27,7 +27,7 @@ def main_menu():
 def tarot_reading():
     reading = Reading()
     reading.go()
-    ai_reading = getGemReading(reading)
+    ai_reading = geminiWT(reading)
     print(ai_reading)
 
 #
