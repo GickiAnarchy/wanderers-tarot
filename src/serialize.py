@@ -82,3 +82,8 @@ def decode_img():
             f.close()
             decodeit = open(f"{img_path}{k[1:-4]}.png", "wb")
             decodeit.write(base64.b64decode((decoded)))
+
+#
+#
+def writeHTML(reading):
+    pass

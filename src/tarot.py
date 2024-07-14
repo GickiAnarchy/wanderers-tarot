@@ -237,9 +237,30 @@ class Reading:
  
     def go(self):
         self.askQuestion()
-        amount = self.ask_amount()
-        self.draw_cards(amount=amount)
-            
+        ret = self.chooseSpread()
+        return ret
+
+    def chooseSpread(self):
+        while True:
+            print("Choose a reading spread:")
+            print("1) Past, Present, Future - 3 cards")
+            print("2) Celtic Cross - 10 cards")
+            print("3) Tree of Life - 10 cards")
+            sel = input("Enter the number: ")
+            try:
+                ret = int(sel)
+            except:
+                print("Must be a number value")
+            if ret in [1,2,3]:
+                match ret:
+                    case 1:
+                        self.draw_cards(3)
+                    case 2:
+                        self.draw_cards(10)
+                    case 3:
+                        self.draw_cards(10)
+                return ret
+
     def askQuestion(self):
         print("What is the question you are seeking the answer for?")
         self.question = input("Ask the universe: ")
@@ -320,30 +341,7 @@ class SearchCard:
         print(f"Chose {self.chosen_card.name}!")
         input("")
         self.show_card()
-        
-        """
-        print("Lets choose a card.")
-        print("Lets first choose the suit the card is in.")
-        print("(M)oons, (S)tones, (K)nives, (F)eathers")
-        print("The Major Arcana is known as (t)rump suit")
-        #Choose the suit
-        while True:
-            sele = input("Choose Suit: ")
-            if sele.lower() in self.gather_options():
-                for k,v in self.suit_options.items():
-                    if sele.lower() in v:
-                        chosen_suit = k
-                        print(f"{k} suit chosen."
-        #Choose the number.
-        num_columns = 3
-        num_rows = (len(stack) + num_columns - 1) // num_columns
-        for row in range(num_rows):
-            for col in range(num_columns):
-                index = row + col * num_rows
-                if index < len(stack):
-                    print(f"{index+1}. {stack[index].name:<15}", end=' | ')
-            """
-
+ 
     def show_card(self):
         if self.chosen_card == None:
             print("No chosen card")
