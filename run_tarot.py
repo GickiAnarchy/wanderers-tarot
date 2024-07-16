@@ -1,5 +1,6 @@
 from src.tarot import Reading, SearchCard
 from src.serialize import encode_img, decode_img
+from src.page_creator import savePage
 from src.geminiRequest import pastPresentFuture, celticCross, treeOfLife
 
 

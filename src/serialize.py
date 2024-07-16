@@ -4,6 +4,7 @@ import base64
 import datetime
 from PIL import Image
 from .cardsjson import number_strings
+from .page_creator import savePage
 
 
 deck_json = r"src/tarot_deck.json"
@@ -40,14 +41,15 @@ def save_readings(reading):
         f.close()
 
 def save_ai_reading(reading):
+    savePage(reading)
     with open(f"src/readings/reading.json", "a") as f:
         json.dump(reading, f, indent = 2)
         f.close()
 
 def load_readings():
-    if not os.path.exists(readfile):
+    if not os.path.exists(f"src/readings/reading.json"):
         return
-    with open(readfile, "r") as f:
+    with open(f"src/readings/reading.json", "r") as f:
         data = json.load(f)
         #data = f.read()
         f.close()
