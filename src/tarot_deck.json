@@ -719,6 +719,7 @@
     "Numerology": "21 = 2 + 1 = 3 (expression, result)",
     "Elemental": "Saturn"
   },
+
   {
     "name": "Ace of Moons",
     "number": "1",
@@ -1177,6 +1178,7 @@
     "Elemental": "Fire of Water.",
     "Affirmation": "\"I strive to be stable and fair-minded.\""
   },
+
   {
     "name": "Ace of Knives",
     "number": "1",
@@ -1650,6 +1652,7 @@
     "Elemental": "Fire of Air.",
     "Affirmation": "\"My word is my bond.\""
   },
+  
   {
     "name": "Ace of Feathers",
     "number": "1",
@@ -2568,5 +2571,3 @@
     "Affirmation": "\"I embody confidence and fairness.\""
   }
 ]
-
-

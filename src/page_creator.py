@@ -35,7 +35,7 @@ def savePage(reading):
     html_bytes = bytes(wtpage)  # casting to bytes is a shortcut to str(wtpage).encode('utf-8')
     
     print(html)
-    with open(f"src/readings/{reading['question']}.html","wb") as f:
+    with open(f"src/readings/{reading['date_and_time']}.html","wb") as f:
         f.write(html_bytes)
 
 

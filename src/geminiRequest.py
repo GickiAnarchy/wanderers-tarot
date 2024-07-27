@@ -85,22 +85,6 @@ def celticCross(reading):
     }
     save_ai_reading(response_to_save)
     return response.text
-    i = 0
-    cds_list = reading.getCards()
-    for d in cds_list:
-        i += 1
-        cds += f"{str(i)}){celtic_positions[i]}:{d}\n"
-    result = f"The seeker has asked a queston and you, as the reader,  read the seekers tarot in the celtic cross spread from the following question and cards:\n\tQuestion:{reading.question}\n\tCards:{cds}"
-    response = chat_session.send_message(result)
-    response_to_save = {
-        "date_and_time":reading.getTime(),
-        "question":reading.question,
-        "cards_drawn":cds,
-        "response":response.text
-    }
-    save_ai_reading(response_to_save)
-    return response.text
-
 
 tree_positions = [
     "",

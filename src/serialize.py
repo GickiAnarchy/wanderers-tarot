@@ -41,15 +41,15 @@ def save_readings(reading):
         f.close()
 
 def save_ai_reading(reading):
-    savePage(reading)
+    #savePage(reading)
     with open(f"src/readings/reading.json", "a") as f:
         json.dump(reading, f, indent = 2)
         f.close()
 
 def load_readings():
-    if not os.path.exists(f"src/readings/reading.json"):
+    if not os.path.exists("src/readings/reading.json"):
         return
-    with open(f"src/readings/reading.json", "r") as f:
+    with open("src/readings/reading.json", "r") as f:
         data = json.load(f)
         #data = f.read()
         f.close()

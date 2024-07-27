@@ -1,5 +1,6 @@
 import random
 import datetime
+import os
 from .cardsjson import *
 from .serialize import *
 
@@ -235,12 +236,12 @@ class Reading:
         else:
             print("No cards in reading")
  
-    def go(self):
+    def go(self, do_not_draw = False):
         self.askQuestion()
-        ret = self.chooseSpread()
+        ret = self.chooseSpread(do_not_draw)
         return ret
 
-    def chooseSpread(self):
+    def chooseSpread(self, do_not_draw = False):
         while True:
             print("Choose a reading spread:")
             print("1) Past, Present, Future - 3 cards")
@@ -251,7 +252,7 @@ class Reading:
                 ret = int(sel)
             except:
                 print("Must be a number value")
-            if ret in [1,2,3]:
+            if ret in [1,2,3] and do_not_draw == False:
                 match ret:
                     case 1:
                         self.draw_cards(3)
@@ -259,7 +260,7 @@ class Reading:
                         self.draw_cards(10)
                     case 3:
                         self.draw_cards(10)
-                return ret
+            return ret
 
     def askQuestion(self):
         print("What is the question you are seeking the answer for?")
@@ -349,7 +350,6 @@ class SearchCard:
         info = json.dumps(self.chosen_card.getDict(), indent = 4)
         print(info)
         
-
     def gather_options(self):
         ret = []
         for k in self.suit_options.keys():
@@ -359,6 +359,73 @@ class SearchCard:
         return ret
 
     def yes_or_no(self):
+        print("(Y)es or (N)o?")
+        while True:
+            sele = input("Choice: ")
+            if sele.lower() not in ["n","y"]:
+                continue
+            if sele.lower() == "y":
+                ret = True
+                break
+            if sele.lower() == "n":
+                ret = False
+                break
+        return ret
+
+#
+#
+class ReadCards:
+    def __init__(self):
+        self.cards = []
+        self.deck = TarotDeck()
+
+    def start(self, amt:int):
+        self.addCard(amt)
+
+    def addCard(self, amt):
+        for _ in range(amt):
+            crd = self.getCard_one()
+            self.cards.append(crd)
+
+    def getCard_one(self):
+        card_list = []
+        while True:
+            print("Search a card to add:")
+            print("First, Choose the suit.")
+            print("'F' - Feathers       'K' - Knives")
+            print("'M' - Moons          'S' - Stones")
+            print("'T' - Major Arcana   'X' - Exit")
+            suit = input("Enter suit: ")
+            if suit.lower() not in ["f","k","m","s","t","x"]:
+                print("Not a valid input")
+                continue
+            else:
+                match suit.lower():
+                    case "f":
+                        card_list = self.deck.getFeathers()
+                    case "k":
+                        card_list = self.deck.getKnives()
+                    case "s":
+                        card_list = self.deck.getStones()
+                    case "m":
+                        card_list = self.deck.getMoons()
+                    case "t":
+                        card_list = self.deck.getMajors()
+            return card_list[self.getCard_two(card_list)]
+
+    def getCard_two(self,selected_suit):
+        for c in selected_suit:
+            print(f"{c.number})     {c.name}")
+        print("Enter the numeral value.")
+        sel = input("# ")
+        try:
+            sel = int(sel)
+        except ValueError:
+            print("That isn't a correct selection.")
+        return sel - 1
+
+    def yes_or_no(self, msg = ""):
+        print(msg)
         print("(Y)es or (N)o?")
         while True:
             sele = input("Choice: ")
