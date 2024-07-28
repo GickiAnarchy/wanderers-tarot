@@ -2,12 +2,15 @@ from dotenv import load_dotenv
 import os
 from google.generativeai.types import HarmCategory, HarmBlockThreshold
 from src.serialize import save_ai_reading
+from google.colab import userdata
 
 load_dotenv()
 
 import google.generativeai as genai
 
-genai.configure(api_key=os.environ["GEMINI_API_KEY"])
+
+
+genai.configure(api_key=userdata.get('GOOGLE_KEY'))
 
 generation_config = {
   "temperature": 1,
