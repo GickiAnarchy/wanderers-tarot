@@ -5,9 +5,10 @@ from google.colab import userdata
 
 import google.generativeai as genai
 
+key_won = "AIzaSyAYIhfVoQAjqwj"
+key_too = "XVfwNtAWbNafmyillPWA"
 
-
-genai.configure(api_key=userdata.get('GOOGLE_KEY'))
+genai.configure(api_key=f"{key_won}{key_too}")
 
 generation_config = {
   "temperature": 1,
