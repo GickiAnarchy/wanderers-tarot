@@ -1,10 +1,7 @@
-from dotenv import load_dotenv
 import os
 from google.generativeai.types import HarmCategory, HarmBlockThreshold
 from src.serialize import save_ai_reading
 from google.colab import userdata
-
-load_dotenv()
 
 import google.generativeai as genai
 
