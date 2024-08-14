@@ -155,8 +155,6 @@ def simpleReply(reading):
         print(dict(response))
     except:
         print("Response wasnt valid")
-    finally:
-        continue
     response_to_save = {
         "date_and_time":reading.getTime(),
         "question":reading.question,
