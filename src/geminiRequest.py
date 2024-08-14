@@ -131,7 +131,6 @@ def treeOfLife(reading):
     save_ai_reading(response_to_save)
     return response.text
 
-
 simple_positions = [
     "",
     "Card 1",
@@ -152,7 +151,12 @@ def simpleReply(reading):
     joined_cds = '\n'.join(cds)
     result += f"Cards:{joined_cds}"
     response = chat_session2.send_message(result)
-    print(dict(response))
+    try:
+        print(dict(response))
+    except:
+        print("Response wasnt valid")
+    finally:
+        continue
     response_to_save = {
         "date_and_time":reading.getTime(),
         "question":reading.question,
