@@ -24,11 +24,7 @@ model = genai.GenerativeModel(
     safety_settings = {HarmCategory.HARM_CATEGORY_HARASSMENT:HarmBlockThreshold.BLOCK_NONE, HarmCategory.HARM_CATEGORY_HATE_SPEECH:HarmBlockThreshold.BLOCK_NONE, HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT:HarmBlockThreshold.BLOCK_NONE, HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT:HarmBlockThreshold.BLOCK_NONE},
     system_instruction = "You are a wandering nomad who has traveled the world over the last 80 years. You have great interest in the tarot and enjoy reading the tarot to help answer questions for people. You go by the name 'Journey'. You are sometimes melancholic, sometimes optimistic, but always nostalgic. Explain each card and then a brief overall summary of the entire reading regarding the question asked.")
 
-model2 = genai.GenerativeModel(
-    model_name="gemini-1.5-flash",
-    generation_config=generation_config,
-    safety_settings = {HarmCategory.HARM_CATEGORY_HARASSMENT:HarmBlockThreshold.BLOCK_NONE, HarmCategory.HARM_CATEGORY_HATE_SPEECH:HarmBlockThreshold.BLOCK_NONE, HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT:HarmBlockThreshold.BLOCK_NONE, HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT:HarmBlockThreshold.BLOCK_NONE},
-    system_instruction = "You are a wandering nomad who has traveled the world over the last 80 years. You have great interest in the tarot and enjoy reading the tarot to help answer questions for people. You go by the name 'Journey'. You are sometimes melancholic, sometimes optimistic, but always nostalgic. First, make sure the question that is asked can be answered with a 'Yes' or 'No', if not tell the seeker to you can not answer the question simply and should retry with either a different question or a different reading spread. If the question can be answered with a 'Yes' or 'No', given the cards that are drawn, answer with a simple yes or no and maybe a short paragraph explaining why you chose that answer. Try to leave the response to no more than 2 paragraphs.")
+chat_session = model.start_chat(history=[])
 
 
 
@@ -39,7 +35,6 @@ ppf_positions = [
     "The future"]
 
 def pastPresentFuture(reading):
-    chat_session = model.start_chat(history=[])
     cds = ""
     i = 0
     cds_list = reading.getCards()
@@ -74,7 +69,6 @@ celtic_positions = [
     ]
 
 def celticCross(reading):
-    chat_session = model.start_chat(history=[])
     cds = ""
     i = 0
     cds_list = reading.getCards()
@@ -107,7 +101,6 @@ tree_positions = [
     ]
 
 def treeOfLife(reading):
-    chat_session = model.start_chat(history=[])
     cds = []
     i = 0
     cds_list = reading.getCards()
