@@ -2,7 +2,7 @@
 name = "wanderers-tarot"
 version = "0.1.0"
 description = ""
-authors = ["Your Name <you@example.com>"]
+authors = ["Magick <fatheranarchy@programmer.net>"]
 readme = "README.md"
 packages = [{include = "wanderers_tarot"}]
 

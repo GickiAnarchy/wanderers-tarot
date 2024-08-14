@@ -2,7 +2,7 @@ import json
 import os
 import base64
 import datetime
-from PIL import Image
+
 from .cardsjson import number_strings
 from .page_creator import savePage
 

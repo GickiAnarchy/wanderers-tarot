@@ -1,7 +1,7 @@
 from src.tarot import Reading, SearchCard, ReadCards
 from src.serialize import encode_img, decode_img
 from src.page_creator import savePage
-from src.geminiRequest import pastPresentFuture, celticCross, treeOfLife
+from src.geminiRequest import pastPresentFuture, celticCross, treeOfLife, simpleReply
 
 
 
@@ -40,6 +40,8 @@ def tarot_reading():
         ai_reading = celticCross(reading)
     if sel == 3:
         ai_reading = treeOfLife(reading)
+    if sel == 4:
+        ai_reading = simpleReply(reading)
     print(ai_reading)
 
 #

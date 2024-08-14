@@ -247,12 +247,13 @@ class Reading:
             print("1) Past, Present, Future - 3 cards")
             print("2) Celtic Cross - 10 cards")
             print("3) Tree of Life - 10 cards")
+            print("4) Simple Yes or No.")
             sel = input("Enter the number: ")
             try:
                 ret = int(sel)
             except:
                 print("Must be a number value")
-            if ret in [1,2,3] and do_not_draw == False:
+            if ret in [1,2,3,4] and do_not_draw == False:
                 match ret:
                     case 1:
                         self.draw_cards(3)
@@ -260,6 +261,8 @@ class Reading:
                         self.draw_cards(10)
                     case 3:
                         self.draw_cards(10)
+                    case 4:
+                        self.draw_cards(4)
             return ret
 
     def askQuestion(self):
