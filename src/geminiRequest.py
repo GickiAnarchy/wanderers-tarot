@@ -1,7 +1,7 @@
 import os
 from google.generativeai.types import HarmCategory, HarmBlockThreshold
 from src.serialize import save_ai_reading
-from google.colab import userdata
+#from google.colab import userdata
 
 import google.generativeai as genai
 
