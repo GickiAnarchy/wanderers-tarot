@@ -5,10 +5,9 @@ from src.serialize import save_ai_reading
 
 import google.generativeai as genai
 
-key_won = "AIzaSyAYIhfVoQAjqwj"
-key_too = "XVfwNtAWbNafmyillPWA"
+gemini_key = os.getenv("GEMINI_API_KEY")
 
-genai.configure(api_key=f"{key_won}{key_too}")
+genai.configure(api_key=gemini_key)
 
 generation_config = {
   "temperature": 1,
