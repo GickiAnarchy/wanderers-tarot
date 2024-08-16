@@ -17,8 +17,6 @@ from src.tarot import TarotDeck, Reading
 
 
 class WanderersBox(BoxLayout):
-    def __init__(self, **kwargs):
-        super().__init__(**kwargs)
 
     def searchCards(self):
         pass
@@ -26,11 +24,12 @@ class WanderersBox(BoxLayout):
     def readTarot(self, question):
         reading = Reading()
         reading.drawCards(10)
-        ai_reading = celticCross(ai_reading)
+        ai_reading = celticCross(reading)
+        return 
 
-class WT_APP(App):
+class WTApp(App):
     def build(self):
-        self.wbox = WanderersBox()
+        self.wbox = ObjectProperty(None)
         return self.wbox
 
 
@@ -49,5 +48,5 @@ def getTime(self):
 
 
 if __name__ == "__main__":
-    WT_APP().run()
+    WTApp().run()
 
