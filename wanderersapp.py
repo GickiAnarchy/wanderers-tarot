@@ -17,7 +17,9 @@ from src.tarot import TarotDeck, Reading
 
 
 class WanderersBox(BoxLayout):
-    
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+
     def searchCards(self):
         pass
 
@@ -37,3 +39,10 @@ def getTime(self):
         now = datetime.datetime.now()
         self.formatted_date = now.strftime("%m/%d/%Y %H:%M")
     return self.formatted_date
+
+
+class WT_APP(App):
+    def build(self):
+        self.wbox = WanderersBox()
+        return self.wbox
+
