@@ -1,0 +1,22 @@
+<WanderersBox>:
+    orientation: "vertical"
+    size_hint_y: 0.3
+    Label:
+        text: "Welcome Seeker"
+    TextInput:
+        id: question_box
+        text: "Ask your question..."
+        multiline: False
+    BoxLayout:
+        size_hint_y: 0.7
+        orientation: "vertical"
+        Button:
+            id: search_btn
+            text: "Search Deck"
+            on_press: root.searchCards()
+        Button:
+            id: reading_btn
+            text: "Read My Tarot"
+            on_press: root.readTarot(question_box.text)
+
+

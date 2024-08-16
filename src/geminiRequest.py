@@ -83,6 +83,7 @@ def celticCross(reading):
         "response":response.text
     }
     save_ai_reading(response_to_save)
+    print(type(response.text))
     return response.text
 
 tree_positions = [
@@ -130,19 +131,19 @@ simple_positions = [
     "Card 4"]
 
 def simpleReply(reading):
-    chat_session2 = model2.start_chat(history=[])
+    chat_session = model.start_chat(history=[])
     cds = []
     i = 0
     cds_list = reading.getCards()
     for d in cds_list:
         i += 1
         cds.append(f"{str(i)}){simple_positions[i]}:{d}")
-    result = f"The seeker has asked a queston and you, as the reader,  read the cards and decide whether they are saying yes or no.:"
+    result = f"The seeker has asked a queston and you, as the reader,  read the cards and decide whether they are saying yes or no. Keep the reaponse either to 'Yes', 'No', or 'Uncertain', and no more than a paragraph explaining why you decided that answer, depending on the cards that were drawn.:"
     result += "\n"
     result += f"Question:{reading.question}"
     joined_cds = '\n'.join(cds)
     result += f"Cards:{joined_cds}"
-    response = chat_session2.send_message(result)
+    response = chat_session.send_message(result)
     try:
         print(dict(response))
     except:
