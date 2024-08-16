@@ -28,12 +28,17 @@ class WanderersBox(BoxLayout):
         reading.drawCards(10)
         ai_reading = celticCross(ai_reading)
 
+class WT_APP(App):
+    def build(self):
+        self.wbox = WanderersBox()
+        return self.wbox
 
 
+"""
 
+        #_#
 
-
-
+"""
 def getTime(self):
     if self.formatted_date == None:
         now = datetime.datetime.now()
@@ -41,8 +46,8 @@ def getTime(self):
     return self.formatted_date
 
 
-class WT_APP(App):
-    def build(self):
-        self.wbox = WanderersBox()
-        return self.wbox
+
+
+if __name__ == "__main__":
+    WT_APP().run()
 
