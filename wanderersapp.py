@@ -17,15 +17,16 @@ from src.tarot import TarotDeck, Reading
 
 
 class WanderersBox(BoxLayout):
-    def __init__(self):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
         self.reading_btn = ObjectProperty(None)
         self.search_btn = ObjectProperty(None)
         self.question_box = ObjectProperty(None)
 
-    def searchCards(self):
+    def searchCards(self, instance):
         pass
 
-    def readTarot(self, question):
+    def readTarot(self, question, instance):
         reading = Reading()
         reading.drawCards(10)
         ai_reading = celticCross(reading)
