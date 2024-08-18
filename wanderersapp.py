@@ -17,6 +17,9 @@ from src.tarot import TarotDeck, Reading
 
 
 class WanderersBox(BoxLayout):
+    self.reading_btn = ObjectProperty(None)
+    self.search_btn = ObjectProperty(None)
+    self.question_box = ObjectProperty(None)
 
     def searchCards(self):
         pass
