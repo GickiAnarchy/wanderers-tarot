@@ -52,6 +52,5 @@ def getTime(self):
 
 
 if __name__ == "__main__":
-    q = WTApp()
-    q.run()
+    WTApp().run()
 
