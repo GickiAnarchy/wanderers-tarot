@@ -11,9 +11,15 @@ from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput
 from kivy.uix.popup import Popup
 from kivy.properties import ObjectProperty
+from kivy.config import Config
+
+from kivy.uix.vkeyboard import VKeyboard
 
 from src.geminiRequest import pastPresentFuture, celticCross, treeOfLife, simpleReply
 from src.tarot import TarotDeck, Reading
+
+Config.set("kivy","keyboard mode","dock")
+
 
 
 class WanderersBox(BoxLayout):
@@ -34,6 +40,7 @@ class WanderersBox(BoxLayout):
 
 class WTApp(App):
     def build(self):
+        self.size_hint = (1,1)
         self.wbox = WanderersBox()
         return self.wbox
 
@@ -48,8 +55,6 @@ def getTime(self):
         now = datetime.datetime.now()
         self.formatted_date = now.strftime("%m/%d/%Y %H:%M")
     return self.formatted_date
-
-
 
 
 if __name__ == "__main__":
