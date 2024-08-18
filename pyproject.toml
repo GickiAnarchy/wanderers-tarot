@@ -12,6 +12,7 @@ image-processing-ge = "0.2"
 google-generativeai = "0.7.2"
 airium = "0.2.6"
 pillow = "10.4.0"
+kivy = "^2.3.0"
 
 
 [build-system]
