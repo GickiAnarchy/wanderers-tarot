@@ -29,11 +29,11 @@ class WanderersBox(BoxLayout):
         reading = Reading()
         reading.drawCards(10)
         ai_reading = celticCross(reading)
-        return 
+        return
 
 class WTApp(App):
     def build(self):
-        self.wbox = ObjectProperty(None)
+        self.wbox = WanderersBox()
         return self.wbox
 
 
