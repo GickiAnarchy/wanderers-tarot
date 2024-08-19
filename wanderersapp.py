@@ -2,7 +2,7 @@
 import datetime
 
 from kivy.config import Config
-Config.set("kivy","keyboard_mode","auto")
+Config.set("kivy","keyboard_mode","dock")
 from kivy.app import App
 from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
@@ -23,6 +23,7 @@ from src.serialize import getRandomPNG
 class WanderersBox(BoxLayout):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
+        self.size_hint = (0.7,0.5)
         self.reading_btn = ObjectProperty(None)
         self.search_btn = ObjectProperty(None)
         self.question_box = ObjectProperty(None)
@@ -42,10 +43,10 @@ class WanderersBox(BoxLayout):
 
 class WTApp(App):
     def build(self):
-        self.box = BoxLayout()
+        self.box = BoxLayout(orientation="vertical")
         self.cardimg = Image()
         self.wbox = WanderersBox()
-        self.wbox.pos_hint = {'center_x': 0.5}
+        #self.wbox.pos_hint = {'center': 0.5}
         self.update()
         return self.box
 
@@ -53,6 +54,7 @@ class WTApp(App):
     def update(self):
         ran_img = getRandomPNG("img/")
         self.cardimg.source = ran_img
+        self.cardimg.size_hint = (0.5,0.5)
         self.box.add_widget(self.cardimg)
         self.box.add_widget(self.wbox)
 
