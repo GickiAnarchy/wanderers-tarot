@@ -46,7 +46,7 @@ class WTApp(App):
         self.box = BoxLayout(orientation="vertical")
         self.cardimg = Image()
         self.wbox = WanderersBox()
-        #self.wbox.pos_hint = {'center': 0.5}
+        self.wbox.pos_hint = {'center': 0.5}
         self.update()
         return self.box
 
