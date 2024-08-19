@@ -46,6 +46,7 @@ class WTApp(App):
         self.size_hint = (1,1)
         self.card = Image()
         self.wbox = WanderersBox()
+        self.wbox.pos_hint = {'center_x': 0.5}
         self.update()
         return self.wbox
 
