@@ -38,6 +38,8 @@ class WanderersBox(BoxLayout):
         ai_reading = celticCross(reading)
         return ai_reading
 
+
+
 class WTApp(App):
     def build(self):
         self.box = BoxLayout()
