@@ -2,6 +2,8 @@
 import random
 import datetime
 
+from kivy.config import Config
+Config.set("kivy","keyboard mode","dock")
 from kivy.app import App
 from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
@@ -12,14 +14,14 @@ from kivy.uix.label import Label
 from kivy.uix.textinput import TextInput
 from kivy.uix.popup import Popup
 from kivy.properties import ObjectProperty
-from kivy.config import Config
+
 
 from kivy.uix.vkeyboard import VKeyboard
 
 from src.geminiRequest import pastPresentFuture, celticCross, treeOfLife, simpleReply
 from src.tarot import TarotDeck, Reading
 
-Config.set("kivy","keyboard mode","dock")
+
 
 
 
