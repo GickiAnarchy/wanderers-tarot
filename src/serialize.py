@@ -89,3 +89,11 @@ def decode_img():
 #
 def writeHTML(reading):
     pass
+
+
+##
+def getRandomPNG(directory): 
+    png_files = [f for f in os.listdir(directory) if f.endswith('.png')]
+    if not png_files:
+        return None
+    return os.path.join(directory, random.choice(png_files))

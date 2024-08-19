@@ -15,13 +15,9 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.popup import Popup
 from kivy.properties import ObjectProperty
 
-
-from kivy.uix.vkeyboard import VKeyboard
-
 from src.geminiRequest import pastPresentFuture, celticCross, treeOfLife, simpleReply
 from src.tarot import TarotDeck, Reading
-
-
+from src.serialize import getRandomPNG
 
 
 
@@ -46,7 +42,8 @@ class WanderersBox(BoxLayout):
 class WTApp(App):
     def build(self):
         self.size_hint = (1,1)
-        self.card = Image()
+        self.box = BoxLayout()
+        self.cardimg = Image()
         self.wbox = WanderersBox()
         self.wbox.pos_hint = {'center_x': 0.5}
         self.update()
@@ -54,8 +51,10 @@ class WTApp(App):
 
 
     def update(self):
-        self.card.source = None
-
+        ran_img = getRandomPNG("img/")
+        self.cardimg.source = ran_img
+        self.box.add_widget(self.cardimg)
+        self.box.add_widget(self.wbox)
 
 """
 
