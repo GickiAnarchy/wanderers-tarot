@@ -2,7 +2,7 @@
 import datetime
 
 from kivy.config import Config
-Config.set("kivy","keyboard mode","dock")
+Config.set("kivy","keyboard_mode","auto")
 from kivy.app import App
 from kivy.uix.button import Button
 from kivy.uix.boxlayout import BoxLayout
@@ -36,7 +36,7 @@ class WanderersBox(BoxLayout):
         reading = Reading()
         reading.drawCards(10)
         ai_reading = celticCross(reading)
-        return
+        return ai_reading
 
 class WTApp(App):
     def build(self):
