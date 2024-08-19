@@ -2,6 +2,7 @@ import json
 import os
 import base64
 import datetime
+import random
 
 from .cardsjson import number_strings
 from .page_creator import savePage

@@ -1,5 +1,4 @@
 
-import random
 import datetime
 
 from kivy.config import Config
@@ -41,13 +40,12 @@ class WanderersBox(BoxLayout):
 
 class WTApp(App):
     def build(self):
-        self.size_hint = (1,1)
         self.box = BoxLayout()
         self.cardimg = Image()
         self.wbox = WanderersBox()
         self.wbox.pos_hint = {'center_x': 0.5}
         self.update()
-        return self.wbox
+        return self.box
 
 
     def update(self):
