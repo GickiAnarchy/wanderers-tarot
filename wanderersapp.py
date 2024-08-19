@@ -1,4 +1,5 @@
 
+import random
 import datetime
 
 from kivy.app import App
@@ -32,7 +33,9 @@ class WanderersBox(BoxLayout):
     def searchCards(self, instance):
         pass
 
-    def readTarot(self, question, instance):
+    def readTarot(self, instance):
+        if self.question_box.text in [None, ""]:
+            return
         reading = Reading()
         reading.drawCards(10)
         ai_reading = celticCross(reading)
@@ -41,8 +44,14 @@ class WanderersBox(BoxLayout):
 class WTApp(App):
     def build(self):
         self.size_hint = (1,1)
+        self.card = Image()
         self.wbox = WanderersBox()
+        self.update()
         return self.wbox
+
+
+    def update(self):
+        self.card.source = None
 
 
 """
