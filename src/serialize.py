@@ -15,7 +15,7 @@ deck_json = r"src/tarot_deck.json"
 def load_tarot_deck():
     deck = []
     with open(deck_json,"r") as file:
-        data = json.loads(file)
+        data = json.load(file)
         for card_details in data:
             yield card_details
         file.close()
