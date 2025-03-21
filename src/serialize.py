@@ -7,7 +7,7 @@ from .cardsjson import number_strings
 from .page_creator import savePage
 
 
-deck_json = r"src/tarot_deck.json"
+deck_json = r"wanderers-tarot/src/tarot_deck.json"
 
 #
 #
