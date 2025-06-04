@@ -3,11 +3,11 @@ import os
 import base64
 import datetime
 
-from .cardsjson import number_strings
-from .page_creator import savePage
+from cardsjson import number_strings
+#from page_creator import savePage
 
 
-deck_json = r"wanderers-tarot/src/tarot_deck.json"
+deck_json = r"tarot_deck.json"
 
 #
 #
@@ -35,6 +35,7 @@ def save_tarot_deck(deck_to_save):
 #
 # READINGS I/O
 readfile = r"src/past_readings.json"
+
 def save_readings(reading):
     with open(readfile,"a") as f:
         json.dump(reading, f, indent = 2)
@@ -57,7 +58,7 @@ def load_readings():
 
 #
 #
-#IMAGE COBVERSION
+#IMAGE CONVERSION
 img_path = r"img/"
 
 def encode_img():

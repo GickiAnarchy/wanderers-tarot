@@ -1,8 +1,8 @@
 import random
 import datetime
 import os
-from .cardsjson import *
-from .serialize import *
+from cardsjson import *
+from serialize import *
 
 #
 #
@@ -97,7 +97,7 @@ class TarotDeck:
             self.deck.append(c)
         random.shuffle(self.deck)
         print(str(len(self.deck)) + " cards")
-        print("Shuffled")
+        print("Deck has been shuffled")
         
     def pullCard(self):
         if not self.deck:
@@ -220,225 +220,44 @@ class TarotDeck:
 
 #
 #
-class Reading:
-    def __init__(self,cards=[],form_date=None):
+class FourSpread:
+    def __init__(self):
         self.deck = TarotDeck()
-        self.cards = cards
-        self.formatted_date = form_date
-        self.question = ""
+        self.drawn_cards = []
+        self.question = None
+        self.deck.shuffle()
 
-    def getCards(self):
-        stuff = []
-        if len(self.cards) > 0:
-            for c in self.cards:
-                stuff.append(f"{c.getAIInfo()}")
-            return stuff
-        else:
-            print("No cards in reading")
- 
-    def go(self, do_not_draw = False):
-        self.askQuestion()
-        ret = self.chooseSpread(do_not_draw)
-        return ret
-
-    def chooseSpread(self, do_not_draw = False):
-        while True:
-            print("Choose a reading spread:")
-            print("1) Past, Present, Future - 3 cards")
-            print("2) Celtic Cross - 10 cards")
-            print("3) Tree of Life - 10 cards")
-            print("4) Simple Yes or No.")
-            sel = input("Enter the number: ")
-            try:
-                ret = int(sel)
-            except:
-                print("Must be a number value")
-            if ret in [1,2,3,4] and do_not_draw == False:
-                match ret:
-                    case 1:
-                        self.draw_cards(3)
-                    case 2:
-                        self.draw_cards(10)
-                    case 3:
-                        self.draw_cards(10)
-                    case 4:
-                        self.draw_cards(4)
-            return ret
-
-    def askQuestion(self):
-        print("What is the question you are seeking the answer for?")
-        self.question = input("Ask the universe: ")
+    def get_question(self):
+        if self.question is None:
+            print("What would you like to ask?")
+            ques = input("")
             
-    def ask_amount(self):
-        print("How many cards are you wanting to draw?")
-        while True:
-            try:
-                answer = int(input(f"Enter amount. (no more than {str(TarotCard.getCount())})"))
-                return answer
-            except ValueError:
-                print("That's not an integer!")
+            print(f"\nYou entered \n\t{ques}\n")
+            print("Press Enter if correct. Any other input to cancel.")
+            sure = input("")
+            
+            if sure == "":
+                self.question = ques
 
-    def draw_cards(self, amount, reshuffle = True):
-        if reshuffle:
-            for c in self.cards:
-                self.deck.append(c)
-            self.deck.shuffle()
-        for i in range(amount):
-            self.cards.append(self.deck.pullCard())
+    def draw_cards(self):
+        if self.question is None:
+            self.get_question()
+            
+        while len(self.drawn_cards) < 4:
+            self.drawn_cards.append(self.deck.pullCard())
 
-    def show_reading(self):
-        if not self.cards:
-            print("No cards have been pulled")
-            return
-        reading = []
-        time_now = self.getTime()
-        for card in self.cards:
-            reading.append(card.lay_down())
-        reading_dict = {f"{time_now}":reading}
-        if self.ask_save():
-            self.save_reading(reading_dict)
-        return reading
-    
-    def save_reading(self, reading):
-        save_readings(reading)
-    
-    def load_reading(self, past_read):
-        self.formatted_date = past_read.keys[0]
-        self.cards = past_read[f"{self.formatted_date}"]
-    
-    def view_past(self):
-        p_read = load_readings()
-        for k,v in p_read.items():
-            print(f"{k}: {str(len(v))} cards.")
-            stop = input("View Reading?")
-            if stop.lower() in ["y","yea","yes",]:
-                self.load_reading(p_read[f"{k}"])
-            if stop.lower() in ["n","no","nah","nope"]:
-                continue
-            if stop.lower() in ["x","exit","stop"]:
-                break
-        
-    def getTime(self):
-        if self.formatted_date == None:
-            now = datetime.datetime.now()
-            self.formatted_date = now.strftime("%m/%d/%Y %H:%M")
-        return self.formatted_date
+    def reveal_cards(self):
+        if len(self.drawn_cards) == 4:
+            for c in self.drawn_cards:
+                print("\n")
+                c.display()
+                input()
 
-    def ask_save(self):
-        print("Do you want to save this reading?")
-        answer = input("'y' for Yes. Any other key to skip.")
-        if answer.lower() in ["y","yes","yea","yeah"]:
-            return True
-        else:
-            return False
 
-#
-#
-class SearchCard:
-    def __init__(self):
-        self.deck = TarotDeck()
-        self.chosen_card = None
-        self.suit_options = cardsjson.suit_options
-    
-    def search(self):
-        self.chosen_card = self.deck.chooseStack()
-        print(f"Chose {self.chosen_card.name}!")
-        input("")
-        self.show_card()
- 
-    def show_card(self):
-        if self.chosen_card == None:
-            print("No chosen card")
-            return
-        info = json.dumps(self.chosen_card.getDict(), indent = 4)
-        print(info)
-        
-    def gather_options(self):
-        ret = []
-        for k in self.suit_options.keys():
-            for v in self.suit_options[k]:
-                print(f"{k}: {v}")
-                ret.append(v)
-        return ret
+def four_spread():
+    spread = FourSpread()
+    spread.draw_cards()
+    spread.reveal_cards()
 
-    def yes_or_no(self):
-        print("(Y)es or (N)o?")
-        while True:
-            sele = input("Choice: ")
-            if sele.lower() not in ["n","y"]:
-                continue
-            if sele.lower() == "y":
-                ret = True
-                break
-            if sele.lower() == "n":
-                ret = False
-                break
-        return ret
-
-#
-#
-class ReadCards:
-    def __init__(self):
-        self.cards = []
-        self.deck = TarotDeck()
-
-    def start(self, amt:int):
-        self.addCard(amt)
-
-    def addCard(self, amt):
-        for _ in range(amt):
-            crd = self.getCard_one()
-            self.cards.append(crd)
-
-    def getCard_one(self):
-        card_list = []
-        while True:
-            print("Search a card to add:")
-            print("First, Choose the suit.")
-            print("'F' - Feathers       'K' - Knives")
-            print("'M' - Moons          'S' - Stones")
-            print("'T' - Major Arcana   'X' - Exit")
-            suit = input("Enter suit: ")
-            if suit.lower() not in ["f","k","m","s","t","x"]:
-                print("Not a valid input")
-                continue
-            else:
-                match suit.lower():
-                    case "f":
-                        card_list = self.deck.getFeathers()
-                    case "k":
-                        card_list = self.deck.getKnives()
-                    case "s":
-                        card_list = self.deck.getStones()
-                    case "m":
-                        card_list = self.deck.getMoons()
-                    case "t":
-                        card_list = self.deck.getMajors()
-            return card_list[self.getCard_two(card_list)]
-
-    def getCard_two(self,selected_suit):
-        for c in selected_suit:
-            print(f"{c.number})     {c.name}")
-        print("Enter the numeral value.")
-        sel = input("# ")
-        try:
-            sel = int(sel)
-        except ValueError:
-            print("That isn't a correct selection.")
-        return sel - 1
-
-    def yes_or_no(self, msg = ""):
-        print(msg)
-        print("(Y)es or (N)o?")
-        while True:
-            sele = input("Choice: ")
-            if sele.lower() not in ["n","y"]:
-                continue
-            if sele.lower() == "y":
-                ret = True
-                break
-            if sele.lower() == "n":
-                ret = False
-                break
-        return ret
-
+if __name__ == "__main__":
+    four_spread()

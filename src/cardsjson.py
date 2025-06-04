@@ -53,5 +53,3 @@ suit_options = {
     "feathers":["f","feathers","feather"],
     "trump":["t","trump","major","maj"]
     }
-
-
