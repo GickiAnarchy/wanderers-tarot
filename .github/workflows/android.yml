@@ -42,11 +42,14 @@ jobs:
 
       - name: Install System Dependencies
         run: |
+          # Add the Jammy (22.04) repository for legacy libncurses5 support
+          sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu/ jammy universe"
           sudo apt update
           sudo apt install -y \
             build-essential git autoconf automake libtool pkg-config \
-            zlib1g-dev libffi-dev libssl-dev libncurses6 libncurses5 \
-            zip unzip libtinfo6
+            zlib1g-dev libffi-dev libssl-dev zip unzip \
+            libncurses5 libtinfo5
+
 
       - name: Install Buildozer and Cython
         run: |
