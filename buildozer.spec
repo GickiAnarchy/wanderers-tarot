@@ -29,7 +29,7 @@ requirements = python3, kivy, google-generativeai, requests, certifi, urllib3, c
 # (str) Application versioning (method 2)
 version.filename = %(source.dir)s/main.py
 
-version.regex = __version__ = ['"](.*)['"]
+#version.regex = __version__ = ['"](.*)['"]
 
 # (str) Custom source folders for requirements
 # android.permissions = INTERNET, ACCESS_NETWORK_STATE
