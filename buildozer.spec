@@ -1,5 +1,8 @@
 [app]
 
+# (str) Application versioning (method 1)
+version = 0.1
+
 # (str) Title of your application
 title = The Digital Oracle
 
@@ -22,6 +25,11 @@ source.include_exts = py,png,jpg,kv,atlas
 # (list) Application requirements
 # Added certifi, requests, and charset-normalizer for Google API stability
 requirements = python3, kivy, google-generativeai, requests, certifi, urllib3, charset-normalizer, idna
+
+# (str) Application versioning (method 2)
+version.filename = %(source.dir)s/main.py
+
+version.regex = __version__ = ['"](.*)['"]
 
 # (str) Custom source folders for requirements
 # android.permissions = INTERNET, ACCESS_NETWORK_STATE

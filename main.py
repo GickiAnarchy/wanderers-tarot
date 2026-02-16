@@ -1,3 +1,6 @@
+__version__ = "1.0.0"
+
+
 import random
 import threading
 import json
