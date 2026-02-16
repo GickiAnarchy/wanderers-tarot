@@ -1,0 +1,82 @@
+<InputScreen>:
+    canvas.before:
+        Color:
+            rgba: 0.1, 0.1, 0.18, 1  # Deep Midnight
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: [40, 60]
+        spacing: 20
+
+        Label:
+            text: "The Digital Oracle"
+            font_size: '32sp'
+            color: 0.9, 0.3, 0.4, 1  # Rose accent
+            bold: True
+            size_hint_y: 0.2
+
+        Label:
+            text: "Focus your energy and ask your question..."
+            font_size: '16sp'
+            size_hint_y: 0.1
+
+        TextInput:
+            id: user_q
+            multiline: True
+            background_color: 0.06, 0.2, 0.37, 1
+            foreground_color: 1, 1, 1, 1
+            cursor_color: 0.9, 0.3, 0.4, 1
+            padding: [10, 10]
+            hint_text: "Will I find my path?"
+            size_hint_y: 0.3
+            on_text_validate: root.submit(self)
+
+        Button:
+            text: "DRAW THE CARDS"
+            size_hint_y: 0.15
+            background_normal: ''
+            background_color: 0.9, 0.3, 0.4, 1
+            font_size: '18sp'
+            bold: True
+            on_press: root.submit(self)
+
+<ReadingScreen>:
+    canvas.before:
+        Color:
+            rgba: 0.05, 0.05, 0.1, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        orientation: 'vertical'
+        padding: 30
+        spacing: 15
+
+        Label:
+            id: status
+            text: "The spirits are awakening..."
+            italic: True
+            size_hint_y: 0.1
+
+        ScrollView:
+            size_hint_y: 0.7
+            do_scroll_x: False
+            Label:
+                id: reading_label
+                text: ""
+                text_size: self.width, None
+                size_hint_y: None
+                height: self.texture_size[1]
+                halign: 'center'
+                font_size: '17sp'
+                line_height: 1.2
+
+        Button:
+            text: "RETURN TO VOID"
+            size_hint_y: 0.1
+            background_color: 0.2, 0.2, 0.4, 1
+            on_press: root.go_back(self)
