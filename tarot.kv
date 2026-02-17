@@ -1,46 +1,37 @@
 <InputScreen>:
     canvas.before:
         Color:
-            rgba: 0.1, 0.1, 0.18, 1  # Deep Midnight
+            rgba: 0.08, 0.08, 0.15, 1  # Midnight Blue
         Rectangle:
             pos: self.pos
             size: self.size
 
     BoxLayout:
         orientation: 'vertical'
-        padding: [40, 60]
+        padding: 40
         spacing: 20
 
         Label:
-            text: "The Digital Oracle"
-            font_size: '32sp'
-            color: 0.9, 0.3, 0.4, 1  # Rose accent
+            text: "Digital Oracle"
+            font_size: '30sp'
+            color: 0.8, 0.6, 1, 1  # Lavender
             bold: True
             size_hint_y: 0.2
 
-        Label:
-            text: "Focus your energy and ask your question..."
-            font_size: '16sp'
-            size_hint_y: 0.1
-
         TextInput:
             id: user_q
-            multiline: True
-            background_color: 0.06, 0.2, 0.37, 1
+            hint_text: "What does the void whisper to you today?"
+            multiline: False
+            size_hint_y: 0.1
+            background_color: 0.1, 0.1, 0.2, 1
             foreground_color: 1, 1, 1, 1
-            cursor_color: 0.9, 0.3, 0.4, 1
-            padding: [10, 10]
-            hint_text: "Will I find my path?"
-            size_hint_y: 0.3
-            on_text_validate: root.submit(self)
+            cursor_color: 0.8, 0.6, 1, 1
 
         Button:
-            text: "DRAW THE CARDS"
+            text: "COMMUNE"
             size_hint_y: 0.15
             background_normal: ''
-            background_color: 0.9, 0.3, 0.4, 1
-            font_size: '18sp'
-            bold: True
+            background_color: 0.4, 0.2, 0.6, 1
             on_press: root.submit(self)
 
 <ReadingScreen>:
@@ -53,18 +44,18 @@
 
     BoxLayout:
         orientation: 'vertical'
-        padding: 30
-        spacing: 15
+        padding: 20
+        spacing: 10
 
         Label:
             id: status
-            text: "The spirits are awakening..."
-            italic: True
+            text: "Aligning cosmic energies..."
             size_hint_y: 0.1
+            color: 0.7, 0.7, 0.7, 1
+            italic: True
 
         ScrollView:
-            size_hint_y: 0.7
-            do_scroll_x: False
+            size_hint_y: 0.8
             Label:
                 id: reading_label
                 text: ""
@@ -72,11 +63,13 @@
                 size_hint_y: None
                 height: self.texture_size[1]
                 halign: 'center'
-                font_size: '17sp'
+                valign: 'top'
+                padding: [10, 10]
+                font_size: '18sp'
                 line_height: 1.2
 
         Button:
-            text: "RETURN TO VOID"
+            text: "RETURN TO DUST"
             size_hint_y: 0.1
-            background_color: 0.2, 0.2, 0.4, 1
+            background_color: 0.2, 0.2, 0.3, 1
             on_press: root.go_back(self)

@@ -15,16 +15,19 @@ package.domain = com.gickistudios
 # (str) Source code where the main.py live
 source.dir = .
 
-# App icon
+icon.filename = android_res/drawable/ic_launcher_foreground.png
+
+android.add_resources = android_res
+
 #icon.filename = %(source.dir)s/data/icon.png
 presplash.filename = %(source.dir)s/data/splash.png
 
 # (list) Source files to include (let's include .kv files!)
-source.include_exts = py,png,jpg,kv,atlas
+source.include_exts = py,png,jpg,kv,atlas,json
 
 # (list) Application requirements
 # Added certifi, requests, and charset-normalizer for Google API stability
-requirements = python3, kivy, google-generativeai, requests, certifi, urllib3, charset-normalizer, idna
+requirements = python3,kivy,requests,certifi,python-dotenv,google-genai
 
 # (str) Application versioning (method 2)
 version.filename = %(source.dir)s/main.py

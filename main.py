@@ -1,28 +1,27 @@
 __version__ = "1.0.0"
 
-
+import os
+from dotenv import load_dotenv
 import random
 import threading
 import json
-import google.generativeai as genai
+import certifi
+import requests  # Replaces google-generativeai
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.clock import Clock
-import env
+from gen import generate
+
+
+load_dotenv()
+
+# --- SSL Configuration for Android ---
+# This ensures the app can make secure HTTPS calls to Google's servers
+#os.environ['SSL_CERT_FILE'] = certifi.where()
 
 # --- GOOGLE AI CONFIGURATION ---
-GOOGLE_API_KEY = "AIzaSyCYN6l7CXHcDJORSsx4vYSAWsPFdPegHwQ"
-genai.configure(api_key=GOOGLE_API_KEY)
-model = genai.GenerativeModel('gemini-2.5-flash')
-
-class TarotDeck:
-    MAJOR_ARCANA = [
-        "The Fool", "The Magician", "The High Priestess", "The Empress",
-        "The Emperor", "The Hierophant", "The Lovers", "The Chariot",
-        "Strength", "The Hermit", "Wheel of Fortune", "Justice",
-        "The Hanged Man", "Death", "Temperance", "The Devil",
-        "The Tower", "The Star", "The Moon", "The Sun", "Judgement", "The World"
-    ]
+#GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
+#GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GOOGLE_API_KEY}"
 
 class InputScreen(Screen):
     def submit(self, instance):
@@ -35,32 +34,27 @@ class InputScreen(Screen):
 class ReadingScreen(Screen):
     def start_reading(self, question):
         self.ids.status.text = "The cosmic energies are aligning..."
-        # Run in thread to prevent UI freezing
         threading.Thread(target=self.generate_reading, args=(question,)).start()
 
     def generate_reading(self, question):
-        cards = Cards()
-        
-        drawn_cards = random.sample(cards.card_names, 3)
-        card_str = cards.get_desc(drawn_cards)
-        drawn = ",".join(drawn_cards)
-        
-        prompt = (
-            f"User Question: '{question}'. Cards: {card_str}. "
-            "Provide a short, mystical 3-part tarot reading. Then summarize the reading with a very short response at the end."
-        )
-
         try:
-            response = model.generate_content(prompt)
-            # Use a variable to hold the text
-            final_text = f"The Cards: {drawn}\n\n{response.text}"
+            cards = Cards()
+            drawn_cards = random.sample(cards.card_names, 3)
+            card_str = cards.get_desc(drawn_cards)
+            drawn = ", ".join(drawn_cards)
             
-            # Pass final_text into the lambda as a default arg 'res'
+            prompt = (
+                f"User Question: '{question}'. Cards: {card_str}. " \
+                "Give a short explanation of each card then summarize the entire reading at the end."
+            )
+            
+            response = generate(prompt)
+             
+            final_text = f"The Cards: {drawn}\n\n{response}"
             Clock.schedule_once(lambda dt, res=final_text: self.update_ui(res, "The Oracle has spoken."))
             
         except Exception as e:
             error_str = str(e)
-            # Pass error_str into the lambda as a default arg 'err'
             Clock.schedule_once(lambda dt, err=error_str: self.update_ui(f"The connection was lost: {err}", "Error"))
 
     def update_ui(self, text, status):
@@ -70,14 +64,6 @@ class ReadingScreen(Screen):
     def go_back(self, instance):
         self.manager.current = 'input'
         self.ids.reading_label.text = ""
-
-class TarotApp(App):
-    def build(self):
-        # This still looks for 'tarot.kv' automatically
-        sm = ScreenManager()
-        sm.add_widget(InputScreen(name='input'))
-        sm.add_widget(ReadingScreen(name='reading'))
-        return sm
 
 class Cards:
     def __init__(self):
@@ -90,21 +76,25 @@ class Cards:
             self.cards = json.load(f)
     
     def get_cards(self):
-        self.cards = {c.get('name'):c for c in self.cards}
+        self.cards = {c.get('name'): c for c in self.cards}
     
     def get_desc(self, cards):
         desc = []
         for c in cards:
-            s = f"{c}\nKeywords:\n{self.cards[c].get('keywords')}"
+            s = f"{c}\nKeywords: {self.cards[c].get('keywords')}"
             desc.append(s)
-        ret = "-----".join(desc)
-        print(ret)
-        return ret
+        return "-----".join(desc)
     
     @property
     def card_names(self):
-        return [n for n in self.cards.keys()]
+        return list(self.cards.keys())
 
+class TarotApp(App):
+    def build(self):
+        sm = ScreenManager()
+        sm.add_widget(InputScreen(name='input'))
+        sm.add_widget(ReadingScreen(name='reading'))
+        return sm
 
 if __name__ == '__main__':
     TarotApp().run()
