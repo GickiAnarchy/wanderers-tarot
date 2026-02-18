@@ -5,3 +5,7 @@
 #Personal Readings
 /src/readings/*
 NewTarot/
+
+
+.env
+*.env

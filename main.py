@@ -16,44 +16,47 @@ from gen import generate
 
 load_dotenv()
 
-# --- SSL Configuration for Android ---
-# This ensures the app can make secure HTTPS calls to Google's servers
-#os.environ['SSL_CERT_FILE'] = certifi.where()
-
-# --- GOOGLE AI CONFIGURATION ---
-#GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
-#GEMINI_URL = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={GOOGLE_API_KEY}"
 
 class InputScreen(Screen):
     def submit(self, instance):
+        cc = 10
         question = self.ids.user_q.text
         if question.strip():
+            if "DEBUG" in question:
+                question = question.replace("DEBUG","")
+                cc = 2
             reading_screen = self.manager.get_screen('reading')
-            reading_screen.start_reading(question)
+            reading_screen.start_reading(question, cc)
             self.manager.current = 'reading'
 
 class ReadingScreen(Screen):
-    def start_reading(self, question):
+    def start_reading(self, question, cc = 10):
+        ccount = cc
         self.ids.status.text = "The cosmic energies are aligning..."
-        threading.Thread(target=self.generate_reading, args=(question,)).start()
+        threading.Thread(target=self.generate_reading, args=(question,ccount)).start()
 
-    def generate_reading(self, question):
+    def generate_reading(self, question, card_count = 10):
+        card_count = card_count
         try:
             cards = Cards()
-            drawn_cards = random.sample(cards.card_names, 10)
+            drawn_cards = random.sample(cards.card_names, card_count)
             card_str = cards.get_desc(drawn_cards)
             drawn = ", ".join(drawn_cards)
-            instruct = ""
-            if os.path.exists("celtic_cross.txt"):
+            instruct = "Determine an insightful response for the seekers inquiry with the cards drawn."
+            
+            if card_count == 10 and os.path.exists("celtic_cross.txt"):
                 with open("celtic_cross.txt","r") as f:
                     instruct = f.read()
+            
+            if card_count == 2:
+                instruct = "Answer with a simple one word response i.e. 'Yes','No','Maybe'."
             
             prompt = (
                 f"User Question: '{question}'. Cards: {card_str}. " \
                 f"{instruct}"
             )
             
-            response = generate(prompt,"celtic")
+            response = generate(prompt)
              
             final_text = f"The Cards: {drawn}\n\n{response}"
             Clock.schedule_once(lambda dt, res=final_text: self.update_ui(res, "The Oracle has spoken."))

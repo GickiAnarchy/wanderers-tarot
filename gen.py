@@ -6,18 +6,9 @@ from google import genai
 from google.genai import types
 
 
-def generate(inquiry=None, spread = None):
-    instruct = ""
+def generate(inquiry=None):
     if inquiry is None:
         inquiry = "Am I gonna be ok?"
-        
-        if spread == "celtic":
-            if os.path.exists("celtic_cross.txt"):
-                with open("celtic_cross.txt","r") as f:
-                    instruct = f.read()
-                    
-        if spread == None:
-            instruct = "Only do a 3 card reading. (Only use 3 of the cards drawn)"
         
     client = genai.Client(
         api_key=os.environ.get("GEMINI_API_KEY"),
