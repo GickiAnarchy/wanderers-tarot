@@ -10,6 +10,7 @@ import requests  # Replaces google-generativeai
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.clock import Clock
+from kivy.uix.image import Image
 from gen import generate
 
 
@@ -39,16 +40,20 @@ class ReadingScreen(Screen):
     def generate_reading(self, question):
         try:
             cards = Cards()
-            drawn_cards = random.sample(cards.card_names, 3)
+            drawn_cards = random.sample(cards.card_names, 10)
             card_str = cards.get_desc(drawn_cards)
             drawn = ", ".join(drawn_cards)
+            instruct = ""
+            if os.path.exists("celtic_cross.txt"):
+                with open("celtic_cross.txt","r") as f:
+                    instruct = f.read()
             
             prompt = (
                 f"User Question: '{question}'. Cards: {card_str}. " \
-                "Give a short explanation of each card then summarize the entire reading at the end."
+                f"{instruct}"
             )
             
-            response = generate(prompt)
+            response = generate(prompt,"celtic")
              
             final_text = f"The Cards: {drawn}\n\n{response}"
             Clock.schedule_once(lambda dt, res=final_text: self.update_ui(res, "The Oracle has spoken."))

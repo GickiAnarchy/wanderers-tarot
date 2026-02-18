@@ -10,6 +10,12 @@
         orientation: 'vertical'
         padding: 40
         spacing: 20
+        
+        Image:
+            source: "data/logo.png"
+            size_hint: None, None
+            size: dp(220), dp(220)
+            pos_hint: {"center_x": 0.5}
 
         Label:
             text: "Digital Oracle"
@@ -17,6 +23,7 @@
             color: 0.8, 0.6, 1, 1  # Lavender
             bold: True
             size_hint_y: 0.2
+            pos_hint:{"y":1}
 
         TextInput:
             id: user_q
@@ -29,7 +36,8 @@
 
         Button:
             text: "COMMUNE"
-            size_hint_y: 0.15
+            size_hint_y: None
+            height: dp(40)
             background_normal: ''
             background_color: 0.4, 0.2, 0.6, 1
             on_press: root.submit(self)
@@ -70,6 +78,7 @@
 
         Button:
             text: "RETURN TO DUST"
-            size_hint_y: 0.1
+            size_hint_y: None
+            height: dp(40)
             background_color: 0.2, 0.2, 0.3, 1
             on_press: root.go_back(self)
