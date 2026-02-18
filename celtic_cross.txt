@@ -1,0 +1,24 @@
+"""Find an answer for the seekers inquiry using the 10 card celtic cross spread.
+Give a brief explanation on each card and then a summary in the end.
+
+Here is the card spread details:
+
+THE CROSS:
+    1. ​The Present (The Heart): The central card representing the current state of the querent or the primary atmosphere of the situation.
+    2. ​The Challenge (The Crossing Card): Placed horizontally over the first card. This represents the immediate obstacle or the force acting against (or for) the querent.  
+​    3. The Goal (The Crown): Located above the center. This represents the best possible outcome or the conscious thoughts and aspirations regarding the situation.
+    4. ​The Foundation (The Root): Located below the center. This represents the subconscious, the distant past, or the underlying factors that created the current reality.
+    5. ​The Past (The Behind): Located to the left. This shows recent events or influences that are passing out of the querent’s life.
+​    6. The Near Future (The Before): Located to the right. This indicates what is likely to occur in the immediate short-term (days or weeks).
+THE STAFF:
+    ​7. The Self: Your internal attitude, how you view yourself in the situation, and your current level of personal power.
+    8. ​The Environment: External influences—friends, family, work culture, or any outside energy that is impacting the situation.  
+    9. ​Hopes and Fears: This card highlights your psychological state. It can reveal what you are secretly wishing for or what you are afraid might happen.  
+​    10. The Final Outcome: The long-term resolution. This is the likely result if you continue on your current path without making significant changes.
+
+
+*Key reading points***
+​The magic of the Celtic Cross isn't just in the individual cards, but in how they interact. For example:
+​Vertical Alignment: Check the relationship between The Foundation (4) and The Goal (3). Are your subconscious roots aligned with your conscious goals?
+​The Future Path: Look at the transition from Near Future (6) to Final Outcome (10) to see how a situation might evolve over months rather than weeks.
+​Internal vs. External: Compare The Self (7) with The Environment (8). If you feel strong but your environment is chaotic, it tells a very different story than if you are feeling weak in a supportive environment."""
