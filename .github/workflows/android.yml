@@ -52,32 +52,29 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install buildozer cython
-
       - name: Build with Buildozer
         run: |
-          # 1. Trigger initial download so paths exist
-          buildozer android status || true
-
-          # 2. Fix the cmdline-tools structure if necessary
-          # Newer SDKs expect tools to be in cmdline-tools/latest/
+          # 1. Manually download and set up the stable Command Line Tools
+          # This bypasses the "sdkmanager not found" error
           export ANDROID_SDK_ROOT=$HOME/.buildozer/android/platform/android-sdk
-          if [ -d "$ANDROID_SDK_ROOT/cmdline-tools" ] && [ ! -d "$ANDROID_SDK_ROOT/cmdline-tools/latest" ]; then
-            mkdir -p $ANDROID_SDK_ROOT/cmdline-tools/latest
-            mv $ANDROID_SDK_ROOT/cmdline-tools/* $ANDROID_SDK_ROOT/cmdline-tools/latest/ 2>/dev/null || true
-          fi
-
-          # 3. Locate the sdkmanager regardless of where it's buried
-          SDK_MANAGER=$(find $HOME/.buildozer -name "sdkmanager" | head -n 1)
-
-          # 4. Manually accept all licenses to allow 'aidl' installation
-          if [ -n "$SDK_MANAGER" ]; then
-            echo "Found sdkmanager at $SDK_MANAGER. Accepting licenses..."
-            yes | $SDK_MANAGER --sdk_root=$ANDROID_SDK_ROOT --licenses || true
-          else
-            echo "Error: sdkmanager not found. Creating manual license files..."
-            mkdir -p $ANDROID_SDK_ROOT/licenses
-            echo -e "89334346ad57599a382335a8f2910f002871651d\nd562471b270fd2172776092b614d93375836214f" > $ANDROID_SDK_ROOT/licenses/android-sdk-license
-          fi
+          mkdir -p $ANDROID_SDK_ROOT/cmdline-tools/latest
+          
+          # Download a stable version of cmdline-tools
+          curl -C - -o cmdline-tools.zip https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip
+          unzip -q cmdline-tools.zip
+          mv cmdline-tools/* $ANDROID_SDK_ROOT/cmdline-tools/latest/
+          
+          # 2. Set the path so Buildozer and the system can find the new sdkmanager
+          export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin
+          
+          # 3. Explicitly accept all licenses
+          # This allows 'build-tools' (and aidl) to install without interruption
+          yes | sdkmanager --sdk_root=$ANDROID_SDK_ROOT --licenses || true
+          
+          # 4. Create the legacy path Buildozer expects as a symlink 
+          # This "tricks" Buildozer into finding the tool where it's looking
+          mkdir -p $ANDROID_SDK_ROOT/tools/bin
+          ln -s $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager $ANDROID_SDK_ROOT/tools/bin/sdkmanager
 
           # 5. Run the actual build
           buildozer android debug

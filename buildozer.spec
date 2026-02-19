@@ -56,6 +56,8 @@ android.permissions = INTERNET, ACCESS_NETWORK_STATE
 # (str) The orientation of the app
 orientation = portrait
 
+android.accept_sdk_license = True
+
 [buildozer]
 # (int) Log level (0 = error only, 1 = info, 2 = debug)
 log_level = 2
