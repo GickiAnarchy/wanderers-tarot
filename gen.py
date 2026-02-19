@@ -6,16 +6,17 @@ import os
 import requests
 import json
 
-a1 = "AIzaSyCUDqqZBQFPc9P"
-# made for testing
-a2 = "gIhWIoVA4TDXVb3wAd7w"
 
 def generate(inquiry=None):
     if inquiry is None:
         inquiry = "Am I gonna be ok?"
         
     #api_key = os.environ.get("GEMINI_API_KEY")
-    api_key = f"{a1}{a2}"
+    
+    with open(".key.key","r") as f:
+        api_key = f.read()
+        f.close()
+    #api_key = f"{a1}{a2}"
     # Using the v1beta endpoint for "Thinking" features or v1 for standard
     model_name = "gemini-2.5-flash" 
     url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={api_key}"

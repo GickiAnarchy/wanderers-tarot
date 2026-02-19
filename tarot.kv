@@ -85,3 +85,30 @@
             height: dp(40)
             background_color: 0.2, 0.2, 0.3, 1
             on_press: root.go_back(self)
+
+
+<KeyScreen>:
+    BoxLayout:
+        orientation:"vertical"
+        padding: 10
+        spacing: 20
+        
+        TextInput:
+            id:keyfield
+            hint_text:"Enter Google API key here"
+            multiline:False
+            size_hint_x: 0.8
+            size_hint_y:None
+            height:self.height
+        
+        Label:
+            halign:"center"
+            text:"API Key"
+        
+        Button:
+            text: "Save Key"
+            size_hint_y: None
+            height: dp(40)
+            background_color: 0.2, 0.2, 0.3, 1
+            on_release:root.save_key()
+            

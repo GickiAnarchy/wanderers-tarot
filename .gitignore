@@ -9,3 +9,4 @@ NewTarot/
 
 .env
 *.env
+.key.key

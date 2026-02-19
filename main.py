@@ -12,12 +12,17 @@ from dotenv import load_dotenv
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.clock import Clock
+from kivy.uix.textinput import TextInput
 from gen import generate
 
 load_dotenv()
 
+
 class InputScreen(Screen):
     def submit(self, instance):
+        kscreen = self.manager.get_screen('key')
+        if not kscreen.check_key():
+            self.manager.current = 'key'
         cc = 10
         question = self.ids.user_q.text
         if question.strip():
@@ -27,6 +32,7 @@ class InputScreen(Screen):
             reading_screen = self.manager.get_screen('reading')
             reading_screen.start_reading(question, cc)
             self.manager.current = 'reading'
+
 
 class ReadingScreen(Screen):
     def start_reading(self, question, cc=10):
@@ -65,6 +71,28 @@ class ReadingScreen(Screen):
         self.manager.current = 'input'
         self.ids.reading_label.text = ""
 
+
+class KeyScreen(Screen):
+    def on_pre_enter(self):
+        self.keyfield = self.ids.keyfield
+    
+    def check_key(self) -> bool:
+        return os.path.exists(".key.key")
+    
+    def save_key(self):
+        apikey = self.keyfield.text
+        with open(".key.key","w") as f:
+            f.write(apikey)
+        self.manager.current = "input"
+    
+    def get_key(self):
+            if self.check_key():
+                with open(".key.key","r") as f:
+                    akey = f.read()
+                return akey
+            
+
+
 class Cards:
     def __init__(self):
         self.file_name = "cards.json"
@@ -80,12 +108,15 @@ class Cards:
     def card_names(self):
         return list(self.cards.keys())
 
+
 class TarotApp(App):
     def build(self):
         sm = ScreenManager()
         sm.add_widget(InputScreen(name='input'))
-        sm.add_widget(ReadingScreen(name='reading'))
+        sm.add_widget(ReadingScreen(name='reading')),
+        sm.add_widget(KeyScreen(name='key'))
         return sm
+    
 
 if __name__ == '__main__':
     TarotApp().run()

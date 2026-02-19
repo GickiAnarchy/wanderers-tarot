@@ -7,7 +7,7 @@ version = 0.1
 title = The Digital Oracle
 
 # (str) Package name
-package.name = tarotoracle
+package.name = digitaloracle
 
 # (str) Package domain (needed for android packaging)
 package.domain = com.gickistudios
@@ -23,7 +23,7 @@ android.add_resources = android_res
 presplash.filename = %(source.dir)s/data/splash.png
 
 # (list) Source files to include (let's include .kv files!)
-source.include_exts = py,png,jpg,kv,atlas,json
+source.include_exts = py,png,jpg,kv,atlas,json,txt
 
 # (list) Application requirements
 # Added certifi, requests, and charset-normalizer for Google API stability
