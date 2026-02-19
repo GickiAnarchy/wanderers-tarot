@@ -26,7 +26,11 @@ presplash.filename = %(source.dir)s/data/splash.png
 source.include_exts = py,png,jpg,kv,atlas,json,txt
 
 # (list) Application requirements
-# Added certifi, requests, and charset-normalizer for Google API stability
+# REMOVED: lzma, uuid, grp - these are not supported on Android
+# These were causing build failures:
+# - lzma: missing lzma.h header
+# - uuid: missing libuuid library  
+# - grp: POSIX functions not available on Android
 requirements = python3,kivy,requests,certifi,python-dotenv,openssl
 
 # (str) Application versioning (method 2)
