@@ -56,8 +56,11 @@ jobs:
 
       - name: Build with Buildozer
         run: |
+          # Clear problematic caches to force fresh build
+          rm -rf ~/.buildozer/android/platform/build-*/build/other_builds/pyjnius || true
+          rm -rf ~/.buildozer/android/platform/build-*/build/bootstrap_builds || true
+          
           # 1. Manually download and set up the stable Command Line Tools
-          # This bypasses the "sdkmanager not found" error
           export ANDROID_SDK_ROOT=$HOME/.buildozer/android/platform/android-sdk
           mkdir -p $ANDROID_SDK_ROOT/cmdline-tools/latest
           
@@ -66,19 +69,17 @@ jobs:
           unzip -q cmdline-tools.zip
           mv cmdline-tools/* $ANDROID_SDK_ROOT/cmdline-tools/latest/
           
-          # 2. Set the path so Buildozer and the system can find the new sdkmanager
+          # 2. Set the path
           export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin
           
-          # 3. Explicitly accept all licenses
-          # This allows 'build-tools' (and aidl) to install without interruption
+          # 3. Accept licenses
           yes | sdkmanager --sdk_root=$ANDROID_SDK_ROOT --licenses || true
           
-          # 4. Create the legacy path Buildozer expects as a symlink 
-          # This "tricks" Buildozer into finding the tool where it's looking
+          # 4. Create legacy path
           mkdir -p $ANDROID_SDK_ROOT/tools/bin
           ln -s $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager $ANDROID_SDK_ROOT/tools/bin/sdkmanager
-
-          # 5. Run the actual build
+          
+          # 5. Run build
           buildozer android debug
 
       - name: Upload APK
