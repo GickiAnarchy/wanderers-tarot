@@ -53,26 +53,24 @@ jobs:
           pip install --upgrade pip
           pip install buildozer cython
 
-
       - name: Build with Buildozer
         run: |
-          # 1. Trigger SDK/NDK download without a full build
-          buildozer android status || true
-
-          # 2. Find the sdkmanager and accept licenses
-          # This fixes the "Aidl not found" by allowing build-tools to install
-          SDK_MANAGER=$(find $HOME/.buildozer -name "sdkmanager" | head -n 1)
+          # 1. Pre-create the license directory to prevent the 'Aidl' crash
+          mkdir -p ~/.buildozer/android/platform/android-sdk/licenses
           
-          if [ -n "$SDK_MANAGER" ]; then
-            echo "Found sdkmanager at $SDK_MANAGER. Accepting licenses..."
-            yes | $SDK_MANAGER --licenses || true
-          else
-            echo "Warning: sdkmanager not found. Buildozer might handle it, or the build may fail."
-          fi
+          # 2. Manually inject the license hashes for Android SDK (standard hashes)
+          # This tells the installer that the licenses are already accepted.
+          echo -e "89334346ad57599a382335a8f2910f002871651d\nd562471b270fd2172776092b614d93375836214f\n24333f8a63b6825a1f5580547076840786015694" > ~/.buildozer/android/platform/android-sdk/licenses/android-sdk-license
+          echo -e "84831b9409646a918e30573bab4c9c91346d8abd\n504663158c582f123da6718d726615b6d9202755" > ~/.buildozer/android/platform/android-sdk/licenses/android-sdk-preview-license
 
-          # 3. Proceed with the actual APK generation
+          # 3. Force Buildozer to use a STABLE version to avoid the 37-rc1 bug
+          # We do this by passing the versions as environment variables
+          export APP_ANDROID_SDK=34
+          export APP_ANDROID_API=34
+          export APP_ANDROID_BUILD_TOOLS_VERSION=34.0.0
+          
+          # 4. Run the build
           buildozer android debug
-
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
