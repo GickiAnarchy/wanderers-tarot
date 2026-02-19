@@ -27,7 +27,7 @@ source.include_exts = py,png,jpg,kv,atlas,json
 
 # (list) Application requirements
 # Added certifi, requests, and charset-normalizer for Google API stability
-requirements = python3,kivy,requests,certifi,python-dotenv,google-genai
+requirements = python3,kivy,requests,certifi,python-dotenv,openssl
 
 # (str) Application versioning (method 2)
 version.filename = %(source.dir)s/main.py

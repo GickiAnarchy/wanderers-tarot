@@ -1,52 +1,51 @@
-# To run this code you need to install the following dependencies:
-# pip install google-genai
+### GEN.PY
+
+
 
 import os
-from google import genai
-from google.genai import types
+import requests
+import json
 
+a1 = "AIzaSyCUDqqZBQFPc9P"
+# made for testing
+a2 = "gIhWIoVA4TDXVb3wAd7w"
 
 def generate(inquiry=None):
     if inquiry is None:
         inquiry = "Am I gonna be ok?"
         
-    client = genai.Client(
-        api_key=os.environ.get("GEMINI_API_KEY"),
-    )
+    #api_key = os.environ.get("GEMINI_API_KEY")
+    api_key = f"{a1}{a2}"
+    # Using the v1beta endpoint for "Thinking" features or v1 for standard
+    model_name = "gemini-2.5-flash" 
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={api_key}"
 
-    model = "gemini-3-flash-preview"
-    contents = [
-        types.Content(
-            role="user",
-            parts=[
-                types.Part.from_text(text=inquiry),
-            ],
-        ),
-    ]
-    generate_content_config = types.GenerateContentConfig(
-        temperature=1.95,
-        thinking_config=types.ThinkingConfig(
-            thinking_level="HIGH",
-        ),
-        system_instruction=[
-            types.Part.from_text(text="You are a tarot card reader. You are insightful yet completely honest. You answer the questions and inquiries of seekers while keeping things brief and to the point"),
-        ],
-    )
+    headers = {'Content-Type': 'application/json'}
+    
+    payload = {
+        "contents": [{
+            "role": "user",
+            "parts": [{"text": inquiry}]
+        }],
+        "systemInstruction": {
+            "parts": [{"text": "You are a tarot card reader. You are insightful yet completely honest. You answer questions completely and directly."}]
+        },
+        "generationConfig": {
+            "temperature": 1.0, # Thinking models usually prefer lower temp than 1.95
+            "maxOutputTokens": 2048
+        }
+    }
 
-    full_response = ""
-    for chunk in client.models.generate_content_stream(
-        model=model,
-        contents=contents,
-        config=generate_content_config,
-    ):
-        print(chunk.text, end="")
-        if chunk.text:
-            full_response += chunk.text
-
-    return full_response
+    try:
+        response = requests.post(url, headers=headers, json=payload, timeout=30)
+        response.raise_for_status()
+        data = response.json()
         
-
-if __name__ == "__main__":
-    generate()
-
-
+        # Navigating the JSON response structure
+        if 'candidates' in data and len(data['candidates']) > 0:
+            return data['candidates'][0]['content']['parts'][0]['text']
+        else:
+            return "The Oracle is silent. (No response content)"
+            
+    except Exception as e:
+        return f"Error contacting the cosmic realm: {str(e)}"
