@@ -42,12 +42,11 @@ jobs:
 
       - name: Install System Dependencies
         run: |
-          sudo add-apt-repository "deb http://archive.ubuntu.com/ubuntu/ jammy universe"
           sudo apt update
           sudo apt install -y \
             build-essential git autoconf automake libtool pkg-config \
             zlib1g-dev libffi-dev libssl-dev zip unzip \
-            libncurses5 libtinfo5
+            libncurses5 libtinfo5 libstdc++6
 
       - name: Install Buildozer and Cython
         run: |
@@ -56,10 +55,18 @@ jobs:
 
       - name: Build with Buildozer
         run: |
-          # 1. Manually accept all licenses first
-          yes | $HOME/.buildozer/android/platform/android-sdk/tools/bin/sdkmanager --licenses || true
-          
-          # 2. Run the build
+          # 1. Initialize Buildozer to ensure SDK/NDK paths are created
+          buildozer android help
+
+          # 2. Find the sdkmanager dynamically and accept all licenses
+          # This solves the "Skipping packages as the license is not accepted" error
+          SDK_MANAGER=$(find $HOME/.buildozer -name "sdkmanager" | head -n 1)
+          if [ -n "$SDK_MANAGER" ]; then
+            echo "Found sdkmanager at $SDK_MANAGER. Accepting licenses..."
+            yes | $SDK_MANAGER --licenses || true
+          fi
+
+          # 3. Run the actual debug build
           buildozer android debug
 
       - name: Upload APK
