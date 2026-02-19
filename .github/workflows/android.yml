@@ -53,21 +53,26 @@ jobs:
           pip install --upgrade pip
           pip install buildozer cython
 
+
       - name: Build with Buildozer
         run: |
-          # 1. Initialize Buildozer to ensure SDK/NDK paths are created
-          buildozer android help
+          # 1. Trigger SDK/NDK download without a full build
+          buildozer android status || true
 
-          # 2. Find the sdkmanager dynamically and accept all licenses
-          # This solves the "Skipping packages as the license is not accepted" error
+          # 2. Find the sdkmanager and accept licenses
+          # This fixes the "Aidl not found" by allowing build-tools to install
           SDK_MANAGER=$(find $HOME/.buildozer -name "sdkmanager" | head -n 1)
+          
           if [ -n "$SDK_MANAGER" ]; then
             echo "Found sdkmanager at $SDK_MANAGER. Accepting licenses..."
             yes | $SDK_MANAGER --licenses || true
+          else
+            echo "Warning: sdkmanager not found. Buildozer might handle it, or the build may fail."
           fi
 
-          # 3. Run the actual debug build
+          # 3. Proceed with the actual APK generation
           buildozer android debug
+
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
