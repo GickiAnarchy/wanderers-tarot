@@ -55,8 +55,11 @@ jobs:
           pip install buildozer cython
 
       - name: Build with Buildozer
-        # 'yes |' handles the SDK license agreements automatically
         run: |
+          # 1. Manually accept all licenses first
+          yes | $HOME/.buildozer/android/platform/android-sdk/tools/bin/sdkmanager --licenses || true
+          
+          # 2. Run the build
           buildozer android debug
 
       - name: Upload APK
