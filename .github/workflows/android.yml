@@ -55,22 +55,33 @@ jobs:
 
       - name: Build with Buildozer
         run: |
-          # 1. Pre-create the license directory to prevent the 'Aidl' crash
-          mkdir -p ~/.buildozer/android/platform/android-sdk/licenses
-          
-          # 2. Manually inject the license hashes for Android SDK (standard hashes)
-          # This tells the installer that the licenses are already accepted.
-          echo -e "89334346ad57599a382335a8f2910f002871651d\nd562471b270fd2172776092b614d93375836214f\n24333f8a63b6825a1f5580547076840786015694" > ~/.buildozer/android/platform/android-sdk/licenses/android-sdk-license
-          echo -e "84831b9409646a918e30573bab4c9c91346d8abd\n504663158c582f123da6718d726615b6d9202755" > ~/.buildozer/android/platform/android-sdk/licenses/android-sdk-preview-license
+          # 1. Trigger initial download so paths exist
+          buildozer android status || true
 
-          # 3. Force Buildozer to use a STABLE version to avoid the 37-rc1 bug
-          # We do this by passing the versions as environment variables
-          export APP_ANDROID_SDK=34
-          export APP_ANDROID_API=34
-          export APP_ANDROID_BUILD_TOOLS_VERSION=34.0.0
-          
-          # 4. Run the build
+          # 2. Fix the cmdline-tools structure if necessary
+          # Newer SDKs expect tools to be in cmdline-tools/latest/
+          export ANDROID_SDK_ROOT=$HOME/.buildozer/android/platform/android-sdk
+          if [ -d "$ANDROID_SDK_ROOT/cmdline-tools" ] && [ ! -d "$ANDROID_SDK_ROOT/cmdline-tools/latest" ]; then
+            mkdir -p $ANDROID_SDK_ROOT/cmdline-tools/latest
+            mv $ANDROID_SDK_ROOT/cmdline-tools/* $ANDROID_SDK_ROOT/cmdline-tools/latest/ 2>/dev/null || true
+          fi
+
+          # 3. Locate the sdkmanager regardless of where it's buried
+          SDK_MANAGER=$(find $HOME/.buildozer -name "sdkmanager" | head -n 1)
+
+          # 4. Manually accept all licenses to allow 'aidl' installation
+          if [ -n "$SDK_MANAGER" ]; then
+            echo "Found sdkmanager at $SDK_MANAGER. Accepting licenses..."
+            yes | $SDK_MANAGER --sdk_root=$ANDROID_SDK_ROOT --licenses || true
+          else
+            echo "Error: sdkmanager not found. Creating manual license files..."
+            mkdir -p $ANDROID_SDK_ROOT/licenses
+            echo -e "89334346ad57599a382335a8f2910f002871651d\nd562471b270fd2172776092b614d93375836214f" > $ANDROID_SDK_ROOT/licenses/android-sdk-license
+          fi
+
+          # 5. Run the actual build
           buildozer android debug
+
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
