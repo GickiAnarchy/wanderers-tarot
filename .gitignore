@@ -5,6 +5,8 @@
 #Personal Readings
 /src/readings/*
 NewTarot/
+__pycache__/
+.kivy/
 
 
 .env
