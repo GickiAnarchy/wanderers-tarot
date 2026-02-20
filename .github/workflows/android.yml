@@ -52,7 +52,8 @@ jobs:
         run: |
           pip install --upgrade pip
           # Install a newer Cython version compatible with Python 3.11
-          pip install 'cython>=0.29.36' buildozer
+          #pip install 'cython>=0.29.36' buildozer
+          pip install buildozer==1.5.0 "cython<3.0"
 
       - name: Build with Buildozer
         run: |
@@ -80,7 +81,7 @@ jobs:
           ln -s $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager $ANDROID_SDK_ROOT/tools/bin/sdkmanager
           
           # 5. Run build
-          buildozer android debug
+          buildozer android debug7g44 is were 2f
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
