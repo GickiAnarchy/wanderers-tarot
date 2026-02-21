@@ -12,10 +12,15 @@ def generate(inquiry=None):
         inquiry = "Am I gonna be ok?"
         
     #api_key = os.environ.get("GEMINI_API_KEY")
-    
-    with open(".key.key","r") as f:
-        api_key = f.read()
-        f.close()
+    try:
+        with open(".key.key","r") as f:
+            api_key = f.read()
+            f.close()
+    except Exception as e:
+        print(e)
+        api_key = None
+        return
+        
     #api_key = f"{a1}{a2}"
     # Using the v1beta endpoint for "Thinking" features or v1 for standard
     model_name = "gemini-2.5-flash" 

@@ -23,6 +23,7 @@ class InputScreen(Screen):
         kscreen = self.manager.get_screen('key')
         if not kscreen.check_key():
             self.manager.current = 'key'
+            return
         cc = 10
         question = self.ids.user_q.text
         if question.strip():
@@ -75,9 +76,19 @@ class ReadingScreen(Screen):
 class KeyScreen(Screen):
     def on_pre_enter(self):
         self.keyfield = self.ids.keyfield
+        if os.path.exists(".key.key"):
+            with open(".key.key","w") as f:
+                f.close()
     
-    def check_key(self) -> bool:
-        return os.path.exists(".key.key")
+    def check_key(self):
+        print("check_key()")
+        try:
+            if os.path.exists(".key.key"):
+                return True
+            else:
+                return False
+        except Exception as e:
+            print(e)
     
     def save_key(self):
         apikey = self.keyfield.text
@@ -86,11 +97,14 @@ class KeyScreen(Screen):
         self.manager.current = "input"
     
     def get_key(self):
-            if self.check_key():
-                with open(".key.key","r") as f:
-                    akey = f.read()
-                return akey
-            
+            print("get_key()")
+            try:
+                if self.check_key():
+                    with open(".key.key","r") as f:
+                        akey = f.read()
+                    return akey
+            except Exception as e:
+                print(e)            
 
 
 class Cards:
