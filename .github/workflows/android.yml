@@ -15,20 +15,7 @@ jobs:
         uses: actions/checkout@v4
 
       # ---------- Caching Magic ----------
-      - #name: Cache Buildozer global directory
-#        uses: actions/cache@v4
-#        with:
-#          path: ~/.buildozer
-#          key: ${{ runner.os }}-buildozer-${{ hashFiles('buildozer.spec') }}
-#          restore-keys: |
-#            ${{ runner.os }}-buildozer-
-
-#      - name: Cache Android SDK/NDK
-#        uses: actions/cache@v4
-#        with:
-#          path: ~/.android
-#          key: ${{ runner.os }}-android-sdk-${{ hashFiles('buildozer.spec') }}
-
+      - 
       - name: Set up Python 3.9
         uses: actions/setup-python@v5
         with:
