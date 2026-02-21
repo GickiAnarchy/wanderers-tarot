@@ -7,71 +7,72 @@ on:
 
 jobs:
   build:
-    if: contains(github.event.head_commit.message, '[apk]')
+    # Optionally trigger only if you include [apk] in your commit message
+    # if: contains(github.event.head_commit.message, '[apk]')
     runs-on: ubuntu-22.04
 
     steps:
+      # Checkout the repo
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # ---------- Caching Magic ----------
-      
+      # Set up Python
       - name: Set up Python 3.9
         uses: actions/setup-python@v5
         with:
           python-version: "3.9"
 
+      # Set up Java (required by Buildozer for Android)
       - name: Set up JDK 17
         uses: actions/setup-java@v4
         with:
-          distribution: 'temurin'
-          java-version: '17'
+          distribution: temurin
+          java-version: "17"
 
-      - name: Install System Dependencies
+      # Install essential Linux dependencies
+      - name: Install Linux dependencies
         run: |
           sudo apt update
           sudo apt install -y \
-            build-essential git autoconf automake libtool pkg-config \
-            zlib1g-dev libffi-dev libssl-dev zip unzip \
-            libncurses5 libtinfo5 libstdc++6
+            zip \
+            unzip \
+            git \
+            libffi-dev \
+            libssl-dev \
+            libsqlite3-dev \
+            zlib1g-dev \
+            libncurses5 \
+            libtinfo5 \
+            build-essential \
+            uuid-dev \
+            liblzma-dev
 
-      - name: Install Buildozer and Cython
+      # Install Buildozer and Cython (pin versions)
+      - name: Install Buildozer (pinned)
         run: |
-          pip install --upgrade pip
-          # Install a newer Cython version compatible with Python 3.11
-          #pip install 'cython>=0.29.36' buildozer
+          python -m pip install --upgrade pip setuptools wheel
           pip install buildozer==1.5.0 "cython<3.0"
 
-      - name: Build with Buildozer
+      # Clean any caches from previous builds
+      - name: Clean build caches
         run: |
-          # Clear problematic caches to force fresh build
-          rm -rf ~/.buildozer/android/platform/build-*/build/other_builds/pyjnius || true
-          rm -rf ~/.buildozer/android/platform/build-*/build/bootstrap_builds || true
-          
-          # 1. Manually download and set up the stable Command Line Tools
-          export ANDROID_SDK_ROOT=$HOME/.buildozer/android/platform/android-sdk
-          mkdir -p $ANDROID_SDK_ROOT/cmdline-tools/latest
-          
-          # Download a stable version of cmdline-tools
-          curl -C - -o cmdline-tools.zip https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip
-          unzip -q cmdline-tools.zip
-          mv cmdline-tools/* $ANDROID_SDK_ROOT/cmdline-tools/latest/
-          
-          # 2. Set the path
-          export PATH=$PATH:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin
-          
-          # 3. Accept licenses
-          yes | sdkmanager --sdk_root=$ANDROID_SDK_ROOT --licenses || true
-          
-          # 4. Create legacy path
-          mkdir -p $ANDROID_SDK_ROOT/tools/bin
-          ln -s $ANDROID_SDK_ROOT/cmdline-tools/latest/bin/sdkmanager $ANDROID_SDK_ROOT/tools/bin/sdkmanager
-          
-          # 5. Run build
-          buildozer android debug is were 2f
+          rm -rf ~/.buildozer ~/.android ~/.gradle
 
+      # Verify the environment
+      - name: Verify environment
+        run: |
+          python --version
+          java -version
+          buildozer --version
+
+      # Build the APK
+      - name: Build APK
+        run: |
+          buildozer android debug
+
+      # Upload the APK as an artifact
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
-          name: DigitalOracle-APK
+          name: WanderersTarot-APK
           path: bin/*.apk
