@@ -7,7 +7,6 @@ import os
 import random
 import threading
 import json
-from dotenv import load_dotenv
 
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, Screen
@@ -15,7 +14,7 @@ from kivy.clock import Clock
 from kivy.uix.textinput import TextInput
 from gen import generate
 
-load_dotenv()
+
 
 
 class InputScreen(Screen):
