@@ -34,7 +34,7 @@ source.include_exts = py,png,jpg,kv,atlas,json,txt
 requirements = python3,kivy,requests,certifi,python-dotenv,openssl
 
 # (str) Application versioning (method 2)
-version.filename = %(source.dir)s/main.py
+#version.filename = %(source.dir)s/main.py
 
 #version.regex = __version__ = ['"](.*)['"]
 
