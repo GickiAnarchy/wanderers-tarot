@@ -14,6 +14,8 @@ from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.clock import Clock
 from kivy.uix.textinput import TextInput
 from gen import generate
+from wtutils import get_image
+
 
 load_dotenv()
 
@@ -33,6 +35,11 @@ class InputScreen(Screen):
             reading_screen = self.manager.get_screen('reading')
             reading_screen.start_reading(question, cc)
             self.manager.current = 'reading'
+    
+    def get_tarot_image(self):
+        return get_image()
+
+
 
 
 class ReadingScreen(Screen):
@@ -121,6 +128,8 @@ class Cards:
     @property
     def card_names(self):
         return list(self.cards.keys())
+
+
 
 
 class TarotApp(App):
