@@ -7,7 +7,6 @@ import os
 import random
 import threading
 import json
-from dotenv import load_dotenv
 
 from kivy.app import App
 from kivy.uix.screenmanager import ScreenManager, Screen
@@ -17,7 +16,7 @@ from gen import generate
 from wtutils import get_image
 
 
-load_dotenv()
+
 
 
 class InputScreen(Screen):
