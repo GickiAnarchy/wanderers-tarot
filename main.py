@@ -34,6 +34,12 @@ class InputScreen(Screen):
             reading_screen = self.manager.get_screen('reading')
             reading_screen.start_reading(question, cc)
             self.manager.current = 'reading'
+
+    def read_celtic(self,instance):
+        pass
+    
+    def read_basic(self,instance):
+        pass
     
     def get_tarot_image(self):
         return get_image()
@@ -58,7 +64,7 @@ class ReadingScreen(Screen):
             if card_count == 2:
                 instruct = "Answer with a simple one-word response i.e. 'Yes', 'No', or 'Maybe'."
             
-            prompt = f"User Question: '{question}'. Cards: {card_str}. {instruct}"
+            prompt = f"Seekers Question: '{question}'. Cards Drawn: {card_str}. Instructions: {instruct}"
             
             # Call our REST-based generate function
             response = generate(prompt)
