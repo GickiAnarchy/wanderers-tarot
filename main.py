@@ -85,11 +85,26 @@ class KeyScreen(Screen):
         if os.path.exists(".key.key"):
             with open(".key.key","w") as f:
                 f.close()
+
+    def on_enter(self):
+        self.update_field()
+
+    def update_field(self):
+        if self.check_key():
+            self.keyfield.text = self.get_key()
     
     def check_key(self):
         print("check_key()")
         try:
             if os.path.exists(".key.key"):
+                try:
+                    with open(".key.key","r") as f:
+                        contents = f.read()
+                except Exception as e:
+                    print(e)
+                    return False
+                if contents == "":
+                    return False
                 return True
             else:
                 return False
@@ -100,7 +115,9 @@ class KeyScreen(Screen):
         apikey = self.keyfield.text
         with open(".key.key","w") as f:
             f.write(apikey)
+        self.update_field()
         self.manager.current = "input"
+        
     
     def get_key(self):
             print("get_key()")
@@ -110,7 +127,14 @@ class KeyScreen(Screen):
                         akey = f.read()
                     return akey
             except Exception as e:
-                print(e)            
+                print(e)
+
+    def reset_key(self):
+        if self.check_key():
+            with open(".key.key","w") as f:
+                f.write("")
+                f.close()
+            self.update_field()
 
 
 class Cards:

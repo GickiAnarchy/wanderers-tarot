@@ -1,0 +1,3 @@
+"""Answer the seekers inquiry with this 5 card tarot spread.
+
+CARD 1: It represents the seekers position on the situation. His/Her role, or I

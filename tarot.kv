@@ -26,8 +26,8 @@
             size_hint_y: None
             pos_hint:{"top":1.0}
         
-        Widget:
-            size_hint_y:0.2
+        #Widget:
+            #size_hint_y:0.2
     
         TextInput:
             id: user_q
@@ -37,14 +37,31 @@
             background_color: 0.1, 0.1, 0.2, 1
             foreground_color: 1, 1, 1, 1
             cursor_color: 0.8, 0.6, 1, 1
+        
+        #Widget:
+#            size_hint_y:0.2
 
-        Button:
-            text: "Ask Question"
-            size_hint_y: None
-            height: dp(40)
-            background_normal: ''
-            background_color: 0.4, 0.2, 0.6, 1
-            on_press: root.submit(self)
+        BoxLayout:
+            orientation:"horizontal"
+            spacing:15
+            size_hint_y: 0.3
+        
+            Button:
+                text: "Ask Question"
+                size_hint: (0.8,None)
+                height: dp(40)
+                background_normal: ''
+                background_color: 0.4, 0.2, 0.6, 1
+                on_press: root.submit(self)
+            
+            Button:
+                text: "API Key"
+                size_hint: (0.2,None)
+                height: dp(40)
+                background_normal: ''
+                background_color: 0.7, 0.2, 0.3, 1
+                on_press: root.manager.current = "key"
+                
 
 <ReadingScreen>:
     canvas.before:
@@ -106,10 +123,22 @@
             halign:"center"
             text:"API Key"
         
-        Button:
-            text: "Save Key"
-            size_hint_y: None
-            height: dp(40)
-            background_color: 0.2, 0.2, 0.3, 1
-            on_release:root.save_key()
+        BoxLayout:
+            orientation:"horizontal"
+            padding:10
+            spacing:10
+            
+            Button:
+                text: "Save Key"
+                size_hint_y: None
+                height: dp(40)
+                background_color: 0.2, 0.2, 0.3, 1
+                on_release:root.save_key()
+
+            Button:
+                text: "Reset Key"
+                size_hint_y: None
+                height: dp(40)
+                background_color: 0.2, 0.2, 0.3, 1
+                on_release:root.reset_key()
             
