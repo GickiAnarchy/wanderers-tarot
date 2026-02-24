@@ -1,3 +1,6 @@
+
+
+
 <InputScreen>:
     canvas.before:
         Color:
@@ -85,10 +88,11 @@
 
         ScrollView:
             size_hint_y: 0.8
+            do_scroll_y: True
             Label:
                 id: reading_label
                 text: ""
-                text_size: self.width, None
+                text_size: (self.width, None)
                 size_hint_y: None
                 height: self.texture_size[1]
                 halign: 'center'
@@ -96,6 +100,8 @@
                 padding: [10, 10]
                 font_size: '18sp'
                 line_height: 1.2
+                
+                
 
         Button:
             text: "RETURN TO DUST"

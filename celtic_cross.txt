@@ -1,6 +1,6 @@
 """Find an answer for the seekers inquiry using the 10 card celtic cross spread.
-Give a brief explanation on each card and then a summary in the end.
-
+Give an explanation that is no less than one paragraph long on each card and then a brief summary in the end.
+Reference the key reading points to help provide the seeker a response.
 Here is the card spread details:
 
 THE CROSS:

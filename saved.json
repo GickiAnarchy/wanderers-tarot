@@ -1,0 +1,30 @@
+{
+    "candidates": [
+        {
+            "content": {
+                "parts": [
+                    {
+                        "text": "Yesterday was a complex tapestry of deep introspection, practical creation, and significant mental friction.\n\nYou began the day, or at least spent a good part of it, in a state of **deep intuition and reflection (The High Priestess)**. Your inner world was active, perhaps guiding you towards hidden truths or encouraging you to listen to your subconscious. This wasn't merely passive; it led to tangible **expression and production (Three of Stones)**. You were actively engaged in work, contributing, or bringing something into being.\n\nThere was a profound sense of **evaluation and potential renewal (Judgement)** hovering over the day. It felt like a time to make crucial decisions or answer a calling, perhaps related to your resources or a desire for **comfort and grounded prosperity (Goddess of Stones)**. This urge for practical growth and learning was further emphasized by the **Wanderer of Stones**, indicating an exploration of new practical territories or a focus on your material well-being. The powerful creative and nurturing energy of **The Empress** suggests that you were either birthing new ideas, nurturing existing projects, or simply feeling very connected to your ability to create abundance.\n\nHowever, this deeply intuitive and productive flow met significant resistance. There was a confrontation with **bluntness, incisive intelligence, or a harsh truth (Prophet of Knives)**. This directness, while potentially necessary, likely contributed to a feeling of **restriction and limitation (Eight of Knives)**. You may have felt confined by circumstances, your own thoughts, or a situation where you perceived a lack of options. This mental struggle culminated in a state of **denial or an impasse (Two of Knives)**, where you might have avoided making a difficult decision, found yourself in a stalemate, or wrestled with two opposing viewpoints that kept you from moving forward.\n\nDespite these mental challenges and feelings of being trapped, an **Ace of Moons** indicates a fresh surge of intuition, affection, or spiritual motivation was present. A new emotional beginning or a deep feeling was stirring beneath the surface, pushing you forward even amidst the confusion and perceived limitations.\n\nIn summary, yesterday was a day where profound inner wisdom and creative output clashed with harsh realities, mental restrictions, and an avoidance of difficult choices. It was a day of significant potential and growth, yet also one of considerable intellectual and emotional struggle where you likely felt the push and pull between what you knew internally and what you faced externally."
+                    }
+                ],
+                "role": "model"
+            },
+            "finishReason": "STOP",
+            "index": 0
+        }
+    ],
+    "usageMetadata": {
+        "promptTokenCount": 285,
+        "candidatesTokenCount": 499,
+        "totalTokenCount": 1814,
+        "promptTokensDetails": [
+            {
+                "modality": "TEXT",
+                "tokenCount": 285
+            }
+        ],
+        "thoughtsTokenCount": 1030
+    },
+    "modelVersion": "gemini-2.5-flash",
+    "responseId": "hFycacbKNYKgz7IPxpiPgAc"
+}
