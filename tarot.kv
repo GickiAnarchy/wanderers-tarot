@@ -129,8 +129,10 @@
             halign:"center"
             text:"API Key"
         
+        Widget:
+
         BoxLayout:
-            orientation:"horizontal"
+            orientation:"vertical"
             padding:10
             spacing:10
             
@@ -141,10 +143,22 @@
                 background_color: 0.2, 0.2, 0.3, 1
                 on_release:root.save_key()
 
-            Button:
-                text: "Reset Key"
-                size_hint_y: None
-                height: dp(40)
-                background_color: 0.2, 0.2, 0.3, 1
-                on_release:root.reset_key()
+            BoxLayout:
+                orientation:"horizontal"
+                padding: 15
+                spacing: 15
+
+                Button:
+                    text: "Reset Key"
+                    size_hint_y: None
+                    height: dp(40)
+                    background_color: 0.2, 0.2, 0.3, 1
+                    on_release:root.reset_key()
+
+                Button:
+                    text: "Back"
+                    size_hint_y: None
+                    height: dp(40)
+                    background_color: 0.2, 0.2, 0.3, 1
+                    on_release: root.manager.current = "input"    
             
