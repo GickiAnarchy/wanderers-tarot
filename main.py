@@ -18,7 +18,6 @@ from wtutils import get_image
 
 
 
-
 class InputScreen(Screen):
     def submit(self, instance):
         kscreen = self.manager.get_screen('key')
@@ -26,9 +25,10 @@ class InputScreen(Screen):
             self.manager.current = 'key'
             return
         cc = 10
-        question = self.ids.user_q.text
+        self.question = self.ids.user_q.text
+        question = self.question
         if question.strip():
-            if "DEBUG" in question:
+            if "basica(" in question:
                 question = question.replace("DEBUG","")
                 cc = 2
             reading_screen = self.manager.get_screen('reading')
@@ -36,15 +36,17 @@ class InputScreen(Screen):
             self.manager.current = 'reading'
 
     def read_celtic(self,instance):
-        pass
+        reading_screen = self.manager.get_screen('reading')
+        reading_screen.start_reading(self.question, 10)
+        self.manager.current = 'reading'
     
     def read_basic(self,instance):
-        pass
+        reading_screen = self.manager.get_screen('reading')
+        reading_screen.start_reading(self.question, 2)
+        self.manager.current = 'reading'
     
     def get_tarot_image(self):
         return get_image()
-
-
 
 
 class ReadingScreen(Screen):
@@ -88,7 +90,7 @@ class ReadingScreen(Screen):
 class KeyScreen(Screen):
     def on_pre_enter(self):
         self.keyfield = self.ids.keyfield
-        if os.path.exists(".key.key"):
+        if not os.path.exists(".key.key"):
             with open(".key.key","w") as f:
                 f.close()
 
@@ -123,8 +125,7 @@ class KeyScreen(Screen):
             f.write(apikey)
         self.update_field()
         self.manager.current = "input"
-        
-    
+
     def get_key(self):
             print("get_key()")
             try:
@@ -157,8 +158,6 @@ class Cards:
     @property
     def card_names(self):
         return list(self.cards.keys())
-
-
 
 
 class TarotApp(App):
