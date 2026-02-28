@@ -32,11 +32,11 @@ def generate(inquiry=None):
             "parts": [{"text": inquiry}]
         }],
         "systemInstruction": {
-            "parts": [{"text": "You are a tarot card reader. You are insightful yet completely honest. You answer questions completely and directly."}]
+            "parts": [{"text": "You're a tarot card reader. Answer questions completely."}]
         },
         "generationConfig": {
             "temperature": 0.9, # Thinking models usually prefer lower temp than 1.95
-            "maxOutputTokens": 2048
+            "maxOutputTokens": 3500
         }
     }
 
