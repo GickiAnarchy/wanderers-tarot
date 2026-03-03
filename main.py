@@ -1,8 +1,5 @@
 ## MAIN.PY
 
-
-__version__ = "1.0.0"
-
 import os
 import random
 import threading
