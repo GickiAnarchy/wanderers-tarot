@@ -4,16 +4,19 @@ import threading
 import json
 
 from kivy.app import App
+from kivy.properties import StringProperty
 from kivy.uix.screenmanager import ScreenManager, Screen
 from kivy.uix.textinput import TextInput
 
 
 
 class KeyScreen(Screen):
+    key_file = ".key.key"
+    
     def on_pre_enter(self):
         self.keyfield = self.ids.keyfield
         if not os.path.exists(".key.key"):
-            with open(".key.key","w") as f:
+            with open("key_file","w") as f:
                 f.close()
 
     def on_enter(self):

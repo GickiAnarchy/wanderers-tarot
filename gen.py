@@ -9,7 +9,7 @@ import json
 
 def generate(inquiry=None):
     if inquiry is None:
-        inquiry = "Am I gonna be ok?"
+        return
         
     try:
         with open(".key.key","r") as f:
