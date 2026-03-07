@@ -11,4 +11,3 @@ class TarotApp(App):
         tsm = TarotScreenManager()
         tsm.set_up()
         return tsm
-    
