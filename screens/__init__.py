@@ -1,5 +1,5 @@
 from .tarotmanager import TarotScreenManager
-from .inputscreen import InputScreen
+from .input_screen import InputScreen
 from .readingscreen import ReadingScreen
 from .keyscreen import KeyScreen
 

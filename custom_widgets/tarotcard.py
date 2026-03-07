@@ -1,4 +1,5 @@
-from kivy.properties import StringProperty, BooleanProperty, NumericProperty
+
+from kivy.properties import StringProperty, BooleanProperty, NumericProperty, ListProperty
 from kivy.uix.behaviors import ButtonBehavior
 from kivymd.uix.card import MDCard
 
@@ -15,8 +16,9 @@ class TarotCard(ButtonBehavior, MDCard):
     rank = StringProperty("")        # Ace, Two, King, etc
 
     # Meaning
-    upright_meaning = StringProperty("")
-    reversed_meaning = StringProperty("")
+    upright_meaning = ListProperty(None)
+    reversed_meaning = ListProperty(None)
+    keywords = ListProperty(None)
 
     # State
     reversed = BooleanProperty(False)
@@ -46,3 +48,4 @@ class TarotCard(ButtonBehavior, MDCard):
         """
         if not self.revealed:
             self.reveal()
+
