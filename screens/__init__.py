@@ -1,19 +1,16 @@
-from .tarotmanager import TarotScreenManager
-from .input_screen import InputScreen
-from .readingscreen import ReadingScreen
-from .keyscreen import KeyScreen
-
+from .rootcontroller import RootController
+from .screens import HomeScreen, TarotScreen, SettingsScreen
 
 ALL_SCREENS = [
-    (InputScreen, "input"),
-    (ReadingScreen, "reading"),
-    (KeyScreen, "key"),
+    (HomeScreen,"home"),
+    (TarotScreen,"tarot"),
+    (SettingsScreen,"settings"),
 ]
 
 
 __all__ = [
-    "TarotScreenManager",
-    "InputScreen",
-    "ReadingScreen",
-    "KeyScreen",
+    "RootController",
+    "HomeScreen",
+    "TarotScreen",
+    "SettingsScreen",
 ]

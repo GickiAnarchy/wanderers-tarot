@@ -1,13 +1,11 @@
-from kivy.app import App
-from kivy.uix.screenmanager import ScreenManager, Screen
+from kivymd.app import MDApp
+from kivymd.uix.screen import MDScreen
+from kivymd.uix.screenmanager import MDScreenManager
 from kivy.clock import Clock
 from kivy.uix.textinput import TextInput
-from screens import TarotScreenManager
-from screens import ALL_SCREENS
 
 
-class TarotApp(App):
+
+class TarotApp(MDApp):
     def build(self):
-        tsm = TarotScreenManager()
-        tsm.set_up()
-        return tsm
+        pass

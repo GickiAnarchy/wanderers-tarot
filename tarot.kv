@@ -1,7 +1,45 @@
-<HomeScreen>:
-    MDBoxLayout:
-        orientation: 'vertical'
-    
-        MDTopAppBar:
-            title: "Digital Oracle"
-            left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+<RootController>:
+    orientation: "vertical"
+
+    MDTopAppBar:
+        id: toolbar
+        title: "Digital Oracle"
+        left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+        elevation: 4
+
+    MDNavigationLayout:
+
+        MDScreenManager:
+            id: screen_manager
+
+            HomeScreen:
+                name: "home"
+
+            TarotScreen:
+                name: "tarot"
+
+            SettingsScreen:
+                name: "settings"
+
+        MDNavigationDrawer:
+            id: nav_drawer
+
+            MDNavigationDrawerMenu:
+
+                MDNavigationDrawerLabel:
+                    text: "Navigation"
+
+                MDNavigationDrawerItem:
+                    text: "Home"
+                    icon: "home"
+                    on_release: root.goto("home")
+
+                MDNavigationDrawerItem:
+                    text: "Tarot Reading"
+                    icon: "cards"
+                    on_release: root.goto("tarot")
+
+                MDNavigationDrawerItem:
+                    text: "Settings"
+                    icon: "cog"
+                    on_release: root.goto("settings")
