@@ -1,4 +1,3 @@
-
 from kivy.properties import StringProperty, BooleanProperty, NumericProperty, ListProperty
 from kivy.uix.behaviors import ButtonBehavior
 from kivymd.uix.card import MDCard

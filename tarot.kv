@@ -16,14 +16,6 @@
         MDScreenManager:
             id: screen_manager
 
-            HomeScreen:
-                name: "home"
-
-            TarotScreen:
-                name: "tarot"
-
-            SettingsScreen:
-
         MDNavigationDrawer:
             id: nav_drawer
 
@@ -45,10 +37,7 @@
                 MDNavigationDrawerItem:
                     text: "Settings"
                     icon: "cog"
-                    on_release: root.goto("settings")
-                
-                
-
+                        on_release: root.goto("settings")
 
 <HomeScreen>:
     name: "home"
@@ -64,6 +53,7 @@
             halign: "center"
             size_hint_y: None
             height: self.texture_size[1]
+
 
 <SettingsScreen>:
     name: "settings"
@@ -110,3 +100,34 @@
                     on_release: root.save_api_key(api_key_input.text)
         
         Widget:
+
+
+<TarotScreen>:
+    in_field: in_field
+
+    name: "tarot"
+
+    MDBoxLayout:
+        orientation: "vertical"
+        spacing: dp(10)
+        padding: dp(10)
+
+        MDLabel:
+            text: "What do you seek?"
+            font_syle: "H4"
+            halign: "centered"
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        MDTextField:
+            id: in_field
+            hint_text: "Ask the stars anything..."
+            size_hint_x: 0.4
+            pos_hint: {"center_x":0.5}
+            multiline: True
+        
+        MDRaisedButton:
+            text: "Ask..."
+            size_hint: 0.3, None
+            height: dp(30)
+            on_release: root.ask_pressed()

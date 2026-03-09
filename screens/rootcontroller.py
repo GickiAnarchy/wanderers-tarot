@@ -1,15 +1,21 @@
+from kivymd.app import MDApp
 from kivymd.uix.boxlayout import MDBoxLayout
 from kivy.properties import ObjectProperty
 from kivymd.uix.screenmanager import MDScreenManager
-from screens.screens import TarotScreen
-from screens.settings_screen import SettingsScreen
-from .home_screen import HomeScreen 
+from screens import ALL_SCREENS
+from models import TarotCards
+from gen import generate
 
 class RootController(MDBoxLayout):
 
     screen_manager = ObjectProperty()
     nav_drawer = ObjectProperty()
     toolbar = ObjectProperty()
+
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        self.cards = TarotCards()
+
 
     def goto(self, screen_name):
         self.screen_manager.current = screen_name
@@ -18,11 +24,10 @@ class RootController(MDBoxLayout):
         if self.nav_drawer:
             self.nav_drawer.set_state("closed")
     
-    def get_api_key(self):
-        settings_screen = self.screen_manager.get_screen("Settings")
-        akey = settings_screen.get_api_key()
-        print(akey)
-        return akey
+    @property
+    def api_key = self.screen_manager.
     
-    def save_api_key(self,instance):
-        self.screen_manager.get_screen("settings").save_api_key(self.screen_manager.get_screen("settings").api_key)
+
+    @property
+    def app(self):
+        return MDApp.get_running_app()

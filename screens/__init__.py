@@ -1,5 +1,5 @@
 from .rootcontroller import RootController
-from .screens import TarotScreen
+from .tarot_screen import TarotScreen
 from .settings_screen import SettingsScreen
 from .home_screen import HomeScreen
 
