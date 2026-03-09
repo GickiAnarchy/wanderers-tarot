@@ -6,6 +6,15 @@
     orientation: "vertical"
 
     MDTopAppBar:
+        #canvas.before:
+#            Color:
+#                rgba: [0.2,0.4,0.4,1]
+#            RoundedRectangle:
+#                pos: self.pos
+#                size: self.size
+#                # The radius of the corners [top-left, top-right, bottom-right, bottom-left]
+#                radius: [25, 25, 25, 25] 
+            
         id: toolbar
         title: "Digital Oracle"
         left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
@@ -47,6 +56,25 @@
                     icon: "cog"
                     on_release: root.goto("settings")
 
+
+<HomeScreen>:
+    name: "home"
+    
+    #canvas.before:
+#        Color:
+#            rgba: root.get_primary()
+#        RoundedRectangle:
+#            pos: self.pos
+#            size: self.size
+#            # The radius of the corners [top-left, top-right, bottom-right, bottom-left]
+#            radius: [25, 25, 25, 25] 
+    
+    MDBoxLayout:
+        orientation: "vertical"
+        padding: dp(15)
+        spacing: dp(15)
+        
+    
 
 
 <SettingsScreen>:
