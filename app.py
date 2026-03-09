@@ -5,7 +5,7 @@ from kivy.clock import Clock
 from kivy.uix.textinput import TextInput
 from screens import RootController
 
-
+    
 
 class TarotApp(MDApp):
     def build(self):

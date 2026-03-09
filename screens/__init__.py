@@ -1,5 +1,6 @@
 from .rootcontroller import RootController
-from .screens import HomeScreen, TarotScreen, SettingsScreen
+from .screens import HomeScreen, TarotScreen
+from .settings_screen import SettingsScreen
 
 ALL_SCREENS = [
     (HomeScreen,"home"),

@@ -1,4 +1,5 @@
 from kivymd.uix.screen import MDScreen
+from kivy.properties import StringProperty, BooleanProperty
 
 
 class HomeScreen(MDScreen):
@@ -8,6 +9,3 @@ class HomeScreen(MDScreen):
 class TarotScreen(MDScreen):
     pass
 
-
-class SettingsScreen(MDScreen):
-    pass

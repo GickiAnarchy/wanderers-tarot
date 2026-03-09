@@ -23,7 +23,6 @@
                 name: "tarot"
 
             SettingsScreen:
-                name: "settings"
 
         MDNavigationDrawer:
             id: nav_drawer
@@ -47,3 +46,41 @@
                     text: "Settings"
                     icon: "cog"
                     on_release: root.goto("settings")
+
+
+
+<SettingsScreen>:
+    name: "settings"
+
+    MDBoxLayout:
+        orientation: "vertical"
+        padding: dp(20)
+        spacing: dp(20)
+        size_hint_y: 0.3
+
+        MDLabel:
+            text: "Google AI API Key"
+            font_style: "H6"
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        MDTextField:
+            id: api_key_input
+            hint_text: "Enter your Google AI API Key"
+            text: root.api_key or ""
+
+        MDBoxLayout:
+            orientation: "horizontal"
+            padding: dp(10)
+            spacing: dp(10)
+            size_hint_y: None
+            height: dp(50)
+            pos_hint: {"center_x": 0.5}
+
+            MDRaisedButton:
+                text: "Reset API Key"
+                on_release: root.reset_api_key()
+
+            MDRaisedButton:
+                text: "Save API Key"
+                on_release: root.save_api_key(api_key_input.text)

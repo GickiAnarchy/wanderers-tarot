@@ -1,7 +1,8 @@
 from kivymd.uix.boxlayout import MDBoxLayout
 from kivy.properties import ObjectProperty
 from kivymd.uix.screenmanager import MDScreenManager
-from screens.screens import HomeScreen,TarotScreen,SettingsScreen
+from screens.screens import HomeScreen,TarotScreen
+from screens.settings_screen import SettingsScreen
 
 class RootController(MDBoxLayout):
 
@@ -15,3 +16,12 @@ class RootController(MDBoxLayout):
         
         if self.nav_drawer:
             self.nav_drawer.set_state("closed")
+    
+    def get_api_key(self):
+        settings_screen = self.screen_manager.get_screen("Settings")
+        akey = settings_screen.get_api_key()
+        print(akey)
+        return akey
+    
+    def save_api_key(self,instance):
+        self.screen_manager.get_screen("settings").save_api_key(self.screen_manager.get_screen("settings").api_key)
