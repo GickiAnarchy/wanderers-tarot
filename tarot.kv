@@ -6,15 +6,6 @@
     orientation: "vertical"
 
     MDTopAppBar:
-        #canvas.before:
-#            Color:
-#                rgba: [0.2,0.4,0.4,1]
-#            RoundedRectangle:
-#                pos: self.pos
-#                size: self.size
-#                # The radius of the corners [top-left, top-right, bottom-right, bottom-left]
-#                radius: [25, 25, 25, 25] 
-            
         id: toolbar
         title: "Digital Oracle"
         left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
@@ -55,27 +46,24 @@
                     text: "Settings"
                     icon: "cog"
                     on_release: root.goto("settings")
+                
+                
 
 
 <HomeScreen>:
     name: "home"
     
-    #canvas.before:
-#        Color:
-#            rgba: root.get_primary()
-#        RoundedRectangle:
-#            pos: self.pos
-#            size: self.size
-#            # The radius of the corners [top-left, top-right, bottom-right, bottom-left]
-#            radius: [25, 25, 25, 25] 
-    
     MDBoxLayout:
         orientation: "vertical"
         padding: dp(15)
         spacing: dp(15)
-        
-    
 
+        MDLabel:
+            text: "Welcome to the Digital Oracle!"
+            font_style: "H4"
+            halign: "center"
+            size_hint_y: None
+            height: self.texture_size[1]
 
 <SettingsScreen>:
     name: "settings"
@@ -84,31 +72,41 @@
         orientation: "vertical"
         padding: dp(20)
         spacing: dp(20)
-        size_hint_y: 0.3
 
-        MDLabel:
-            text: "Google AI API Key"
-            font_style: "H6"
+        Widget:
             size_hint_y: None
-            height: self.texture_size[1]
-
-        MDTextField:
-            id: api_key_input
-            hint_text: "Enter your Google AI API Key"
-            text: root.api_key or ""
+            height: dp(20)
 
         MDBoxLayout:
-            orientation: "horizontal"
+            orientation: "vertical"
             padding: dp(10)
-            spacing: dp(10)
-            size_hint_y: None
-            height: dp(50)
-            pos_hint: {"center_x": 0.5}
+            size_hint_y: 0.3
 
-            MDRaisedButton:
-                text: "Reset API Key"
-                on_release: root.reset_api_key()
+            MDLabel:
+                text: "Google AI API Key"
+                font_style: "H6"
+                size_hint_y: None
+                height: self.texture_size[1]
 
-            MDRaisedButton:
-                text: "Save API Key"
-                on_release: root.save_api_key(api_key_input.text)
+            MDTextField:
+                id: api_key_input
+                hint_text: "Enter your Google AI API Key"
+                text: root.api_key or ""
+
+            MDBoxLayout:
+                orientation: "horizontal"
+                padding: dp(10)
+                spacing: dp(10)
+                size_hint_y: None
+                height: dp(50)
+                pos_hint: {"center_x": 0.5}
+
+                MDRaisedButton:
+                    text: "Reset API Key"
+                    on_release: root.reset_api_key()
+
+                MDRaisedButton:
+                    text: "Save API Key"
+                    on_release: root.save_api_key(api_key_input.text)
+        
+        Widget:

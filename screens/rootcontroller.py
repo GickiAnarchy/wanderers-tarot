@@ -1,8 +1,9 @@
 from kivymd.uix.boxlayout import MDBoxLayout
 from kivy.properties import ObjectProperty
 from kivymd.uix.screenmanager import MDScreenManager
-from screens.screens import HomeScreen,TarotScreen
+from screens.screens import TarotScreen
 from screens.settings_screen import SettingsScreen
+from .home_screen import HomeScreen 
 
 class RootController(MDBoxLayout):
 
