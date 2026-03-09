@@ -16,9 +16,9 @@ class TarotCard(ButtonBehavior, MDCard):
     rank = StringProperty("")        # Ace, Two, King, etc
 
     # Meaning
-    upright_meaning = ListProperty(None)
-    reversed_meaning = ListProperty(None)
-    keywords = ListProperty(None)
+    upright_meaning = ListProperty([])
+    reversed_meaning = ListProperty([])
+    keywords = ListProperty([])
 
     # State
     reversed = BooleanProperty(False)
@@ -39,8 +39,8 @@ class TarotCard(ButtonBehavior, MDCard):
     def meaning(self):
         """Return the current meaning depending on orientation."""
         if self.reversed:
-            return self.reversed_meaning
-        return self.upright_meaning
+            return "\n".join(self.reversed_meaning)
+        return "\n".join(self.upright_meaning)
 
     def on_release(self):
         """

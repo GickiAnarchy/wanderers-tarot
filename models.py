@@ -16,13 +16,13 @@ class TarotCards:
         if self.card_data:
             for c in self.card_data:
                 tc = TarotCard()
-                tc.name = c.get("name")
-                tc.number = c.get("number")
-                tc.arcana = c.get("arcana")
-                tc.suit = c.get("suit")
-                tc.upright_meaning = c["meanings"].get("light")
-                tc.reversed_meaning = c["meanings"].get("shadow")
-                tc.keywords = c.get("keywords")
+                tc.name = c.get("name","")
+                tc.number = c.get("number",0)
+                tc.arcana = c.get("arcana","")
+                tc.suit = c.get("suit","")
+                tc.upright_meaning = c["meanings"].get("light",[])
+                tc.reversed_meaning = c["meanings"].get("shadow",[])
+                tc.keywords = c.get("keywords",[])
 
                 self.cards.append(tc)
             self.shuffle()
@@ -30,19 +30,19 @@ class TarotCards:
     def shuffle(self):
         if self.cards:
             for c in self.cards:
-                c.reversed = random.choices([True,False])
+                c.reversed = random.choice([True,False])
             random.shuffle(self.cards)
 
-    def read_json(self) -> dict:
+    def read_json(self):
         if not os.path.exists(self.card_file):
-            return
+            return []
         try:
             with open(self.card_file, "r") as f:
                 data = json.load(f)
             return data
         except Exception as e:
             print(e)
-            return {}
+            return []
 
     def draw_cards(self, amount:int):
         for c in range(amount):
