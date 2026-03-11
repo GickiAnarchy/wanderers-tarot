@@ -2,7 +2,7 @@ from kivymd.app import MDApp
 from kivymd.uix.boxlayout import MDBoxLayout
 from kivy.properties import ObjectProperty
 from kivymd.uix.screenmanager import MDScreenManager
-from screens import ALL_SCREENS
+from kivy.clock import Clock
 from models import TarotCards
 from gen import generate
 
@@ -23,9 +23,32 @@ class RootController(MDBoxLayout):
         
         if self.nav_drawer:
             self.nav_drawer.set_state("closed")
+
     
     @property
-    def api_key = self.screen_manager.
+    def api_key(self):
+        akey = self.screen_manager.get_screen("settings").get_api_key()
+        if akey == "":
+            return None
+        return akey
+    
+    @property
+    def inquiry(self):
+        inq = self.screen_manager.get_screen("tarot").inquiry
+        if inq not in ["", None]:
+            return inq
+        else:
+            return None
+
+    def send_inquiry(self):
+        crds = []
+        for i in range(10):
+            crds.append(i.meaning())
+        crds_info = ".\n".join(crds)
+        data = generate(self.api_key, self.inquiry, crds_info)
+        rs = self.screen_manager.get_screen("reading")
+        rs.res_label.text = data
+        self.screen_manager.current = "reading"
     
 
     @property

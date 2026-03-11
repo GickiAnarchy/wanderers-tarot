@@ -1,9 +1,10 @@
 from kivy.properties import StringProperty, BooleanProperty, NumericProperty, ListProperty
 from kivy.uix.behaviors import ButtonBehavior
 from kivymd.uix.card import MDCard
+from kivymd.uix.widget import MDWidget
 
 
-class TarotCard(ButtonBehavior, MDCard):
+class TarotCard(MDWidget):
     """
     A visual tarot card widget that can be placed anywhere in the UI.
     """
@@ -26,6 +27,9 @@ class TarotCard(ButtonBehavior, MDCard):
     # Optional metadata
     image = StringProperty("")
     number = NumericProperty(0)
+
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
 
     def reveal(self):
         """Reveal the card."""

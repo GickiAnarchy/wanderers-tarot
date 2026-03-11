@@ -6,7 +6,7 @@ import json
 
 
 
-def generate(api_key=None,inquiry=None):
+def generate(api_key = None, inquiry = None, cards_info = None):
     if inquiry is None or api_key is None:
         return
 
@@ -21,7 +21,7 @@ def generate(api_key=None,inquiry=None):
             "parts": [{"text": inquiry}]
         }],
         "systemInstruction": {
-            "parts": [{"text": "You're a tarot card reader. Answer questions completely."}]
+            "parts": [{"text": f"Answer the inquiry using the Tarot with these dealt cards: {cards_info}"}]
         },
         "generationConfig": {
             "temperature": 0.9,

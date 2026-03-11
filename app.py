@@ -3,8 +3,7 @@ from kivymd.uix.screen import MDScreen
 from kivymd.uix.screenmanager import MDScreenManager
 from kivy.clock import Clock
 from kivy.uix.textinput import TextInput
-from screens import RootController
-
+from screens import RootController, ALL_SCREENS
     
 
 class TarotApp(MDApp):
@@ -14,9 +13,17 @@ class TarotApp(MDApp):
         self.theme_cls.primary_palette = "DeepOrange"
         self.theme_cls.accent_palette = "BlueGray"
 
-        rc = RootController()
-        
-        return rc
+        self.rc = RootController()
+        for cls,name in ALL_SCREENS:
+            self.rc.screen_manager.add_widget(cls(name = name))
+            print(f"{name} added to screen manager")
+        self.rc.screen_manager.current = "home"
+        return self.rc
+    
+    @property
+    def root_manager(self):
+        return self.rc
+    
 
     
 

@@ -37,7 +37,7 @@
                 MDNavigationDrawerItem:
                     text: "Settings"
                     icon: "cog"
-                        on_release: root.goto("settings")
+                    on_release: root.goto("settings")
 
 <HomeScreen>:
     name: "home"
@@ -49,11 +49,15 @@
 
         MDLabel:
             text: "Welcome to the Digital Oracle!"
+            pos_hint: {"center_x": 0.5}
             font_style: "H4"
             halign: "center"
             size_hint_y: None
             height: self.texture_size[1]
-
+        
+        Widget:
+            size_hint_y: None
+            height: dp(200)
 
 <SettingsScreen>:
     name: "settings"
@@ -115,14 +119,15 @@
         MDLabel:
             text: "What do you seek?"
             font_syle: "H4"
-            halign: "centered"
-            size_hint_y: None
+            halign: "center"
+            #size_hint_y: None
             height: self.texture_size[1]
 
         MDTextField:
             id: in_field
             hint_text: "Ask the stars anything..."
-            size_hint_x: 0.4
+            size_hint: 0.4,None
+            height: dp(100)
             pos_hint: {"center_x":0.5}
             multiline: True
         
@@ -131,3 +136,22 @@
             size_hint: 0.3, None
             height: dp(30)
             on_release: root.ask_pressed()
+
+
+<ReadingScreen>:
+    res_label:res_label
+
+    name: "reading"
+
+    MDBoxLayout:
+        orientation: "vertical"
+
+        MDLabel:
+            id: res_label
+            size_hint: 0.8, 0.7
+        
+        MDRaisedButton:
+            text:"Ok"
+            size_hint: 0.3, None
+            height: dp(30)
+            on_release: root.ok_pressed()
