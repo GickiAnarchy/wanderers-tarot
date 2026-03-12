@@ -11,7 +11,7 @@ class TarotApp(MDApp):
 
         self.theme_cls.theme_style = "Dark"
         self.theme_cls.primary_palette = "DeepOrange"
-        self.theme_cls.accent_palette = "BlueGray"
+        self.theme_cls.accent_palette = "White"
 
         self.rc = RootController()
         for cls,name in ALL_SCREENS:

@@ -10,7 +10,7 @@ class ReadingScreen(MDScreen):
 
     def ok_pressed(self):
         self.res_label.text = ""
-        self.manager.current = "home"
+        self.root.goto("home")
 
     @property
     def app(self):

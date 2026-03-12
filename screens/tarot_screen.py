@@ -11,7 +11,7 @@ class TarotScreen(MDScreen):
     in_field = ObjectProperty(None)
 
     def ask_pressed(self,instance = None):
-        self.app.rc.send_inquiry()
+        self.manager.root.send_inquiry()
 
     @property
     def app(self):

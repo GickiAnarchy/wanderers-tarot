@@ -31,6 +31,7 @@ class RootController(MDBoxLayout):
         if akey == "":
             return None
         return akey
+
     
     @property
     def inquiry(self):
@@ -40,16 +41,23 @@ class RootController(MDBoxLayout):
         else:
             return None
 
+
     def send_inquiry(self):
         crds = []
-        for i in range(10):
-            crds.append(i.meaning())
+        for card in range(10):
+            crds.append(card.meaning())
         crds_info = ".\n".join(crds)
         data = generate(self.api_key, self.inquiry, crds_info)
         rs = self.screen_manager.get_screen("reading")
         rs.res_label.text = data
         self.screen_manager.current = "reading"
+        
+        
     
+    
+    ''' @property
+    def root(self):
+        return self.screen_manager.root '''
 
     @property
     def app(self):

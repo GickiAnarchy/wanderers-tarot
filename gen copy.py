@@ -6,28 +6,14 @@ import json
 
 
 
-def generate(api_key = None, inquiry = None, drawm_cards = None, spread = None):
-    if inquiry is None:
-        print("no inquiry in generate.")
+def generate(api_key = None, inquiry = None, cards_info = None):
+    if inquiry is None or api_key is None:
         return
-    if api_key is None:
-        print("no api_key in generate.")
-        return
-    if drawm_cards is None:
-        print("no drawn_cards in generate.")
-        return
-    if spread is None:
-        print("no spread in generate.")
-        return
-
-
 
     model_name = "gemini-2.5-flash" 
     url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={api_key}"
 
-
     headers = {'Content-Type': 'application/json'}
-
 
     payload = {
         "contents": [{
@@ -35,14 +21,13 @@ def generate(api_key = None, inquiry = None, drawm_cards = None, spread = None):
             "parts": [{"text": inquiry}]
         }],
         "systemInstruction": {
-            "parts": [{"text": f"You will provide an answer for the users inquiry using the {spread} spread. Here are the drawn cards: {drawm_cards}"}]
+            "parts": [{"text": f"Answer the inquiry using the Tarot with these dealt cards: {cards_info}"}]
         },
         "generationConfig": {
             "temperature": 0.9,
             "maxOutputTokens": 3500
         }
     }
-
 
     try:
         response = requests.post(url, headers=headers, json=payload, timeout=30)
