@@ -1,3 +1,4 @@
+import json
 from kivymd.app import MDApp
 from kivymd.uix.boxlayout import MDBoxLayout
 from kivy.properties import ObjectProperty
@@ -42,19 +43,27 @@ class RootController(MDBoxLayout):
             return None
 
 
-    def send_inquiry(self):
-        crds = []
-        for card in range(10):
-            crds.append(card.meaning())
-        crds_info = ".\n".join(crds)
-        data = generate(self.api_key, self.inquiry, crds_info)
+    def send_inquiry(self, inq, cards_amount:int):
+        cards = self.draw_cards(cards_amount)
+        c_info = self.get_cards_info(cards)
+    
+        data = generate(self.api_key, inq, c_info, "Celtic Cross")
         rs = self.screen_manager.get_screen("reading")
         rs.res_label.text = data
         self.screen_manager.current = "reading"
-        
-        
-    
-    
+
+
+    def draw_cards(self, card_amount:int):
+        all_cards = TarotCards()
+        cards_drawn = all_cards.draw_cards(card_amount)
+        return cards_drawn
+
+    def get_cards_info(self, cards):
+        all_info = []
+        for c in cards:
+            all_info.append(c.get_info())
+        return "\n".join(all_info)
+
     ''' @property
     def root(self):
         return self.screen_manager.root '''

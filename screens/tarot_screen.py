@@ -10,10 +10,10 @@ class TarotScreen(MDScreen):
     inquiry = StringProperty(None)
     in_field = ObjectProperty(None)
 
-    def ask_pressed(self,instance = None):
-        self.manager.root.send_inquiry()
+    def ask_pressed(self, instance = None):
+        if self.in_field.text:
+            self.app.root_manager.send_inquiry(self.in_field.text, 10)
 
     @property
     def app(self):
         return MDApp.get_running_app()
-    

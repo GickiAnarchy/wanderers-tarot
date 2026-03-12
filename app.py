@@ -4,14 +4,16 @@ from kivymd.uix.screenmanager import MDScreenManager
 from kivy.clock import Clock
 from kivy.uix.textinput import TextInput
 from screens import RootController, ALL_SCREENS
-    
+from kivymd.uix.navigationdrawer import MDNavigationDrawerItem
+
+
 
 class TarotApp(MDApp):
     def build(self):
 
         self.theme_cls.theme_style = "Dark"
-        self.theme_cls.primary_palette = "DeepOrange"
-        self.theme_cls.accent_palette = "White"
+        self.theme_cls.primary_palette = "Teal"
+        self.theme_cls.accent_palette = "Amber"
 
         self.rc = RootController()
         for cls,name in ALL_SCREENS:

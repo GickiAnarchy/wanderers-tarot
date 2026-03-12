@@ -28,6 +28,7 @@
                     text: "Home"
                     icon: "home"
                     on_release: root.goto("home")
+                    text_color: 0.3,0.5,0,1
 
                 MDNavigationDrawerItem:
                     text: "Tarot Reading"
@@ -38,6 +39,7 @@
                     text: "Settings"
                     icon: "cog"
                     on_release: root.goto("settings")
+
 
 <HomeScreen>:
     name: "home"
@@ -58,6 +60,7 @@
         Widget:
             size_hint_y: None
             height: dp(200)
+
 
 <SettingsScreen>:
     name: "settings"

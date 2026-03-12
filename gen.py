@@ -12,7 +12,7 @@ def generate(api_key = None, inquiry = None, drawm_cards = None, spread = None):
         return
     if api_key is None:
         print("no api_key in generate.")
-        return
+        return "NO API KEY"
     if drawm_cards is None:
         print("no drawn_cards in generate.")
         return

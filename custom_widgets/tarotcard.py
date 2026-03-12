@@ -52,3 +52,6 @@ class TarotCard(MDWidget):
         if not self.revealed:
             self.reveal()
 
+    def get_info(self):
+        ret = f"Name:\t{self.name}\nMeaning:\t{self.meaning}"
+        return ret
