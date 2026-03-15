@@ -3,6 +3,7 @@ from .tarot_screen import TarotScreen
 from .settings_screen import SettingsScreen
 from .home_screen import HomeScreen
 from .reading_screen import ReadingScreen
+from .history_screen import HistoryScreen
 
 
 
@@ -11,6 +12,7 @@ ALL_SCREENS = [
     (TarotScreen,"tarot"),
     (SettingsScreen,"settings"),
     (ReadingScreen, "reading"),
+    (HistoryScreen, "history"),
 ]
 
 
@@ -19,5 +21,6 @@ __all__ = [
     "HomeScreen",
     "TarotScreen",
     "SettingsScreen",
-    "ReadingScreen"
+    "ReadingScreen",
+    "HistoryScreen",
 ]

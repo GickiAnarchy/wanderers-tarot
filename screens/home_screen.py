@@ -4,6 +4,9 @@ from kivy.properties import StringProperty, BooleanProperty
 
 
 class HomeScreen(MDScreen):
+    def on_pre_enter(self):
+        pass
+    
     def get_primary(self):
         return self.app.theme_cls.primary_color
     

@@ -1,8 +1,7 @@
 <RootController>:
     screen_manager: screen_manager
     toolbar:toolbar
-    nav_drawer: nav_drawer
-    
+    nav_drawer: nav_drawer    
     orientation: "vertical"
 
     MDTopAppBar:
@@ -28,17 +27,19 @@
                     text: "Home"
                     icon: "home"
                     on_release: root.goto("home")
-                    text_color: 0.3,0.5,0,1
+                    text_color: 0.2,0.1,0.6,1
 
                 MDNavigationDrawerItem:
                     text: "Tarot Reading"
                     icon: "cards"
                     on_release: root.goto("tarot")
+                    text_color: 0.2,0.1,0.6,1
 
                 MDNavigationDrawerItem:
                     text: "Settings"
                     icon: "cog"
                     on_release: root.goto("settings")
+                    text_color: 0.2,0.1,0.6,1
 
 
 <HomeScreen>:
@@ -56,6 +57,14 @@
             halign: "center"
             size_hint_y: None
             height: self.texture_size[1]
+
+        MDLabel:
+            id: warning_label
+            pos_hint: {"center_x": 0.8}
+            halign: "center"
+            size_hint_y: None
+            height: self.texture_size[1]
+            text_color: 1,0,0,1
         
         Widget:
             size_hint_y: None
@@ -118,22 +127,25 @@
         orientation: "vertical"
         spacing: dp(10)
         padding: dp(10)
+        pos_hint:{"center_x":0.5}
 
         MDLabel:
             text: "What do you seek?"
             font_syle: "H4"
             halign: "center"
-            #size_hint_y: None
+            size_hint_y: None
             height: self.texture_size[1]
 
         MDTextField:
             id: in_field
             hint_text: "Ask the stars anything..."
-            size_hint: 0.4,None
-            height: dp(100)
-            pos_hint: {"center_x":0.5}
+            size_hint: 0.7,None
+            height: dp(150)
+            pos_hint: {"center_x":0.5,"center_y":0.5}
             multiline: True
         
+        Widget:
+
         MDRaisedButton:
             text: "Ask..."
             size_hint: 0.3, None

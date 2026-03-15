@@ -1,4 +1,5 @@
 import json
+
 from kivymd.app import MDApp
 from kivymd.uix.boxlayout import MDBoxLayout
 from kivy.properties import ObjectProperty
@@ -6,6 +7,9 @@ from kivymd.uix.screenmanager import MDScreenManager
 from kivy.clock import Clock
 from models import TarotCards
 from gen import generate
+from kivymd.uix.toolbar import MDTopAppBar
+
+
 
 class RootController(MDBoxLayout):
 
@@ -25,7 +29,16 @@ class RootController(MDBoxLayout):
         if self.nav_drawer:
             self.nav_drawer.set_state("closed")
 
-    
+
+    def no_key_warning(self):
+        if self.api_key is None:
+            self.toolbar.right_action_items = (["warning", None])
+            return False            
+        else:
+            self.toolbar.right_action_items = []
+            return True
+
+
     @property
     def api_key(self):
         akey = self.screen_manager.get_screen("settings").get_api_key()
@@ -33,7 +46,7 @@ class RootController(MDBoxLayout):
             return None
         return akey
 
-    
+
     @property
     def inquiry(self):
         inq = self.screen_manager.get_screen("tarot").inquiry
@@ -64,9 +77,6 @@ class RootController(MDBoxLayout):
             all_info.append(c.get_info())
         return "\n".join(all_info)
 
-    ''' @property
-    def root(self):
-        return self.screen_manager.root '''
 
     @property
     def app(self):
