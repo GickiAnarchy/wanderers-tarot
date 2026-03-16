@@ -22,6 +22,7 @@ class TarotApp(MDApp):
         return self.rc
 
 
+    @property
     def root_manager(self):
         return self.rc
 

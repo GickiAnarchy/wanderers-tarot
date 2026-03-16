@@ -48,5 +48,9 @@ class TarotCards:
         for c in range(amount):
             if self.cards:
                 yield self.cards.pop()
-
-
+    
+    def get_meanings(self, card_list):
+        meanings = []
+        for card in card_list:
+            meanings.append(card.get_info())
+        return "\n".join(meanings)
