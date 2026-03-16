@@ -11,6 +11,15 @@ class TarotScreen(MDScreen):
     inquiry = StringProperty(None)
     in_field = ObjectProperty(None)
 
+    def ask_pressed(self, instance=None):
+        if self.in_field.text:
+            self.inquiry = self.in_field.text
+            self.in_field.text = ""
+            self.app.rc.ask_question()
+    
+    def on_inquiry(self, instance, value):
+        self.app.rc.current_inquiry = self.inquiry
+
     @property
     def app(self):
         return MDApp.get_running_app()

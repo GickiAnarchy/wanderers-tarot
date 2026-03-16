@@ -1,5 +1,8 @@
 {
     "python.REPL.enableREPLSmartSend": false,
     "python.analysis.autoImportCompletions": true,
-    "python.analysis.typeCheckingMode": "standard"
+    "python.analysis.typeCheckingMode": "standard",
+    "editor.snippetSuggestions": "none",
+    "editor.defaultFormatter": null,
+    "materialkv.pythonFile": "main.py"
 }
