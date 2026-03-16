@@ -14,7 +14,7 @@ from kivymd.uix.label import MDLabel
 KEYFILE = "keyfile.json"
 
 class SettingsScreen(MDScreen):
-    api_key = StringProperty(None)
+    api_key = StringProperty("")
 
     def on_enter(self):
         pass
@@ -23,14 +23,14 @@ class SettingsScreen(MDScreen):
 ##  API Key Management
 #####
     def save_api_key(self, apikey, instnance = None):
-        if apikey == "" or apikey == None:
+        if apikey == "":
             return
         self.api_key = apikey
         with open(KEYFILE, "w") as f:
             json.dump({"api_key": self.api_key}, f)
     
     def get_api_key(self):
-        if self.api_key is not None:
+        if self.api_key is not "":
             return self.api_key
         if not os.path.exists(KEYFILE):
             return ""
@@ -41,6 +41,10 @@ class SettingsScreen(MDScreen):
         except json.JSONDecodeError:
             self.api_key = ""
         return self.api_key
+
+    @property
+    def has_api_key(self):
+        return self.get_api_key() is not ""
 
     def on_api_key(self, instance, value):
         print("SettingsScreen.on_api_key()\n")

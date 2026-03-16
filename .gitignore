@@ -9,7 +9,7 @@ __pycache__/
 .kivy/
 md_version/
 
-
+keyfile.json
 .env
 *.env
 .key.key

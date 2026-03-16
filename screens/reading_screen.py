@@ -8,6 +8,10 @@ from kivy.properties import ObjectProperty
 class ReadingScreen(MDScreen):
     res_label = ObjectProperty()
 
+    def ok_pressed(self, instance=None):
+        self.app.rc.save_reading()
+        self.app.rc.goto("home")
+
     @property
     def app(self):
         return MDApp().get_running_app()
