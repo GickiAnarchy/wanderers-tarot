@@ -31,15 +31,22 @@ class SettingsScreen(MDScreen):
     
     def get_api_key(self):
         if self.api_key is not "":
+            print("API key already loaded in SettingsScreen.api_key")
             return self.api_key
         if not os.path.exists(KEYFILE):
+            print("No API key file found.")
             return ""
         try:
             with open(KEYFILE, "r") as f:
                 data = json.load(f)
+            print("API key loaded from file.")
             self.api_key = data.get("api_key", "")
         except json.JSONDecodeError:
+            print("Error decoding API key file.")
             self.api_key = ""
+        except Exception as e:
+            print(f"Unexpected error occurred: {e}")
+        print(f"API key: {self.api_key}")
         return self.api_key
 
     @property

@@ -34,6 +34,12 @@
                     icon: "cards"
                     on_release: root.goto("tarot")
                     text_color: 0.2,0.1,0.6,1
+                
+                MDNavigationDrawerItem:
+                    text: "Reading History"
+                    icon: "history"
+                    on_release: root.goto("history")
+                    text_color: 0.2,0.1,0.6,1
 
                 MDNavigationDrawerItem:
                     text: "Settings"
@@ -170,3 +176,10 @@
             size_hint: 0.3, None
             height: dp(30)
             on_release: root.ok_pressed()
+
+
+<HistoryScreen>:
+    name: "history"
+    
+    MDBoxLayout:
+        orientation: "vertical"

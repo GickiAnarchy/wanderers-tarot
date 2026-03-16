@@ -32,7 +32,6 @@ class RootController(MDBoxLayout):
     def check_key(self, dt):
         settings_screen = self.screen_manager.get_screen("settings")
         if settings_screen.has_api_key:
-            self.api_key = settings_screen.get_api_key()
             self.goto("home")
         else:
             print("Need API Key")

@@ -14,4 +14,4 @@ class ReadingScreen(MDScreen):
 
     @property
     def app(self):
-        return MDApp().get_running_app()
+        return MDApp.get_running_app()
