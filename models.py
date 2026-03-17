@@ -1,4 +1,4 @@
-from custom_widgets import TarotCard
+
 import os
 import json
 import random
@@ -54,3 +54,34 @@ class TarotCards:
         for card in card_list:
             meanings.append(card.get_info())
         return "\n".join(meanings)
+
+
+
+
+class TarotCard:
+    def __init__(self, **kwargs):
+        self.reversed = True
+        try:
+            self.name = kwargs.get("name","")
+            self.number = kwargs.get("number",0)
+            self.arcana = kwargs.get("arcana","")
+            suit = kwargs.get("suit","")
+            self.upright_meaning = kwargs["meanings"].get("light",[])
+            self.reversed_meaning = kwargs["meanings"].get("shadow",[])
+            self.keywords = kwargs.get("keywords",[])
+        except Exception as e:
+            print(f"Error:\
+                TarotCard()__init__()\
+                {e}")
+
+    @property
+    def meaning(self):
+        """Return the current meaning depending on orientation."""
+        if self.reversed:
+            return "\n".join(self.reversed_meaning)
+        return "\n".join(self.upright_meaning)
+
+
+    def get_info(self):
+        ret = f"Name:\t{self.name}\nMeaning:\t{self.meaning}"
+        return ret

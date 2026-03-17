@@ -1,9 +1,9 @@
 from .confirmation_popup import ConfirmDialog
-from .tarotcard import TarotCard
+from .tarotcard import KivyTarotCard
 
 
 
 __all__ = [
     "ConfirmDialog",
-    "TarotCard",
+    "KivyTarotCard",
 ]

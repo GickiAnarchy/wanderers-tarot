@@ -1,13 +1,13 @@
 [app]
 
 # (str) Application versioning (method 1)
-version = 0.1
+version = 0.3
 
 # (str) Title of your application
-title = The Digital Oracle
+title = The Tarot Oracle
 
 # (str) Package name
-package.name = digitaloracle
+package.name = tarotoracle
 
 # (str) Package domain (needed for android packaging)
 package.domain = com.gickistudios
@@ -23,7 +23,7 @@ android.add_resources = android_res
 presplash.filename = %(source.dir)s/data/splash.png
 
 # (list) Source files to include (let's include .kv files!)
-source.include_exts = py,png,jpg,kv,atlas,json,txt
+source.include_exts = py,png,jpg,kv,atlas,json,txt,json
 
 # (list) Application requirements
 # REMOVED: lzma, uuid, grp - these are not supported on Android
@@ -31,7 +31,7 @@ source.include_exts = py,png,jpg,kv,atlas,json,txt
 # - lzma: missing lzma.h header
 # - uuid: missing libuuid library  
 # - grp: POSIX functions not available on Android
-requirements = python3,kivy,requests,certifi,python-dotenv,openssl
+requirements = python3,kivy,kivymd,requests,certifi,python-dotenv,openssl
 
 # (str) Application versioning (method 2)
 #version.filename = %(source.dir)s/main.py
@@ -54,7 +54,7 @@ android.archs = arm64-v8a, armeabi-v7a
 android.allow_backup = True
 
 # (list) Permissions
-android.permissions = INTERNET, ACCESS_NETWORK_STATE
+android.permissions = INTERNET, ACCESS_NETWORK_STATE, READ_EXTERNAL_STORAGE, WRITE_EXTERNAL_STORAGE
 
 # (str) The orientation of the app
 orientation = portrait

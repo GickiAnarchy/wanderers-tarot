@@ -21,7 +21,7 @@ class RootController(MDBoxLayout):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        self.cards = TarotCards()
+        #self.cards = TarotCards()
         self.api_key = None
         self.current_inquiry = None
         self.current_reading = None

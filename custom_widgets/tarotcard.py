@@ -4,7 +4,7 @@ from kivymd.uix.card import MDCard
 from kivymd.uix.widget import MDWidget
 
 
-class TarotCard(MDWidget):
+class KivyTarotCard(MDWidget):
     """
     A visual tarot card widget that can be placed anywhere in the UI.
     """
