@@ -28,7 +28,8 @@ class RootController(MDBoxLayout):
         self.current_spread = "Celtic Cross"
 
         Clock.schedule_once(self.check_key, 1)
-    
+
+  
     def check_key(self, dt):
         settings_screen = self.screen_manager.get_screen("settings")
         if settings_screen.has_api_key:
@@ -47,15 +48,8 @@ class RootController(MDBoxLayout):
 
 
     def ask_question(self):
-        if self.current_spread == "Celtic Cross":
-            self.celtic_cross_spread()
-            
-
-
-    def celtic_cross_spread(self):
-        self.current_reading = generate_celtic_cross(self.api_key, self.current_inquiry)
         rs = self.screen_manager.get_screen("reading")
-        rs.res_label.text = self.current_reading
+        rs.generate_request(self.api_key, self.current_inquiry)
         self.screen_manager.current = "reading"
 
 
@@ -86,6 +80,11 @@ class RootController(MDBoxLayout):
             print(f"Error loading history: {e}")
             history = []
         return history
+
+
+    @property
+    def has_api_key(self):
+        return self.screen_manager.get_screen("settings").has_api_key
 
 
     @property

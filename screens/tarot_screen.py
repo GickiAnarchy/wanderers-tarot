@@ -4,7 +4,7 @@ from kivymd.uix.screen import MDScreen
 from kivymd.uix.textfield import MDTextField
 from kivymd.uix.label import MDLabel
 from kivy.properties import StringProperty, BooleanProperty, ObjectProperty
-from gen import generate, generate_celtic_cross
+
 
 
 class TarotScreen(MDScreen):
@@ -14,11 +14,13 @@ class TarotScreen(MDScreen):
     def ask_pressed(self, instance=None):
         if self.in_field.text:
             self.inquiry = self.in_field.text
-            self.in_field.text = ""
             self.app.rc.ask_question()
     
     def on_inquiry(self, instance, value):
+        print(f"current_inquiry is now {value}")
         self.app.rc.current_inquiry = self.inquiry
+        self.in_field.text = ""
+        
 
     @property
     def app(self):

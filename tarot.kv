@@ -161,15 +161,25 @@
 
 <ReadingScreen>:
     res_label:res_label
+    current_status: current_status
 
     name: "reading"
 
     MDBoxLayout:
         orientation: "vertical"
-
+        
         MDLabel:
-            id: res_label
-            size_hint: 0.8, 0.7
+            id: current_status
+            pos_hint:{"center_x":0.5}
+            size_hint: 0.6,None
+            height: self.texture_size[1]
+        
+        MDScrollView:
+            size_hint_y: 0.8
+            do_scroll_y: True
+            MDLabel:
+                id: res_label
+                size_hint: 0.8, 0.7
         
         MDRaisedButton:
             text:"Ok"
