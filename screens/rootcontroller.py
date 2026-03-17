@@ -49,7 +49,7 @@ class RootController(MDBoxLayout):
 
     def ask_question(self):
         rs = self.screen_manager.get_screen("reading")
-        rs.generate_request(self.api_key, self.current_inquiry)
+        rs.ask_pressed()
         self.screen_manager.current = "reading"
 
 
@@ -68,6 +68,7 @@ class RootController(MDBoxLayout):
         try:
             with open("history.json", "w") as f:
                 json.dump(history, f, indent=4)
+            print("reading saved")
         except Exception as e:
             print(f"Error saving history: {e}")
 

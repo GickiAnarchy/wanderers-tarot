@@ -12,29 +12,30 @@ from kivymd.uix.scrollview import MDScrollView
 class ReadingScreen(MDScreen):
     res_label = ObjectProperty()
     current_status = ObjectProperty()
-
-
+    
+    
     def ok_pressed(self, instance=None):
+        self.app.rc.save_reading()
+        self.manager.current = "home"
+
+
+    def ask_pressed(self, instance=None):#self.current_status.text = "Asking the void"
         if self.app.rc.has_api_key:
             akey = self.app.rc.api_key
             inq = self.app.rc.current_inquiry
-            self.current_status.text = "Asking the void"
-            threading.Thread(target = self.generate_request, args=(akey, inq)). start()
+            threading.Thread(target=self.generate_request, args=(akey, inq)). start()
         
 
     def generate_request(self, akey, inq):
+        response = generate_celtic_cross(akey,inq)
         try:
-            self.current_status.text = "Consulting the stars.."
-            response = generate_celtic_cross(akey,inq)
-            
-            final_text = f"<<<>>>\n{response}\n<<<>>>"
-            Clock.schedule_once(lambda dt: self.update_ui(final_text, "The oracle has spoken.."))
+            Clock.schedule_once(lambda dt: self.update_ui(response, "The oracle has spoken.."))
         except Exception as e:
-            final_text = f"Whoops...\n{e}"
-            Clock.schedule_once(lambda dt: self.update_ui(final_text, "Its fuzzy.."))
+            ee = e
+            Clock.schedule_once(lambda dt: self.update_ui(f"ERROR:{ee}", "Its fuzzy.."))
             
 
-    def update_ui(self, text = "...", status="Empty"):
+    def update_ui(self, text = "...", status = "Empty"):
         self.res_label.text = text
         self.current_status.text = status   
     
