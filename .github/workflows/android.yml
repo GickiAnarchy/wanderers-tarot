@@ -8,7 +8,7 @@ on:
 jobs:
   build:
     # Optionally trigger only if you include [apk] in your commit message
-    # if: contains(github.event.head_commit.message, '[apk]')
+    if: contains(github.event.head_commit.message, '[apk]')
     runs-on: ubuntu-22.04
 
     steps:

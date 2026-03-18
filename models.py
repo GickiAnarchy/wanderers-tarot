@@ -22,16 +22,19 @@ class TarotCards:
                 tc.suit = c.get("suit","")
                 tc.upright_meaning = c["meanings"].get("light",[])
                 tc.reversed_meaning = c["meanings"].get("shadow",[])
-                tc.keywords = c.get("keywords",[])
+                tc.keywords = c.get("keywords",[]),
+                tc.image = c.get("image", "")
 
                 self.cards.append(tc)
             self.shuffle()
+
 
     def shuffle(self):
         if self.cards:
             for c in self.cards:
                 c.reversed = random.choice([True,False])
             random.shuffle(self.cards)
+
 
     def read_json(self):
         if not os.path.exists(self.card_file):
@@ -44,17 +47,18 @@ class TarotCards:
             print(e)
             return []
 
+
     def draw_cards(self, amount:int):
         for c in range(amount):
             if self.cards:
                 yield self.cards.pop()
+    
     
     def get_meanings(self, card_list):
         meanings = []
         for card in card_list:
             meanings.append(card.get_info())
         return "\n".join(meanings)
-
 
 
 
@@ -74,6 +78,7 @@ class TarotCard:
                 TarotCard()__init__()\
                 {e}")
 
+
     @property
     def meaning(self):
         """Return the current meaning depending on orientation."""
@@ -85,3 +90,51 @@ class TarotCard:
     def get_info(self):
         ret = f"Name:\t{self.name}\nMeaning:\t{self.meaning}"
         return ret
+
+
+
+
+
+class RiderDeck:
+    def __init__(self):
+        self.deck = []
+
+
+    def create_deck(self):
+        with open("rider_waite_tarot.json","r") as f:
+            data = json.load(f)
+        for c in data.get("cards"):
+            rc = RiderTarotCard(**c)
+            self.deck.append(rc)
+
+
+    def shuffle(self):
+        if self.deck:
+            for c in self.deck:
+                c.is_reversed = random.choice([True,False])
+            random.shuffle(self.deck)
+
+
+
+#################
+
+class RiderTarotCard:
+    def __init__(self, **kwargs):
+        self.name           = kwargs.get("name", "")
+        self.id             = kwargs.get("id", None)
+        self.arcana         = kwargs.get("arcana", "")
+        self.suit           = kwargs.get("suit", None)
+        self.number         = kwargs.get("number", "")
+        self.roman_numeral  = kwargs.get("roman_numeral", "")
+        self.element        = kwargs.get("element", "")
+        self.astrological   = kwargs.get("astrological", "")
+        self.hebrew_letter  = kwargs.get("hebrew_letter", None)
+        self.keywords       = kwargs.get("keywords", [])
+        self.upright        = kwargs.get("upright", {})
+        self.reversed       = kwargs.get("reversed", {})
+        self.description    = kwargs.get("description", "")
+        self.imagery_symbols = kwargs.get("imagery_symbols", [])
+        self.yes_no         = kwargs.get("yes_no", "")
+        self.image          = kwargs.get("image", "")
+        
+        self.is_reversed = None

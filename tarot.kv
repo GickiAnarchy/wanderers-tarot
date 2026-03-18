@@ -270,3 +270,29 @@
             size_hint: 0.3, None
             height: dp(50)
             on_release: root.delete_reading()
+
+
+#
+#
+#
+#
+<FlippableCard>:
+    canvas.before:
+        PushMatrix
+        Scale:
+            x: root.scale_x
+            y: 1
+            z: 1
+            origin: self.center
+    canvas.after:
+        PopMatrix
+
+    MDCard:
+        id: card
+        orientation: "vertical"
+        padding: "16dp"
+        spacing: "10dp"
+        radius: [20]
+        elevation: 6
+        size_hint: 0.9, 0.9
+        pos_hint: {"center_x": 0.5, "center_y": 0.5}

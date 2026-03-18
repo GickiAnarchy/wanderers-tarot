@@ -1,0 +1,3350 @@
+{
+  "deck": "Rider-Waite Tarot",
+  "artist": "Pamela Colman Smith",
+  "author": "Arthur Edward Waite",
+  "published": 1909,
+  "publisher": "Rider Company",
+  "total_cards": 78,
+  "cards": [
+    {
+      "id": 0,
+      "name": "The Fool",
+      "arcana": "Major",
+      "suit": null,
+      "number": "0",
+      "roman_numeral": "0",
+      "element": "Air",
+      "astrological": "Uranus",
+      "hebrew_letter": "Aleph",
+      "keywords": [
+        "beginnings",
+        "innocence",
+        "spontaneity",
+        "free spirit",
+        "adventure"
+      ],
+      "upright": {
+        "general": "New beginnings, optimism, trust in life. A leap of faith into the unknown with a carefree spirit.",
+        "love": "New relationship on the horizon, spontaneity in romance, openness to love.",
+        "career": "New job opportunity, starting a business, taking a risk professionally.",
+        "finances": "Taking a financial risk, being carefree with money, unexpected windfall.",
+        "spirituality": "Beginning a spiritual journey, openness to new beliefs, divine guidance."
+      },
+      "reversed": {
+        "general": "Recklessness, risk-taking without thought, naivety, poor judgment, foolishness.",
+        "love": "Rushing into a relationship, acting without thinking, emotional immaturity.",
+        "career": "Poor planning, taking unnecessary risks at work, lack of direction.",
+        "finances": "Financial recklessness, bad investments, spending without thinking.",
+        "spirituality": "Spiritual naivety, gullibility, being led astray."
+      },
+      "description": "A young figure stands at the edge of a cliff, gazing upward at the sky, with a small dog at their heels. They carry a white rose in one hand and a traveler's sack on a staff over their shoulder. The sun shines brightly behind them.",
+      "imagery_symbols": [
+        "cliff edge",
+        "white rose",
+        "small dog",
+        "traveler's sack",
+        "sun",
+        "mountains"
+      ],
+      "yes_no": "Yes",
+      "image": "thefool.jpeg"
+    },
+    {
+      "id": 1,
+      "name": "The Magician",
+      "arcana": "Major",
+      "suit": null,
+      "number": "1",
+      "roman_numeral": "I",
+      "element": "Air",
+      "astrological": "Mercury",
+      "hebrew_letter": "Beth",
+      "keywords": [
+        "willpower",
+        "desire",
+        "creation",
+        "manifestation",
+        "skill"
+      ],
+      "upright": {
+        "general": "Manifestation, resourcefulness, power, inspired action. You have all the tools needed to succeed.",
+        "love": "Using charm and communication to attract a partner, creating the relationship you desire.",
+        "career": "Using your skills effectively, taking initiative, making things happen.",
+        "finances": "Manifesting financial goals, skillful money management, new opportunities.",
+        "spirituality": "Channeling divine energy, harnessing personal power, spiritual willpower."
+      },
+      "reversed": {
+        "general": "Manipulation, poor planning, untapped talents, trickery, illusion.",
+        "love": "Manipulation in relationships, deception, using charm dishonestly.",
+        "career": "Misusing skills, lack of focus, cunning or deceptive colleagues.",
+        "finances": "Financial manipulation, poor use of resources, scams.",
+        "spirituality": "Misusing spiritual power, illusion, ego-driven spiritual practice."
+      },
+      "description": "A robed figure stands before a table bearing all four suit symbols (wand, cup, sword, pentacle). One hand points a wand toward the sky, the other points to the earth. An infinity symbol floats above the head, and a snake biting its own tail encircles the waist.",
+      "imagery_symbols": [
+        "infinity symbol",
+        "four suit tools",
+        "wand raised to sky",
+        "lemniscate",
+        "roses",
+        "lilies"
+      ],
+      "yes_no": "Yes",
+      "image": "themagician.jpeg"
+    },
+    {
+      "id": 2,
+      "name": "The High Priestess",
+      "arcana": "Major",
+      "suit": null,
+      "number": "2",
+      "roman_numeral": "II",
+      "element": "Water",
+      "astrological": "Moon",
+      "hebrew_letter": "Gimel",
+      "keywords": [
+        "intuition",
+        "sacred knowledge",
+        "divine feminine",
+        "subconscious",
+        "mystery"
+      ],
+      "upright": {
+        "general": "Intuition, higher powers, mystery, subconscious mind. Trust your inner voice and look within.",
+        "love": "Trusting your instincts about a partner, mystery and depth in romance, divine feminine energy.",
+        "career": "Trusting your gut at work, hidden information will surface, patience advised.",
+        "finances": "Hidden financial factors, trust your instincts, research before investing.",
+        "spirituality": "Deep spiritual knowledge, psychic abilities, connection to the divine feminine."
+      },
+      "reversed": {
+        "general": "Secrets, disconnected from intuition, withdrawal, hidden agendas.",
+        "love": "Secrets in a relationship, ignoring red flags, lack of communication.",
+        "career": "Hidden information affecting work, not trusting your instincts, secrets at play.",
+        "finances": "Hidden financial problems, ignoring financial intuition, secrets about money.",
+        "spirituality": "Ignoring spiritual gifts, blocked intuition, surface-level spirituality."
+      },
+      "description": "A serene woman sits between two pillars marked B and J, wearing a crown with a crescent moon and a cross on her chest. She holds a partially concealed scroll (the Torah) and a crescent moon rests at her feet. A veil of pomegranates hangs behind her.",
+      "imagery_symbols": [
+        "twin pillars (Boaz and Jachin)",
+        "crescent moon",
+        "veil",
+        "Torah scroll",
+        "pomegranates",
+        "cross"
+      ],
+      "yes_no": "Maybe",
+      "image": "thehighpriestess.jpeg"
+    },
+    {
+      "id": 3,
+      "name": "The Empress",
+      "arcana": "Major",
+      "suit": null,
+      "number": "3",
+      "roman_numeral": "III",
+      "element": "Earth",
+      "astrological": "Venus",
+      "hebrew_letter": "Daleth",
+      "keywords": [
+        "femininity",
+        "beauty",
+        "nature",
+        "abundance",
+        "nurturing"
+      ],
+      "upright": {
+        "general": "Femininity, beauty, nature, nurturing, abundance. A time of fertility, creativity, and growth.",
+        "love": "Deep connection, romance, sensuality, a nurturing relationship, possible pregnancy.",
+        "career": "Creative endeavors flourishing, nurturing work environment, abundance coming.",
+        "finances": "Financial abundance, prosperity, a fruitful investment.",
+        "spirituality": "Connection to nature, divine feminine, earthly spirituality, abundance mindset."
+      },
+      "reversed": {
+        "general": "Creative block, dependence on others, smothering, lack of growth, neglect.",
+        "love": "Overdependence, smothering a partner, neglecting self-care in a relationship.",
+        "career": "Creative blocks, lack of growth at work, unhealthy dependence on colleagues.",
+        "finances": "Financial dependence, overspending on comfort, poor financial nurturing.",
+        "spirituality": "Disconnected from nature, blocked creative spiritual energy."
+      },
+      "description": "A crowned woman sits on a throne in a lush field, wearing a robe adorned with pomegranates. A heart-shaped shield bearing Venus' symbol rests beside her, wheat grows at her feet, and a waterfall flows in the background.",
+      "imagery_symbols": [
+        "crown of stars",
+        "Venus symbol",
+        "wheat",
+        "waterfall",
+        "pomegranate robe",
+        "lush forest"
+      ],
+      "yes_no": "Yes",
+      "image": "theempress.jpeg"
+    },
+    {
+      "id": 4,
+      "name": "The Emperor",
+      "arcana": "Major",
+      "suit": null,
+      "number": "4",
+      "roman_numeral": "IV",
+      "element": "Fire",
+      "astrological": "Aries",
+      "hebrew_letter": "Heh",
+      "keywords": [
+        "authority",
+        "structure",
+        "control",
+        "fatherhood",
+        "stability"
+      ],
+      "upright": {
+        "general": "Authority, establishment, structure, a father figure. Stability through order and discipline.",
+        "love": "Stability and security in a relationship, a protective partner, traditional relationship.",
+        "career": "Leadership, structure, authority at work, meeting with superiors.",
+        "finances": "Financial stability through discipline, structured financial planning.",
+        "spirituality": "Spiritual discipline, structured practice, divine masculine energy."
+      },
+      "reversed": {
+        "general": "Domination, excessive control, rigidity, stubbornness, lack of discipline.",
+        "love": "Controlling partner, rigidity in relationships, abuse of power.",
+        "career": "Tyrannical boss, excessive bureaucracy, misuse of authority.",
+        "finances": "Financial rigidity, overly controlling finances, stubbornness about money.",
+        "spirituality": "Rigid spiritual beliefs, dogma, excessive control in spiritual life."
+      },
+      "description": "An older man with a long white beard sits on a stone throne adorned with four ram heads, wearing armor beneath his robes. He holds an ankh scepter and an orb. Behind him are barren mountains.",
+      "imagery_symbols": [
+        "ram heads",
+        "stone throne",
+        "ankh scepter",
+        "armor",
+        "barren mountains",
+        "orb"
+      ],
+      "yes_no": "Yes",
+      "image": "theemperor.jpeg"
+    },
+    {
+      "id": 5,
+      "name": "The Hierophant",
+      "arcana": "Major",
+      "suit": null,
+      "number": "5",
+      "roman_numeral": "V",
+      "element": "Earth",
+      "astrological": "Taurus",
+      "hebrew_letter": "Vau",
+      "keywords": [
+        "tradition",
+        "religion",
+        "conformity",
+        "institution",
+        "guidance"
+      ],
+      "upright": {
+        "general": "Spiritual wisdom, religious beliefs, conformity, tradition, institutions. Seeking counsel.",
+        "love": "Traditional relationship, marriage, shared values, spiritual connection.",
+        "career": "Following workplace rules, traditional career path, mentorship.",
+        "finances": "Following conventional financial advice, traditional investments.",
+        "spirituality": "Organized religion, spiritual guidance from a mentor, traditional practice."
+      },
+      "reversed": {
+        "general": "Personal beliefs, freedom, challenging the status quo, unconventional lifestyle.",
+        "love": "Unconventional relationship, breaking with tradition, questioning relationship norms.",
+        "career": "Breaking with professional norms, challenging workplace authority.",
+        "finances": "Unconventional financial approach, challenging traditional financial norms.",
+        "spirituality": "Personal spirituality over organized religion, spiritual rebellion."
+      },
+      "description": "A religious figure in papal robes sits between two pillars, his right hand raised in blessing with two fingers pointing up and two down. Two monks kneel before him. He wears a triple crown and holds a triple cross scepter.",
+      "imagery_symbols": [
+        "triple crown",
+        "triple cross scepter",
+        "two pillars",
+        "two supplicants",
+        "crossed keys",
+        "papal robes"
+      ],
+      "yes_no": "Yes",
+      "image": "thehierophant.jpeg"
+    },
+    {
+      "id": 6,
+      "name": "The Lovers",
+      "arcana": "Major",
+      "suit": null,
+      "number": "6",
+      "roman_numeral": "VI",
+      "element": "Air",
+      "astrological": "Gemini",
+      "hebrew_letter": "Zain",
+      "keywords": [
+        "love",
+        "harmony",
+        "relationships",
+        "values alignment",
+        "choices"
+      ],
+      "upright": {
+        "general": "Love, harmony, relationships, values, choices. A meaningful relationship or important decision about values.",
+        "love": "A deep loving relationship, soulmate connection, harmony between partners.",
+        "career": "Choosing between career paths, a harmonious partnership, aligning work with values.",
+        "finances": "Financial decisions based on values, harmonious financial partnership.",
+        "spirituality": "Integration of opposites, divine love, spiritual harmony, alignment of values."
+      },
+      "reversed": {
+        "general": "Self-love, disharmony, imbalance, misalignment of values, poor choices.",
+        "love": "Disharmony in a relationship, poor communication, misaligned values with partner.",
+        "career": "Conflict with colleagues, feeling out of alignment at work, wrong career choice.",
+        "finances": "Financial decisions misaligned with values, partnership financial disputes.",
+        "spirituality": "Spiritual disharmony, temptation, feeling disconnected from spiritual values."
+      },
+      "description": "A man and woman stand naked before an angel (Raphael) above them. The woman stands before the Tree of Knowledge (with a serpent), the man before the Tree of Life. A mountain rises in the background beneath a blazing sun.",
+      "imagery_symbols": [
+        "angel Raphael",
+        "Adam and Eve",
+        "Tree of Knowledge",
+        "serpent",
+        "Tree of Life",
+        "sun",
+        "mountain"
+      ],
+      "yes_no": "Yes",
+      "image": "thelovers.jpeg"
+    },
+    {
+      "id": 7,
+      "name": "The Chariot",
+      "arcana": "Major",
+      "suit": null,
+      "number": "7",
+      "roman_numeral": "VII",
+      "element": "Water",
+      "astrological": "Cancer",
+      "hebrew_letter": "Cheth",
+      "keywords": [
+        "control",
+        "willpower",
+        "success",
+        "action",
+        "determination"
+      ],
+      "upright": {
+        "general": "Control, willpower, success, action, determination. Victory through discipline and focus.",
+        "love": "Taking control of your love life, determined pursuit of a partner, moving forward.",
+        "career": "Success through hard work, driving your career forward, overcoming obstacles.",
+        "finances": "Financial victory, taking control of finances, hard-earned success.",
+        "spirituality": "Spiritual willpower, disciplined spiritual practice, overcoming inner conflicts."
+      },
+      "reversed": {
+        "general": "Lack of control, aggression, lack of direction, defeat, powerlessness.",
+        "love": "Losing control in a relationship, aggression, lack of direction in love.",
+        "career": "Lack of direction at work, losing control of a project, obstacles not overcome.",
+        "finances": "Financial lack of control, scattered financial energy, defeat.",
+        "spirituality": "Lack of spiritual discipline, scattered spiritual energy, inner conflict."
+      },
+      "description": "An armored warrior stands in a chariot, holding a wand and wearing a starry canopy above. Two sphinxes \u2014 one black, one white \u2014 sit at the front. The chariot bears a winged sun, and a crescent moon rests on the warrior's shoulders.",
+      "imagery_symbols": [
+        "black and white sphinxes",
+        "starred canopy",
+        "winged sun disc",
+        "armor",
+        "wand",
+        "crescent moons"
+      ],
+      "yes_no": "Yes",
+      "image": "thechariot.jpeg"
+    },
+    {
+      "id": 8,
+      "name": "Strength",
+      "arcana": "Major",
+      "suit": null,
+      "number": "8",
+      "roman_numeral": "VIII",
+      "element": "Fire",
+      "astrological": "Leo",
+      "hebrew_letter": "Teth",
+      "keywords": [
+        "strength",
+        "courage",
+        "patience",
+        "control",
+        "compassion"
+      ],
+      "upright": {
+        "general": "Strength, courage, persuasion, influence, compassion. Inner strength over brute force.",
+        "love": "Compassionate strength in a relationship, patience with a partner, taming passion.",
+        "career": "Handling challenges with grace, inner strength at work, patient persistence.",
+        "finances": "Patient financial approach, inner strength through financial challenges.",
+        "spirituality": "Spiritual strength, taming the ego, compassion in spiritual practice."
+      },
+      "reversed": {
+        "general": "Inner strength, self-doubt, low energy, raw emotion, weakness.",
+        "love": "Weakness in a relationship, self-doubt about love, losing patience.",
+        "career": "Lack of confidence at work, giving in to pressure, weakness in professional challenges.",
+        "finances": "Financial weakness, giving in to impulse spending, lack of willpower.",
+        "spirituality": "Spiritual weakness, doubting inner strength, ego overpowering the spirit."
+      },
+      "description": "A woman gently holds open the mouth of a lion, with an infinity symbol floating above her head. She wears a white robe and a crown of flowers. The scene is set in a lush green landscape.",
+      "imagery_symbols": [
+        "lion",
+        "infinity symbol",
+        "white robe",
+        "flower crown",
+        "gentle hands"
+      ],
+      "yes_no": "Yes",
+      "image": "strength.jpeg"
+    },
+    {
+      "id": 9,
+      "name": "The Hermit",
+      "arcana": "Major",
+      "suit": null,
+      "number": "9",
+      "roman_numeral": "IX",
+      "element": "Earth",
+      "astrological": "Virgo",
+      "hebrew_letter": "Yod",
+      "keywords": [
+        "soul searching",
+        "introspection",
+        "solitude",
+        "inner guidance",
+        "contemplation"
+      ],
+      "upright": {
+        "general": "Soul-searching, introspection, being alone, inner guidance. A time for reflection and solitude.",
+        "love": "Solitude needed before love, introspection about relationships, a period of independence.",
+        "career": "Soul-searching about career, working alone, seeking inner guidance about vocation.",
+        "finances": "Careful deliberate financial decisions, withdrawing from financial activity.",
+        "spirituality": "Deep spiritual seeking, solitary practice, inner wisdom, spiritual guidance."
+      },
+      "reversed": {
+        "general": "Isolation, loneliness, withdrawal, anti-social behavior, losing one's way.",
+        "love": "Too much isolation affecting love life, loneliness, withdrawing from relationship.",
+        "career": "Isolation at work, loneliness in career, lost without professional guidance.",
+        "finances": "Financial isolation, lost financial direction, avoiding financial reality.",
+        "spirituality": "Spiritual isolation, cutting off from community, losing spiritual way."
+      },
+      "description": "An old man in grey robes stands alone on a snowy mountaintop, holding a lantern containing a six-pointed star in one hand and a staff in the other. He gazes downward, symbolizing guiding others with his light.",
+      "imagery_symbols": [
+        "lantern with Star of David",
+        "staff",
+        "grey robes",
+        "snowy mountain",
+        "six-pointed star"
+      ],
+      "yes_no": "Maybe",
+      "image": "thehermit.jpeg"
+    },
+    {
+      "id": 10,
+      "name": "Wheel of Fortune",
+      "arcana": "Major",
+      "suit": null,
+      "number": "10",
+      "roman_numeral": "X",
+      "element": "Fire",
+      "astrological": "Jupiter",
+      "hebrew_letter": "Kaph",
+      "keywords": [
+        "good luck",
+        "karma",
+        "life cycles",
+        "destiny",
+        "turning point"
+      ],
+      "upright": {
+        "general": "Good luck, karma, life cycles, destiny, a turning point. The wheel is turning in your favor.",
+        "love": "Positive change in love life, fate bringing two people together, a lucky turn in romance.",
+        "career": "A lucky career break, a turning point, good fortune in professional matters.",
+        "finances": "Financial luck, unexpected windfall, positive turn in finances.",
+        "spirituality": "Karmic cycles, accepting fate, working with destiny."
+      },
+      "reversed": {
+        "general": "Bad luck, resistance to change, breaking cycles, bad karma, unwanted change.",
+        "love": "Bad luck in love, resisting change in relationship, breaking karmic cycle.",
+        "career": "Bad luck at work, resistance to change, unfavorable turn of events.",
+        "finances": "Financial bad luck, losses, karmic financial consequences.",
+        "spirituality": "Resisting karmic lessons, stuck in negative cycles, spiritual stagnation."
+      },
+      "description": "A great wheel turns in the sky, inscribed with alchemical symbols, letters, and a serpent. A sphinx sits atop the wheel, and Anubis rises on the right. Four winged creatures representing the fixed signs of the zodiac appear in the corners.",
+      "imagery_symbols": [
+        "great wheel",
+        "sphinx",
+        "Anubis",
+        "serpent",
+        "four evangelists",
+        "TARO/ROTA letters",
+        "alchemical symbols"
+      ],
+      "yes_no": "Yes",
+      "image": "wheeloffortune.jpeg"
+    },
+    {
+      "id": 11,
+      "name": "Justice",
+      "arcana": "Major",
+      "suit": null,
+      "number": "11",
+      "roman_numeral": "XI",
+      "element": "Air",
+      "astrological": "Libra",
+      "hebrew_letter": "Lamed",
+      "keywords": [
+        "justice",
+        "fairness",
+        "truth",
+        "cause and effect",
+        "law"
+      ],
+      "upright": {
+        "general": "Justice, fairness, truth, cause and effect. A fair outcome, legal matters, balance will be restored.",
+        "love": "Fairness in a relationship, honest communication, karmic connection.",
+        "career": "Fair treatment at work, legal workplace matters, honest dealings.",
+        "finances": "Financial fairness, legal financial matters, karmic financial balance.",
+        "spirituality": "Spiritual law, karma, divine justice, honest self-reflection."
+      },
+      "reversed": {
+        "general": "Unfairness, lack of accountability, dishonesty, injustice, legal complications.",
+        "love": "Unfairness in a relationship, dishonesty, one-sided partnership.",
+        "career": "Workplace injustice, unfair treatment, legal issues at work.",
+        "finances": "Financial injustice, unfair dealings, legal financial complications.",
+        "spirituality": "Avoiding karmic consequences, dishonesty in spiritual life."
+      },
+      "description": "A crowned figure sits between two pillars, wearing red robes and a crown. They hold a balanced scale in their left hand and a double-edged sword raised upright in their right. A purple veil hangs behind them between the pillars.",
+      "imagery_symbols": [
+        "scales",
+        "double-edged sword",
+        "crown",
+        "two pillars",
+        "purple veil",
+        "red robes"
+      ],
+      "yes_no": "Yes",
+      "image": "justice.jpeg"
+    },
+    {
+      "id": 12,
+      "name": "The Hanged Man",
+      "arcana": "Major",
+      "suit": null,
+      "number": "12",
+      "roman_numeral": "XII",
+      "element": "Water",
+      "astrological": "Neptune",
+      "hebrew_letter": "Mem",
+      "keywords": [
+        "pause",
+        "surrender",
+        "letting go",
+        "new perspectives",
+        "contemplation"
+      ],
+      "upright": {
+        "general": "Pause, surrender, letting go, new perspectives. Voluntary suspension for higher wisdom.",
+        "love": "Letting go of expectations, seeing your love situation from a new angle, a pause needed.",
+        "career": "Pausing career plans, new perspective on work, sacrificing short-term for long-term.",
+        "finances": "Putting financial decisions on hold, new financial perspective, sacrifice now for gain later.",
+        "spirituality": "Spiritual surrender, enlightenment through letting go, new spiritual insights."
+      },
+      "reversed": {
+        "general": "Martyrdom, indecision, delay, resistance to necessary sacrifice.",
+        "love": "Stalling in a relationship, martyrdom, unwilling to let go.",
+        "career": "Career stagnation, unnecessary martyrdom at work, resisting needed change.",
+        "finances": "Financial delay, stalling, unnecessary financial sacrifice.",
+        "spirituality": "Spiritual stagnation, resisting letting go, ego-driven spiritual martyrdom."
+      },
+      "description": "A man hangs upside down from a T-shaped cross (the World Tree), suspended by one ankle while the other leg is bent at the knee forming a reversed figure-4. His expression is serene, and a halo of light surrounds his head.",
+      "imagery_symbols": [
+        "T-cross",
+        "living wood cross",
+        "halo of light",
+        "inverted figure",
+        "serene expression",
+        "bound ankle"
+      ],
+      "yes_no": "Maybe",
+      "image": "thehangedman.jpeg"
+    },
+    {
+      "id": 13,
+      "name": "Death",
+      "arcana": "Major",
+      "suit": null,
+      "number": "13",
+      "roman_numeral": "XIII",
+      "element": "Water",
+      "astrological": "Scorpio",
+      "hebrew_letter": "Nun",
+      "keywords": [
+        "endings",
+        "change",
+        "transformation",
+        "transition",
+        "new beginnings"
+      ],
+      "upright": {
+        "general": "Endings, change, transformation, transition. An old phase is ending to make way for new beginnings.",
+        "love": "End of a relationship, transformation within a relationship, major change in love life.",
+        "career": "End of a job or career phase, major transformation at work, clearing way for new.",
+        "finances": "Financial transformation, ending a financial period, old financial habits dying.",
+        "spirituality": "Spiritual transformation, death of the ego, rebirth and renewal."
+      },
+      "reversed": {
+        "general": "Resistance to change, personal transformation, inner purging, delayed change.",
+        "love": "Resisting the end of a relationship, fear of change in love, prolonging the inevitable.",
+        "career": "Resisting career change, clinging to a job or role past its time.",
+        "finances": "Resisting necessary financial change, holding onto outdated financial patterns.",
+        "spirituality": "Resisting spiritual transformation, fear of spiritual death and rebirth."
+      },
+      "description": "A skeleton in black armor rides a white horse, carrying a black flag with a white rose. A fallen king lies before the horse, while a bishop prays, a child offers flowers, and a maiden looks away. A sun rises between two towers in the background.",
+      "imagery_symbols": [
+        "skeleton in armor",
+        "white horse",
+        "black flag with rose",
+        "rising sun",
+        "two towers",
+        "fallen king",
+        "bishop"
+      ],
+      "yes_no": "No",
+      "image": "death.jpeg"
+    },
+    {
+      "id": 14,
+      "name": "Temperance",
+      "arcana": "Major",
+      "suit": null,
+      "number": "14",
+      "roman_numeral": "XIV",
+      "element": "Fire",
+      "astrological": "Sagittarius",
+      "hebrew_letter": "Samekh",
+      "keywords": [
+        "balance",
+        "moderation",
+        "patience",
+        "purpose",
+        "alchemy"
+      ],
+      "upright": {
+        "general": "Balance, moderation, patience, purpose. Combining opposing forces to create something new.",
+        "love": "Balance and harmony in a relationship, patient approach to love, healing in romance.",
+        "career": "Balance at work, moderate approach, combining different skills, patient career building.",
+        "finances": "Balanced financial approach, moderation in spending, patience in financial growth.",
+        "spirituality": "Spiritual alchemy, divine guidance, integration of higher and lower self."
+      },
+      "reversed": {
+        "general": "Imbalance, excess, lack of long-term vision, re-alignment needed.",
+        "love": "Imbalance in a relationship, excess, conflict, realignment of relationship values needed.",
+        "career": "Work-life imbalance, excess at work, lack of long-term career vision.",
+        "finances": "Financial imbalance, excessive spending, lack of moderation.",
+        "spirituality": "Spiritual imbalance, extremism in spiritual practice, lack of integration."
+      },
+      "description": "An angel stands with one foot in water and one foot on land, pouring liquid between two golden cups. The angel wears a robe with a triangle within a square on the chest. A glowing crown hovers above their head, and iris flowers grow nearby.",
+      "imagery_symbols": [
+        "angel",
+        "two cups",
+        "flowing water",
+        "triangle in square",
+        "solar crown",
+        "irises",
+        "one foot on land one in water"
+      ],
+      "yes_no": "Yes",
+      "image": "temperance.jpeg"
+    },
+    {
+      "id": 15,
+      "name": "The Devil",
+      "arcana": "Major",
+      "suit": null,
+      "number": "15",
+      "roman_numeral": "XV",
+      "element": "Earth",
+      "astrological": "Capricorn",
+      "hebrew_letter": "Ayin",
+      "keywords": [
+        "shadow self",
+        "attachment",
+        "addiction",
+        "restriction",
+        "sexuality"
+      ],
+      "upright": {
+        "general": "Shadow self, attachment, addiction, restriction, sexuality. Being chained to material things or unhealthy patterns.",
+        "love": "Unhealthy relationship, lust over love, codependency, toxic attachment.",
+        "career": "Feeling trapped in a job, unhealthy workplace behavior, materially motivated work.",
+        "finances": "Being enslaved by debt, materialism, obsession with wealth.",
+        "spirituality": "Materialism blocking spiritual growth, shadow work, confronting the ego."
+      },
+      "reversed": {
+        "general": "Releasing limiting beliefs, exploring dark thoughts safely, detachment, freedom from addiction.",
+        "love": "Breaking free from a toxic relationship, releasing unhealthy attachment.",
+        "career": "Breaking free from a constraining job, releasing career-related fears.",
+        "finances": "Breaking free from debt, releasing materialism, financial liberation.",
+        "spirituality": "Shadow integration, spiritual liberation, releasing ego chains."
+      },
+      "description": "A horned, winged devil figure sits on a pedestal between two chained nude figures (a man and woman with tails). The devil holds a torch downward and raises one hand in a mock blessing. An inverted pentagram is on the devil's forehead.",
+      "imagery_symbols": [
+        "Baphomet figure",
+        "inverted pentagram",
+        "chained figures",
+        "torch",
+        "horns",
+        "bat wings",
+        "tails"
+      ],
+      "yes_no": "No",
+      "image": "thedevil.jpeg"
+    },
+    {
+      "id": 16,
+      "name": "The Tower",
+      "arcana": "Major",
+      "suit": null,
+      "number": "16",
+      "roman_numeral": "XVI",
+      "element": "Fire",
+      "astrological": "Mars",
+      "hebrew_letter": "Peh",
+      "keywords": [
+        "sudden change",
+        "upheaval",
+        "chaos",
+        "revelation",
+        "awakening"
+      ],
+      "upright": {
+        "general": "Sudden change, upheaval, chaos, revelation, awakening. Destruction of false structures to reveal truth.",
+        "love": "Sudden breakup, revelation in a relationship, upheaval challenging the partnership.",
+        "career": "Sudden job loss, unexpected career upheaval, a shocking revelation at work.",
+        "finances": "Sudden financial loss, unexpected financial upheaval, financial shock.",
+        "spirituality": "Spiritual awakening through crisis, shattering false beliefs, sudden insight."
+      },
+      "reversed": {
+        "general": "Personal transformation, fear of change, averting disaster, delaying the inevitable.",
+        "love": "Avoiding necessary upheaval in a relationship, delayed relationship crisis.",
+        "career": "Avoiding necessary career change, delaying professional upheaval.",
+        "finances": "Narrowly avoiding financial disaster, delaying necessary financial change.",
+        "spirituality": "Resisting spiritual awakening, delaying necessary inner demolition."
+      },
+      "description": "A tall tower on a rocky outcrop is struck by lightning and set ablaze. A crown is blown off the top, and two figures fall headlong from the flames. Waves crash below and dark clouds fill the sky.",
+      "imagery_symbols": [
+        "lightning bolt",
+        "burning tower",
+        "falling crown",
+        "falling figures",
+        "rocky cliff",
+        "flames",
+        "dark clouds"
+      ],
+      "yes_no": "No",
+      "image": "thetower.jpeg"
+    },
+    {
+      "id": 17,
+      "name": "The Star",
+      "arcana": "Major",
+      "suit": null,
+      "number": "17",
+      "roman_numeral": "XVII",
+      "element": "Air",
+      "astrological": "Aquarius",
+      "hebrew_letter": "Tzaddi",
+      "keywords": [
+        "hope",
+        "faith",
+        "renewal",
+        "spirituality",
+        "serenity"
+      ],
+      "upright": {
+        "general": "Hope, faith, renewal, spirituality, serenity. A time of healing, optimism, and inspiration after hardship.",
+        "love": "Hope renewed in love, healing in a relationship, a beautiful new romance on the horizon.",
+        "career": "Hope and inspiration at work, career renewal, a promising new direction.",
+        "finances": "Financial hope, renewal after hardship, a promising financial outlook.",
+        "spirituality": "Spiritual renewal, connection to the divine, hope, faith restored."
+      },
+      "reversed": {
+        "general": "Lack of faith, despair, self-trust issues, disconnection, hopelessness.",
+        "love": "Loss of faith in love, despair in relationship, disconnection from partner.",
+        "career": "Lack of hope about career, despair, disconnection from professional purpose.",
+        "finances": "Financial despair, loss of faith in financial future, hopelessness.",
+        "spirituality": "Loss of spiritual faith, spiritual despair, disconnection from the divine."
+      },
+      "description": "A nude woman kneels at the edge of a body of water, pouring water from two jugs \u2014 one into the pool, one onto the land. Above her shines one large eight-pointed star surrounded by seven smaller stars. An ibis perches in a tree behind her.",
+      "imagery_symbols": [
+        "eight-pointed star",
+        "seven smaller stars",
+        "two urns",
+        "pool of water",
+        "ibis",
+        "green land",
+        "bare figure"
+      ],
+      "yes_no": "Yes",
+      "image": "thestar.jpeg"
+    },
+    {
+      "id": 18,
+      "name": "The Moon",
+      "arcana": "Major",
+      "suit": null,
+      "number": "18",
+      "roman_numeral": "XVIII",
+      "element": "Water",
+      "astrological": "Pisces",
+      "hebrew_letter": "Qoph",
+      "keywords": [
+        "illusion",
+        "fear",
+        "the unconscious",
+        "intuition",
+        "confusion"
+      ],
+      "upright": {
+        "general": "Illusion, fear, the unconscious, intuition, confusion. Things are not as they appear; trust your intuition.",
+        "love": "Confusion in love, illusion about a partner, fears about a relationship surfacing.",
+        "career": "Confusion at work, illusions about a job, hidden information, unclear path.",
+        "finances": "Financial confusion, things not as they appear, hidden financial information.",
+        "spirituality": "Deep unconscious work, navigating the shadow, psychic development."
+      },
+      "reversed": {
+        "general": "Release of fear, repressed emotion, inner confusion, unhealthy fantasies.",
+        "love": "Releasing fears about love, uncovering relationship illusions, repressed feelings.",
+        "career": "Releasing career confusion, uncovering workplace deceptions.",
+        "finances": "Financial deception uncovered, releasing financial fears and illusions.",
+        "spirituality": "Releasing spiritual illusions, moving through unconscious fears."
+      },
+      "description": "A moon with a face shines in the night sky, partially shadowed. Below, a dog and a wolf howl at the moon beside a path leading into the distance. A crayfish emerges from a pool, and two towers flank the path.",
+      "imagery_symbols": [
+        "full moon with face",
+        "dog and wolf",
+        "crayfish",
+        "path",
+        "two towers",
+        "pool",
+        "dewdrops"
+      ],
+      "yes_no": "Maybe",
+      "image": "themoon.jpeg"
+    },
+    {
+      "id": 19,
+      "name": "The Sun",
+      "arcana": "Major",
+      "suit": null,
+      "number": "19",
+      "roman_numeral": "XIX",
+      "element": "Fire",
+      "astrological": "Sun",
+      "hebrew_letter": "Resh",
+      "keywords": [
+        "positivity",
+        "fun",
+        "warmth",
+        "success",
+        "vitality"
+      ],
+      "upright": {
+        "general": "Positivity, fun, warmth, success, vitality. Joy, abundance, and radiant energy shine through.",
+        "love": "A joyful, happy relationship, warmth and affection, a loving partnership blossoming.",
+        "career": "Career success, recognition, positivity at work, vibrant professional energy.",
+        "finances": "Financial success, abundance, positivity around money.",
+        "spirituality": "Spiritual enlightenment, radiant energy, joyful spiritual expression."
+      },
+      "reversed": {
+        "general": "Inner child, feeling down, overly optimistic, lack of success, blocked positivity.",
+        "love": "Temporary unhappiness in love, excessive optimism about a partner, blocked joy.",
+        "career": "Temporary setback at work, blocked success, overly optimistic career expectations.",
+        "finances": "Blocked financial success, temporary financial setback, overly optimistic.",
+        "spirituality": "Spiritual blockage, difficulty accessing inner joy and light."
+      },
+      "description": "A radiant sun shines overhead with a human face, surrounded by sunflowers. A naked child rides a white horse joyfully, holding a red banner. A low wall of sunflowers lines the background.",
+      "imagery_symbols": [
+        "radiant sun with face",
+        "sunflowers",
+        "white horse",
+        "naked child",
+        "red banner",
+        "low wall"
+      ],
+      "yes_no": "Yes",
+      "image": "thesun.jpeg"
+    },
+    {
+      "id": 20,
+      "name": "Judgement",
+      "arcana": "Major",
+      "suit": null,
+      "number": "20",
+      "roman_numeral": "XX",
+      "element": "Fire",
+      "astrological": "Pluto",
+      "hebrew_letter": "Shin",
+      "keywords": [
+        "judgement",
+        "rebirth",
+        "inner calling",
+        "absolution",
+        "awakening"
+      ],
+      "upright": {
+        "general": "Judgement, rebirth, inner calling, absolution. A time of reflection and reckoning leading to transformation.",
+        "love": "Reflection on past relationships, a significant second chance, rebirth of love.",
+        "career": "Answering a career calling, a pivotal career moment, professional reckoning.",
+        "finances": "Financial reckoning, reflecting on past financial decisions, new financial start.",
+        "spirituality": "Spiritual awakening, answering a divine calling, spiritual rebirth."
+      },
+      "reversed": {
+        "general": "Self-doubt, inner critic, ignoring the call, self-loathing, failure to learn lessons.",
+        "love": "Refusing to reflect on past relationship patterns, repeating love mistakes.",
+        "career": "Ignoring career calling, self-sabotage professionally, repeating career mistakes.",
+        "finances": "Refusing to reflect on financial mistakes, self-sabotage financially.",
+        "spirituality": "Spiritual self-doubt, ignoring the divine call, blocked spiritual awakening."
+      },
+      "description": "An angel blows a trumpet from the clouds, bearing a banner with a cross. Below, grey figures \u2014 men, women, and children \u2014 rise from coffins with arms outstretched. Mountains of ice loom in the background.",
+      "imagery_symbols": [
+        "angel Gabriel",
+        "trumpet",
+        "rising figures",
+        "open coffins",
+        "cross banner",
+        "icy mountains"
+      ],
+      "yes_no": "Yes",
+      "image": "judgement.jpeg"
+    },
+    {
+      "id": 21,
+      "name": "The World",
+      "arcana": "Major",
+      "suit": null,
+      "number": "21",
+      "roman_numeral": "XXI",
+      "element": "Earth",
+      "astrological": "Saturn",
+      "hebrew_letter": "Tau",
+      "keywords": [
+        "completion",
+        "integration",
+        "accomplishment",
+        "travel",
+        "wholeness"
+      ],
+      "upright": {
+        "general": "Completion, integration, accomplishment, wholeness. A cycle is complete; joy and fulfillment abound.",
+        "love": "Completion in a relationship, perfect harmony, a love reaching its full potential.",
+        "career": "Career success and completion, achieving professional goals, fulfillment at work.",
+        "finances": "Financial completion, achieving financial goals, abundance and security.",
+        "spirituality": "Spiritual completion, integration of all lessons, cosmic consciousness."
+      },
+      "reversed": {
+        "general": "Seeking personal closure, short-cuts, delays, incomplete goals.",
+        "love": "Incomplete relationship cycle, seeking closure, not quite there yet.",
+        "career": "Unfinished career goals, seeking shortcuts to success, delays in completion.",
+        "finances": "Unfinished financial goals, seeking shortcuts, financial closure needed.",
+        "spirituality": "Incomplete spiritual journey, seeking shortcuts to enlightenment."
+      },
+      "description": "A dancing figure wrapped in a purple sash is enclosed within a laurel wreath. The figure holds two wands or batons. In the four corners are the four fixed signs of the zodiac: a man (Aquarius), eagle (Scorpio), lion (Leo), and bull (Taurus).",
+      "imagery_symbols": [
+        "laurel wreath",
+        "dancing figure",
+        "purple sash",
+        "four fixed signs",
+        "two wands",
+        "cosmic circle"
+      ],
+      "yes_no": "Yes",
+      "image": "theworld.jpeg"
+    },
+    {
+      "id": 22,
+      "name": "Ace of Wands",
+      "arcana": "Minor",
+      "suit": "Wands",
+      "number": "1",
+      "roman_numeral": "Ace",
+      "element": "Fire",
+      "astrological": "Aries, Leo, Sagittarius",
+      "hebrew_letter": null,
+      "keywords": [
+        "inspiration",
+        "new opportunities",
+        "growth",
+        "potential",
+        "spark"
+      ],
+      "upright": {
+        "general": "Inspiration, new opportunities, growth, potential. A burst of creative energy and passion.",
+        "love": "New passionate romance, a spark of attraction, exciting beginning.",
+        "career": "New career opportunity, inspired work, a creative business idea.",
+        "finances": "A new financial opportunity, inspired investment, financial growth potential.",
+        "spirituality": "Spiritual inspiration, new spiritual path, fiery spiritual awakening."
+      },
+      "reversed": {
+        "general": "An emerging idea, lack of direction, delays, creative blocks.",
+        "love": "Delays in romance, lack of passion, creative energy blocked in love.",
+        "career": "Creative career blocks, delayed opportunities, lack of inspiration.",
+        "finances": "Delayed financial opportunity, lack of financial inspiration.",
+        "spirituality": "Blocked spiritual inspiration, delays in spiritual growth."
+      },
+      "description": "A hand emerges from a cloud holding an upright wand with leaves sprouting from it. A castle sits on a hill in the background, with mountains beyond.",
+      "imagery_symbols": [
+        "hand from cloud",
+        "budding wand",
+        "castle on hill",
+        "mountains",
+        "leaves"
+      ],
+      "yes_no": "Yes",
+      "image": "aceofwands.jpeg"
+    },
+    {
+      "id": 23,
+      "name": "Two of Wands",
+      "arcana": "Minor",
+      "suit": "Wands",
+      "number": "2",
+      "roman_numeral": "II",
+      "element": "Fire",
+      "astrological": "Aries (Mars in Aries)",
+      "hebrew_letter": null,
+      "keywords": [
+        "future planning",
+        "progress",
+        "decisions",
+        "discovery",
+        "boldness"
+      ],
+      "upright": {
+        "general": "Future planning, progress, decisions, discovery. Standing at a crossroads, the world at your feet.",
+        "love": "Planning a future with a partner, deciding between potential loves, bold romantic move.",
+        "career": "Career planning, progress, expansion into new territories.",
+        "finances": "Financial planning for the future, decisions about investment and expansion.",
+        "spirituality": "Spiritual planning, expanding spiritual horizons, bold spiritual steps."
+      },
+      "reversed": {
+        "general": "Personal goals, inner alignment, fear of unknown, lack of planning.",
+        "love": "Fear of future in a relationship, lack of relationship planning.",
+        "career": "Lack of career planning, fear of expansion, limiting professional vision.",
+        "finances": "Lack of financial planning, fear of financial risk.",
+        "spirituality": "Lack of spiritual direction, fear of spiritual expansion."
+      },
+      "description": "A man in robes stands on a castle parapet, holding a globe in one hand and a wand in the other. A second wand is fixed to the wall beside him. He gazes out over the sea and distant land.",
+      "imagery_symbols": [
+        "globe",
+        "two wands",
+        "castle parapet",
+        "sea view",
+        "robes",
+        "distant land"
+      ],
+      "yes_no": "Yes",
+      "image": "twoofwands.jpeg"
+    },
+    {
+      "id": 24,
+      "name": "Three of Wands",
+      "arcana": "Minor",
+      "suit": "Wands",
+      "number": "3",
+      "roman_numeral": "III",
+      "element": "Fire",
+      "astrological": "Aries (Sun in Aries)",
+      "hebrew_letter": null,
+      "keywords": [
+        "progress",
+        "expansion",
+        "foresight",
+        "overseas opportunities",
+        "leadership"
+      ],
+      "upright": {
+        "general": "Progress, expansion, foresight, overseas opportunities. Plans are underway and the future looks bright.",
+        "love": "Expansion in love, long-distance relationship, optimism about romantic future.",
+        "career": "Career expansion, overseas work, leadership in a growing enterprise.",
+        "finances": "Financial expansion, international investments, growing prosperity.",
+        "spirituality": "Expanding spiritual horizons, foresight in spiritual path, global spirituality."
+      },
+      "reversed": {
+        "general": "Playing it safe, lack of foresight, unexpected delays, frustration.",
+        "love": "Stagnation in love, lack of romantic progress, delays in relationship growth.",
+        "career": "Frustrated career expansion, delays in projects, playing it safe professionally.",
+        "finances": "Delayed financial expansion, playing it safe financially.",
+        "spirituality": "Lack of spiritual expansion, fear of new spiritual horizons."
+      },
+      "description": "A figure stands with their back to the viewer on a cliff, looking out at sea where ships sail in the distance. They lean on one wand while two others stand planted beside them.",
+      "imagery_symbols": [
+        "three wands",
+        "cliff",
+        "sailing ships",
+        "distant sea",
+        "cloaked figure",
+        "trade ships"
+      ],
+      "yes_no": "Yes",
+      "image": "threeofwands.jpeg"
+    },
+    {
+      "id": 25,
+      "name": "Four of Wands",
+      "arcana": "Minor",
+      "suit": "Wands",
+      "number": "4",
+      "roman_numeral": "IV",
+      "element": "Fire",
+      "astrological": "Aries (Venus in Aries)",
+      "hebrew_letter": null,
+      "keywords": [
+        "celebration",
+        "joy",
+        "harmony",
+        "homecoming",
+        "community"
+      ],
+      "upright": {
+        "general": "Celebration, joy, harmony, relaxation, homecoming. A time of festivity and communal happiness.",
+        "love": "Celebration in love, engagement or wedding, happy home life, joyous relationship milestone.",
+        "career": "Celebrating professional success, workplace harmony, team celebration.",
+        "finances": "Celebrating financial success, a prosperous period.",
+        "spirituality": "Joyful spiritual community, celebrating spiritual milestones, spiritual homecoming."
+      },
+      "reversed": {
+        "general": "Personal celebration, inner harmony, conflict at home, transition.",
+        "love": "Disrupted domestic harmony, transition in relationship, inner relationship conflict.",
+        "career": "Workplace harmony disrupted, incomplete professional celebration.",
+        "finances": "Financial celebrations cut short, unstable financial foundation.",
+        "spirituality": "Disrupted spiritual community, inner spiritual harmony sought."
+      },
+      "description": "Four wands form a canopy draped with flowers and garlands. Two figures dance joyfully beneath it, raising bouquets. A grand castle stands in the background, and more people celebrate on the bridge.",
+      "imagery_symbols": [
+        "four wands",
+        "flower garland",
+        "dancing figures",
+        "castle",
+        "celebration",
+        "bouquets"
+      ],
+      "yes_no": "Yes",
+      "image": "fourofwands.jpeg"
+    },
+    {
+      "id": 26,
+      "name": "Five of Wands",
+      "arcana": "Minor",
+      "suit": "Wands",
+      "number": "5",
+      "roman_numeral": "V",
+      "element": "Fire",
+      "astrological": "Leo (Saturn in Leo)",
+      "hebrew_letter": null,
+      "keywords": [
+        "conflict",
+        "disagreements",
+        "competition",
+        "tension",
+        "diversity"
+      ],
+      "upright": {
+        "general": "Conflict, disagreements, competition, tension, diversity of opinion. Healthy debate and challenges.",
+        "love": "Arguments in a relationship, competition for a love interest, fiery passion with conflict.",
+        "career": "Workplace competition, conflicts with colleagues, challenges and debate.",
+        "finances": "Financial competition, disagreement over money, challenging financial environment.",
+        "spirituality": "Spiritual conflict, differing spiritual views, challenge in spiritual growth."
+      },
+      "reversed": {
+        "general": "Inner conflict, conflict avoidance, tension release, personal struggles.",
+        "love": "Avoiding conflict in a relationship, internalizing romantic tension.",
+        "career": "Avoiding workplace conflict, inner professional struggle.",
+        "finances": "Internal conflict over finances, avoiding financial disputes.",
+        "spirituality": "Internal spiritual conflict, avoiding spiritual challenges."
+      },
+      "description": "Five young men brandish wands wildly as if in a brawl or mock battle. Each wears different colored clothing suggesting diverse backgrounds. The scene is chaotic with wands clashing overhead.",
+      "imagery_symbols": [
+        "five clashing wands",
+        "five young men",
+        "chaotic scene",
+        "colorful clothing",
+        "raised arms"
+      ],
+      "yes_no": "Maybe",
+      "image": "fiveofwands.jpeg"
+    },
+    {
+      "id": 27,
+      "name": "Six of Wands",
+      "arcana": "Minor",
+      "suit": "Wands",
+      "number": "6",
+      "roman_numeral": "VI",
+      "element": "Fire",
+      "astrological": "Leo (Jupiter in Leo)",
+      "hebrew_letter": null,
+      "keywords": [
+        "success",
+        "public recognition",
+        "progress",
+        "self-confidence",
+        "victory"
+      ],
+      "upright": {
+        "general": "Success, public recognition, progress, self-confidence, victory. A triumphant return after achievement.",
+        "love": "Public acknowledgment of a relationship, confidence in love, success in romantic pursuit.",
+        "career": "Career victory, public recognition, promotion, acclaim for your work.",
+        "finances": "Financial success, recognition of financial achievement, profitable venture.",
+        "spirituality": "Spiritual victory, recognition of spiritual growth, confident spiritual path."
+      },
+      "reversed": {
+        "general": "Private achievement, personal pride, fall from grace, lack of recognition.",
+        "love": "Private romantic success, lack of public acknowledgment, doubts in love.",
+        "career": "Lack of professional recognition, fall from grace, private career success.",
+        "finances": "Financial success not recognized, private financial win, loss of financial status.",
+        "spirituality": "Private spiritual victory, lack of external spiritual recognition."
+      },
+      "description": "A figure rides a white horse wearing a laurel wreath and holding a wand adorned with a wreath. A crowd of five people march alongside holding wands, celebrating the rider's return in triumph.",
+      "imagery_symbols": [
+        "white horse",
+        "laurel wreath",
+        "victory wand",
+        "cheering crowd",
+        "five followers",
+        "triumph"
+      ],
+      "yes_no": "Yes",
+      "image": "sixofwands.jpeg"
+    },
+    {
+      "id": 28,
+      "name": "Seven of Wands",
+      "arcana": "Minor",
+      "suit": "Wands",
+      "number": "7",
+      "roman_numeral": "VII",
+      "element": "Fire",
+      "astrological": "Leo (Mars in Leo)",
+      "hebrew_letter": null,
+      "keywords": [
+        "challenge",
+        "competition",
+        "perseverance",
+        "defensive",
+        "conviction"
+      ],
+      "upright": {
+        "general": "Challenge, competition, perseverance, conviction. Hold your ground and stand up for what you believe.",
+        "love": "Fighting for a relationship, standing your ground in love, perseverance through romantic challenge.",
+        "career": "Defending your position at work, competition, standing firm in your career.",
+        "finances": "Defending financial position, competition for resources, financial perseverance.",
+        "spirituality": "Defending spiritual beliefs, perseverance in spiritual path, conviction."
+      },
+      "reversed": {
+        "general": "Exhaustion, giving up, overwhelmed, yielding.",
+        "love": "Giving up on a relationship, overwhelmed by romantic challenges, yielding in love.",
+        "career": "Giving up a career position, exhaustion from workplace competition.",
+        "finances": "Giving up financial fight, overwhelmed by financial competition.",
+        "spirituality": "Exhaustion in spiritual practice, giving up spiritual convictions."
+      },
+      "description": "A young man stands on a hill wielding a wand defensively against six wands thrust up from below. He appears to be holding his ground against challengers beneath him. He wears mismatched shoes.",
+      "imagery_symbols": [
+        "seven wands",
+        "defensive stance",
+        "high ground",
+        "attackers below",
+        "mismatched shoes"
+      ],
+      "yes_no": "Yes",
+      "image": "sevenofwands.jpeg"
+    },
+    {
+      "id": 29,
+      "name": "Eight of Wands",
+      "arcana": "Minor",
+      "suit": "Wands",
+      "number": "8",
+      "roman_numeral": "VIII",
+      "element": "Fire",
+      "astrological": "Sagittarius (Mercury in Sagittarius)",
+      "hebrew_letter": null,
+      "keywords": [
+        "speed",
+        "action",
+        "air travel",
+        "movement",
+        "swift change"
+      ],
+      "upright": {
+        "general": "Speed, action, movement, swift change. Things are moving fast; expect rapid progress.",
+        "love": "Rapid romantic development, love messages incoming, exciting fast-moving romance.",
+        "career": "Fast career progress, swift action needed at work, things moving quickly.",
+        "finances": "Fast financial movement, swift financial change, rapid financial decisions.",
+        "spirituality": "Rapid spiritual progress, swift spiritual change, energy in motion."
+      },
+      "reversed": {
+        "general": "Delays, frustration, resisting change, slowing down.",
+        "love": "Delays in romance, frustration in love, slowing down a relationship.",
+        "career": "Career delays, frustrated professional momentum, stagnation.",
+        "finances": "Financial delays, frustrated progress, slowing financial momentum.",
+        "spirituality": "Delays in spiritual progress, resistance to spiritual momentum."
+      },
+      "description": "Eight wands fly through the air in a clear sky over green countryside, all pointing in the same direction as if in swift flight. The scene is open and unobstructed, conveying speed and energy.",
+      "imagery_symbols": [
+        "eight flying wands",
+        "clear sky",
+        "green landscape",
+        "swift movement",
+        "open country"
+      ],
+      "yes_no": "Yes",
+      "image": "eightofwands.jpeg"
+    },
+    {
+      "id": 30,
+      "name": "Nine of Wands",
+      "arcana": "Minor",
+      "suit": "Wands",
+      "number": "9",
+      "roman_numeral": "IX",
+      "element": "Fire",
+      "astrological": "Sagittarius (Moon in Sagittarius)",
+      "hebrew_letter": null,
+      "keywords": [
+        "resilience",
+        "courage",
+        "persistence",
+        "test of faith",
+        "boundaries"
+      ],
+      "upright": {
+        "general": "Resilience, courage, persistence, test of faith, boundaries. Almost there \u2014 hold on just a little longer.",
+        "love": "Persisting in love despite challenges, resilience after heartbreak, guarded heart.",
+        "career": "Persistence at work, nearly finished despite obstacles, resilient professional attitude.",
+        "finances": "Financial resilience, almost through a financial struggle, persistence pays off.",
+        "spirituality": "Spiritual resilience, persistence in spiritual practice, spiritual protection."
+      },
+      "reversed": {
+        "general": "Inner resources, struggle, paranoia, defensiveness, reaching your limit.",
+        "love": "Excessive defensiveness in love, paranoia in relationship, reaching emotional limit.",
+        "career": "Feeling overwhelmed at work, paranoia in professional setting, exhaustion.",
+        "finances": "Reaching financial limit, paranoia about finances, excessive financial defensiveness.",
+        "spirituality": "Spiritual exhaustion, excessive spiritual defensiveness, reaching spiritual limit."
+      },
+      "description": "A wounded, bandaged man leans on a wand, looking back over his shoulder with wariness. Eight wands are planted in a row behind him like a fence. His expression is tired but determined.",
+      "imagery_symbols": [
+        "bandaged head",
+        "nine wands",
+        "wand fence",
+        "battle-worn figure",
+        "wary gaze"
+      ],
+      "yes_no": "Maybe",
+      "image": "nineofwands.jpeg"
+    },
+    {
+      "id": 31,
+      "name": "Ten of Wands",
+      "arcana": "Minor",
+      "suit": "Wands",
+      "number": "10",
+      "roman_numeral": "X",
+      "element": "Fire",
+      "astrological": "Sagittarius (Saturn in Sagittarius)",
+      "hebrew_letter": null,
+      "keywords": [
+        "burden",
+        "responsibility",
+        "hard work",
+        "completion",
+        "overextension"
+      ],
+      "upright": {
+        "general": "Burden, responsibility, hard work, completion, overextension. You're carrying too much; consider delegating.",
+        "love": "Burden within a relationship, taking on too much responsibility, heavy love.",
+        "career": "Overloaded at work, too much responsibility, completing a burdensome project.",
+        "finances": "Financial burden, too many financial responsibilities, heavy debt load.",
+        "spirituality": "Spiritual burden, taking on too much spiritually, completing spiritual obligations."
+      },
+      "reversed": {
+        "general": "Doing it the hard way, releasing burdens, delegating, dumping unnecessary weight.",
+        "love": "Releasing relationship burdens, delegating romantic responsibilities.",
+        "career": "Dropping unnecessary work burdens, delegating tasks, easier path forward.",
+        "finances": "Releasing financial burdens, delegating financial tasks, lighter load ahead.",
+        "spirituality": "Releasing spiritual burdens, delegating spiritual responsibilities."
+      },
+      "description": "A figure bent nearly double trudges toward a distant town, struggling under the weight of ten wands held tightly to their chest. They can barely see ahead due to the burden they carry.",
+      "imagery_symbols": [
+        "ten wands bundle",
+        "bent figure",
+        "distant town",
+        "heavy burden",
+        "struggling walk"
+      ],
+      "yes_no": "No",
+      "image": "tenofwands.jpeg"
+    },
+    {
+      "id": 32,
+      "name": "Page of Wands",
+      "arcana": "Minor",
+      "suit": "Wands",
+      "number": "11",
+      "roman_numeral": "Page",
+      "element": "Fire of Fire",
+      "astrological": "Earth of Fire",
+      "hebrew_letter": null,
+      "keywords": [
+        "inspiration",
+        "ideas",
+        "discovery",
+        "limitless potential",
+        "free spirit"
+      ],
+      "upright": {
+        "general": "Inspiration, ideas, discovery, limitless potential, free spirit. An enthusiastic and adventurous young energy.",
+        "love": "Exciting new romance, adventurous spirit in love, a passionate admirer.",
+        "career": "New creative career ideas, inspired young talent, adventurous career spirit.",
+        "finances": "New financial ideas, inspired and adventurous financial energy.",
+        "spirituality": "Inspired spiritual exploration, enthusiastic new spiritual seeker."
+      },
+      "reversed": {
+        "general": "Newly formed ideas, redirecting energy, self-limiting beliefs, tantrums.",
+        "love": "Immature romantic energy, scattered love ideas, self-limiting in romance.",
+        "career": "Scattered career ideas, immature professional energy, self-limiting beliefs.",
+        "finances": "Immature financial ideas, scattered financial energy.",
+        "spirituality": "Scattered spiritual energy, immature spiritual exploration."
+      },
+      "description": "A young figure in a tunic adorned with salamander motifs stands in a desert landscape, gazing intently at a tall wand they hold upright. Their feathered hat and stance convey youthful confidence.",
+      "imagery_symbols": [
+        "salamander tunic",
+        "tall wand",
+        "feathered hat",
+        "desert landscape",
+        "pyramids in distance"
+      ],
+      "yes_no": "Yes",
+      "image": "pageofwands.jpeg"
+    },
+    {
+      "id": 33,
+      "name": "Knight of Wands",
+      "arcana": "Minor",
+      "suit": "Wands",
+      "number": "12",
+      "roman_numeral": "Knight",
+      "element": "Fire of Fire",
+      "astrological": "Sagittarius / Scorpio",
+      "hebrew_letter": null,
+      "keywords": [
+        "energy",
+        "passion",
+        "inspired action",
+        "adventure",
+        "impulsiveness"
+      ],
+      "upright": {
+        "general": "Energy, passion, inspired action, adventure, impulsiveness. A bold and daring energy charging forward.",
+        "love": "Passionate and exciting romance, adventurous lover, whirlwind romance.",
+        "career": "Bold career action, passionate work, charging ahead with a project.",
+        "finances": "Bold financial action, passionate financial pursuit, investment charge.",
+        "spirituality": "Passionate spiritual quest, bold spiritual action, adventurous spirit."
+      },
+      "reversed": {
+        "general": "Passion projects, haste, scattered energy, delays, frustration.",
+        "love": "Scattered romantic energy, haste in love, frustrated romantic passion.",
+        "career": "Frustrated career passion, scattered work energy, hasty decisions at work.",
+        "finances": "Hasty financial decisions, scattered financial energy, frustrated goals.",
+        "spirituality": "Scattered spiritual energy, frustrated spiritual passion."
+      },
+      "description": "A knight in armour decorated with salamanders charges forward on a rearing horse, holding a wand aloft. The horse and rider both lean energetically forward, conveying great speed and passion.",
+      "imagery_symbols": [
+        "salamander armor",
+        "rearing horse",
+        "charging forward",
+        "wand held high",
+        "desert backdrop"
+      ],
+      "yes_no": "Yes",
+      "image": "knightofwands.jpeg"
+    },
+    {
+      "id": 34,
+      "name": "Queen of Wands",
+      "arcana": "Minor",
+      "suit": "Wands",
+      "number": "13",
+      "roman_numeral": "Queen",
+      "element": "Water of Fire",
+      "astrological": "Aries / Pisces",
+      "hebrew_letter": null,
+      "keywords": [
+        "courage",
+        "confidence",
+        "independence",
+        "social butterfly",
+        "determination"
+      ],
+      "upright": {
+        "general": "Courage, confidence, independence, determination, fiery femininity. A passionate and magnetic leader.",
+        "love": "A passionate and confident lover, fiery independent romance, magnetic attraction.",
+        "career": "Confident career leadership, passionate and independent professional energy.",
+        "finances": "Confident financial decisions, fiery financial independence.",
+        "spirituality": "Courageous spiritual leadership, confident spiritual practice, fiery devotion."
+      },
+      "reversed": {
+        "general": "Self-respect, self-confidence, introverted, re-establishing confidence.",
+        "love": "Lack of confidence in love, introverted romantic energy, self-focused.",
+        "career": "Lack of professional confidence, introverted at work, self-sabotage.",
+        "finances": "Lack of financial confidence, introversion around money decisions.",
+        "spirituality": "Rebuilding spiritual confidence, introverted spiritual practice."
+      },
+      "description": "A confident queen sits on a throne decorated with lions and sunflowers, holding a wand in her right hand and a sunflower in her left. A black cat sits at her feet. Her expression is bold and commanding.",
+      "imagery_symbols": [
+        "lion throne",
+        "sunflower",
+        "black cat",
+        "wand",
+        "yellow robes",
+        "commanding gaze"
+      ],
+      "yes_no": "Yes",
+      "image": "queenofwands.jpeg"
+    },
+    {
+      "id": 35,
+      "name": "King of Wands",
+      "arcana": "Minor",
+      "suit": "Wands",
+      "number": "14",
+      "roman_numeral": "King",
+      "element": "Fire of Fire",
+      "astrological": "Sagittarius / Scorpio",
+      "hebrew_letter": null,
+      "keywords": [
+        "natural-born leader",
+        "vision",
+        "entrepreneur",
+        "honour",
+        "mastery"
+      ],
+      "upright": {
+        "general": "Natural-born leader, vision, entrepreneur, honour, mastery. Commanding, inspiring, and bold.",
+        "love": "A passionate and inspiring partner, leading a relationship with vision and honour.",
+        "career": "Visionary career leadership, entrepreneurial spirit, commanding professional presence.",
+        "finances": "Visionary financial leadership, bold financial decisions, entrepreneurial finance.",
+        "spirituality": "Spiritual mastery, visionary spiritual leader, commanding spiritual presence."
+      },
+      "reversed": {
+        "general": "Impulsiveness, haste, ruthless, high expectations, domineering.",
+        "love": "Domineering in love, ruthless romantic behavior, impulsive decisions.",
+        "career": "Ruthless at work, impulsive career decisions, domineering leadership.",
+        "finances": "Ruthless financial decisions, impulsive investments, domineering approach to money.",
+        "spirituality": "Domineering spiritual energy, impulsive spiritual leadership, ruthless expectations."
+      },
+      "description": "A king sits on a throne decorated with lions and salamanders. He wears a crown and cloak adorned with the same symbols. He holds a short wand and appears ready to spring into action. A small salamander is at his feet.",
+      "imagery_symbols": [
+        "lion throne",
+        "salamander cloak",
+        "wand",
+        "crown",
+        "powerful gaze",
+        "salamander at feet"
+      ],
+      "yes_no": "Yes",
+      "image": "kingofwands.jpeg"
+    },
+    {
+      "id": 36,
+      "name": "Ace of Cups",
+      "arcana": "Minor",
+      "suit": "Cups",
+      "number": "1",
+      "roman_numeral": "Ace",
+      "element": "Water",
+      "astrological": "Cancer, Scorpio, Pisces",
+      "hebrew_letter": null,
+      "keywords": [
+        "new feelings",
+        "intuition",
+        "intimacy",
+        "love",
+        "compassion"
+      ],
+      "upright": {
+        "general": "New feelings, intuition, intimacy, love, compassion. An outpouring of emotion and spiritual blessing.",
+        "love": "New love, emotional fulfillment, overflowing compassion, beautiful new beginning.",
+        "career": "Emotionally fulfilling new work, creative inspiration, compassionate career.",
+        "finances": "Financial abundance from an emotional place, fulfillment beyond money.",
+        "spirituality": "Spiritual awakening, divine love, overflowing compassion, spiritual gift."
+      },
+      "reversed": {
+        "general": "Blocked creativity, emptiness, emotional loss, repressed feelings.",
+        "love": "Blocked emotions in love, emptiness in romance, repressed feelings.",
+        "career": "Creative block, emotional emptiness at work, lack of inspiration.",
+        "finances": "Lack of emotional fulfillment around money, feeling empty about finances.",
+        "spirituality": "Blocked spiritual love, repressed spiritual feelings, spiritual emptiness."
+      },
+      "description": "A hand emerges from clouds holding a golden cup from which five streams of water pour down. A dove descends bearing a disc (the Host), and a field of lotus blossoms floats on the water below.",
+      "imagery_symbols": [
+        "golden chalice",
+        "five streams",
+        "dove with host",
+        "lotus blossoms",
+        "hand from cloud",
+        "overflowing water"
+      ],
+      "yes_no": "Yes",
+      "image": "aceofcups.jpeg"
+    },
+    {
+      "id": 37,
+      "name": "Two of Cups",
+      "arcana": "Minor",
+      "suit": "Cups",
+      "number": "2",
+      "roman_numeral": "II",
+      "element": "Water",
+      "astrological": "Cancer (Venus in Cancer)",
+      "hebrew_letter": null,
+      "keywords": [
+        "unified love",
+        "partnership",
+        "mutual attraction",
+        "harmony",
+        "balance"
+      ],
+      "upright": {
+        "general": "Unified love, partnership, mutual attraction, harmony. A deep connection, bond, or marriage.",
+        "love": "Deep romantic connection, mutual attraction, equal partnership, engagement or marriage.",
+        "career": "Equal business partnership, mutual respect, harmonious work relationship.",
+        "finances": "Financial partnership, harmonious financial arrangement, mutual agreement.",
+        "spirituality": "Spiritual partnership, twin flame connection, harmonious spiritual bond."
+      },
+      "reversed": {
+        "general": "Self-love, break-ups, disharmony, distrust, imbalance in a relationship.",
+        "love": "Break-up, disharmony between partners, lack of trust, imbalanced relationship.",
+        "career": "Disharmony in business partnership, lack of professional trust.",
+        "finances": "Financial partnership breakdown, distrust over money, financial imbalance.",
+        "spirituality": "Spiritual partnership broken, disharmony in spiritual connection."
+      },
+      "description": "A man and woman face each other, each holding a cup and appearing to exchange them. A caduceus with a lion's head floats between them in the air. They stand beneath a wreath and appear engaged or pledging.",
+      "imagery_symbols": [
+        "two cups exchanged",
+        "caduceus",
+        "lion's head",
+        "pledge",
+        "couple facing each other"
+      ],
+      "yes_no": "Yes",
+      "image": "twoofcups.jpeg"
+    },
+    {
+      "id": 38,
+      "name": "Three of Cups",
+      "arcana": "Minor",
+      "suit": "Cups",
+      "number": "3",
+      "roman_numeral": "III",
+      "element": "Water",
+      "astrological": "Cancer (Mercury in Cancer)",
+      "hebrew_letter": null,
+      "keywords": [
+        "celebration",
+        "friendship",
+        "creativity",
+        "community",
+        "sisterhood"
+      ],
+      "upright": {
+        "general": "Celebration, friendship, creativity, community. Friends gathering together in joyous celebration.",
+        "love": "Celebrating a relationship milestone, love among friends, communal joy in love.",
+        "career": "Team celebration at work, community creativity, collaborative success.",
+        "finances": "Celebrating financial success with others, community financial joy.",
+        "spirituality": "Spiritual community, celebrating spiritual milestones, joyful sisterhood."
+      },
+      "reversed": {
+        "general": "Independence, alone time, hardcore partying, three's a crowd, overindulgence.",
+        "love": "Third party in a relationship, overindulgence in love life, needing alone time.",
+        "career": "Overindulgence at a work party, three's a crowd professionally.",
+        "finances": "Overindulgent spending on celebrations, financial excess in social settings.",
+        "spirituality": "Over-socializing in spiritual community, needing alone spiritual time."
+      },
+      "description": "Three women dance in a circle, each raising a cup in a toast of celebration. They are surrounded by autumn harvest \u2014 pumpkins, grapes, and flowers. Their expressions are joyful and carefree.",
+      "imagery_symbols": [
+        "three women dancing",
+        "raised cups",
+        "harvest abundance",
+        "flowers",
+        "celebration circle"
+      ],
+      "yes_no": "Yes",
+      "image": "threeofcups.jpeg"
+    },
+    {
+      "id": 39,
+      "name": "Four of Cups",
+      "arcana": "Minor",
+      "suit": "Cups",
+      "number": "4",
+      "roman_numeral": "IV",
+      "element": "Water",
+      "astrological": "Cancer (Moon in Cancer)",
+      "hebrew_letter": null,
+      "keywords": [
+        "apathy",
+        "contemplation",
+        "disconnectedness",
+        "meditation",
+        "re-evaluation"
+      ],
+      "upright": {
+        "general": "Apathy, contemplation, disconnectedness, re-evaluation. Withdrawing to reflect; missing what is being offered.",
+        "love": "Emotional withdrawal in love, apathy about a relationship, missing opportunities.",
+        "career": "Apathy at work, disconnection from career, missing opportunities.",
+        "finances": "Apathy about finances, disconnection from financial opportunities.",
+        "spirituality": "Spiritual apathy, disconnection from spiritual practice, withdrawal."
+      },
+      "reversed": {
+        "general": "Sudden awareness, choosing happiness, acceptance, moving on.",
+        "love": "Sudden awareness of romantic opportunity, choosing happiness in love, moving on.",
+        "career": "Suddenly seeing career opportunities, choosing professional happiness.",
+        "finances": "Suddenly noticing financial opportunities, choosing financial growth.",
+        "spirituality": "Sudden spiritual awareness, choosing spiritual happiness, moving forward."
+      },
+      "description": "A young man sits cross-armed under a tree, staring at three cups before him. A hand emerges from a cloud offering a fourth cup, which he appears not to notice. His posture is withdrawn and contemplative.",
+      "imagery_symbols": [
+        "cross-armed figure",
+        "three cups",
+        "hand offering fourth cup",
+        "tree",
+        "withdrawal",
+        "contemplation"
+      ],
+      "yes_no": "No",
+      "image": "fourofcups.jpeg"
+    },
+    {
+      "id": 40,
+      "name": "Five of Cups",
+      "arcana": "Minor",
+      "suit": "Cups",
+      "number": "5",
+      "roman_numeral": "V",
+      "element": "Water",
+      "astrological": "Scorpio (Mars in Scorpio)",
+      "hebrew_letter": null,
+      "keywords": [
+        "regret",
+        "failure",
+        "disappointment",
+        "pessimism",
+        "grief"
+      ],
+      "upright": {
+        "general": "Regret, failure, disappointment, pessimism. Focus on loss while ignoring what remains.",
+        "love": "Grief over a lost relationship, dwelling on romantic disappointment, heartbreak.",
+        "career": "Grief over career loss, professional disappointment, dwelling on failure.",
+        "finances": "Financial loss, grief over money, dwelling on financial disappointment.",
+        "spirituality": "Spiritual grief, disappointment in spiritual life, dwelling on spiritual loss."
+      },
+      "reversed": {
+        "general": "Personal setbacks, self-forgiveness, moving on, finding peace.",
+        "love": "Moving on from heartbreak, self-forgiveness in love, finding peace.",
+        "career": "Moving past professional disappointment, forgiving career setbacks.",
+        "finances": "Moving past financial loss, self-forgiveness about money, finding peace.",
+        "spirituality": "Moving past spiritual disappointment, forgiving spiritual setbacks."
+      },
+      "description": "A cloaked figure hangs their head before three spilled cups, seeming not to notice two upright cups behind them. A river flows nearby, a bridge visible in the distance leading to a castle.",
+      "imagery_symbols": [
+        "three spilled cups",
+        "two standing cups",
+        "cloaked figure",
+        "bridge",
+        "river",
+        "castle in distance"
+      ],
+      "yes_no": "No",
+      "image": "fiveofcups.jpeg"
+    },
+    {
+      "id": 41,
+      "name": "Six of Cups",
+      "arcana": "Minor",
+      "suit": "Cups",
+      "number": "6",
+      "roman_numeral": "VI",
+      "element": "Water",
+      "astrological": "Scorpio (Sun in Scorpio)",
+      "hebrew_letter": null,
+      "keywords": [
+        "revisiting the past",
+        "childhood memories",
+        "innocence",
+        "nostalgia",
+        "reunion"
+      ],
+      "upright": {
+        "general": "Revisiting the past, childhood memories, innocence, nostalgia, reunion. Happy memories and simpler times.",
+        "love": "Reconnecting with a past love, innocence in romance, nostalgia for old relationship.",
+        "career": "Revisiting past career successes, nostalgic professional memories, returning to old job.",
+        "finances": "Financial nostalgia, old financial habits resurfacing, past financial gift.",
+        "spirituality": "Reconnecting with spiritual roots, childhood spiritual memories, innocence."
+      },
+      "reversed": {
+        "general": "Living in the past, forgiveness, lacking playfulness, moving forward.",
+        "love": "Stuck in past romantic patterns, need to move on from old love.",
+        "career": "Stuck in past career ways, unable to move forward professionally.",
+        "finances": "Stuck in old financial patterns, unable to move forward financially.",
+        "spirituality": "Stuck in spiritual past, inability to grow beyond childhood beliefs."
+      },
+      "description": "A small child hands a cup filled with white flowers to a younger child in a village courtyard. Six cups with flowers are arranged around the scene. An older figure walks away in the background.",
+      "imagery_symbols": [
+        "two children",
+        "six cups with flowers",
+        "village setting",
+        "gift exchange",
+        "older figure departing"
+      ],
+      "yes_no": "Yes",
+      "image": "sixofcups.jpeg"
+    },
+    {
+      "id": 42,
+      "name": "Seven of Cups",
+      "arcana": "Minor",
+      "suit": "Cups",
+      "number": "7",
+      "roman_numeral": "VII",
+      "element": "Water",
+      "astrological": "Scorpio (Venus in Scorpio)",
+      "hebrew_letter": null,
+      "keywords": [
+        "choices",
+        "wishful thinking",
+        "illusion",
+        "fantasy",
+        "imagination"
+      ],
+      "upright": {
+        "general": "Choices, wishful thinking, illusion, fantasy, imagination. Many options, but not all are what they seem.",
+        "love": "Romantic fantasies, illusions about a partner, too many choices in love.",
+        "career": "Career fantasies, too many options, illusions about work, wishful thinking.",
+        "finances": "Financial fantasies, too many options, illusions about wealth.",
+        "spirituality": "Spiritual illusions, too many spiritual paths, fantasy over reality."
+      },
+      "reversed": {
+        "general": "Alignment, personal values, overwhelmed by choices, lack of clarity.",
+        "love": "Clarity about romantic choices, alignment in love, cutting through illusion.",
+        "career": "Clarity about career choices, overcoming professional illusions.",
+        "finances": "Clarity about financial choices, cutting through financial illusions.",
+        "spirituality": "Clarity about spiritual path, overcoming spiritual illusions."
+      },
+      "description": "A silhouetted figure looks up at seven cups floating in clouds, each containing a different vision: a face, a ghost, a snake, a castle, jewels, a laurel wreath, and a dragon.",
+      "imagery_symbols": [
+        "seven cups in clouds",
+        "silhouetted figure",
+        "visions",
+        "dragon",
+        "jewels",
+        "castle",
+        "fantasy imagery"
+      ],
+      "yes_no": "Maybe",
+      "image": "sevenofcups.jpeg"
+    },
+    {
+      "id": 43,
+      "name": "Eight of Cups",
+      "arcana": "Minor",
+      "suit": "Cups",
+      "number": "8",
+      "roman_numeral": "VIII",
+      "element": "Water",
+      "astrological": "Pisces (Saturn in Pisces)",
+      "hebrew_letter": null,
+      "keywords": [
+        "walking away",
+        "disillusionment",
+        "leaving behind",
+        "withdrawal",
+        "escapism"
+      ],
+      "upright": {
+        "general": "Walking away, disillusionment, leaving behind, withdrawal. Moving on from what no longer serves.",
+        "love": "Walking away from an unfulfilling relationship, seeking deeper love.",
+        "career": "Walking away from a job, career disillusionment, seeking more meaningful work.",
+        "finances": "Walking away from a financial situation, disillusionment with material wealth.",
+        "spirituality": "Leaving behind old spiritual path, seeking deeper spiritual meaning."
+      },
+      "reversed": {
+        "general": "Trying one more time, indecision, aimless drifting, staying in bad situation.",
+        "love": "Trying once more in love, indecision about leaving, staying in bad relationship.",
+        "career": "Indecision about leaving a job, trying once more at work.",
+        "finances": "Indecision about leaving a financial situation, trying once more.",
+        "spirituality": "Indecision about spiritual path, unable to leave behind old beliefs."
+      },
+      "description": "A cloaked figure walks away from eight stacked cups into a mountainous rocky terrain. The moon shines above partially eclipsed by the sun. The scene feels melancholy and solitary.",
+      "imagery_symbols": [
+        "eight stacked cups",
+        "cloaked walking figure",
+        "mountains",
+        "partial eclipse moon",
+        "night scene",
+        "solitude"
+      ],
+      "yes_no": "No",
+      "image": "eightofcups.jpeg"
+    },
+    {
+      "id": 44,
+      "name": "Nine of Cups",
+      "arcana": "Minor",
+      "suit": "Cups",
+      "number": "9",
+      "roman_numeral": "IX",
+      "element": "Water",
+      "astrological": "Pisces (Jupiter in Pisces)",
+      "hebrew_letter": null,
+      "keywords": [
+        "contentment",
+        "satisfaction",
+        "gratitude",
+        "wish fulfillment",
+        "pleasure"
+      ],
+      "upright": {
+        "general": "Contentment, satisfaction, gratitude, wish fulfillment. Your wish is granted; enjoy emotional fulfillment.",
+        "love": "Emotional fulfillment in love, wish for romance granted, deep contentment.",
+        "career": "Professional satisfaction, career wish granted, contentment at work.",
+        "finances": "Financial wish fulfilled, financial contentment, abundance.",
+        "spirituality": "Spiritual contentment, wishes granted, deep gratitude and fulfillment."
+      },
+      "reversed": {
+        "general": "Inner happiness, materialism, dissatisfaction, indulgence, greed.",
+        "love": "Seeking deeper happiness in love beyond surface satisfaction.",
+        "career": "Dissatisfaction despite career success, materialism at work.",
+        "finances": "Financial dissatisfaction despite wealth, materialism, greed.",
+        "spirituality": "Spiritual materialism, seeking inner happiness beyond external fulfillment."
+      },
+      "description": "A well-dressed, satisfied-looking man sits before a curved bench displaying nine golden cups. His arms are crossed and he smiles contentedly, appearing self-satisfied and pleased.",
+      "imagery_symbols": [
+        "nine golden cups",
+        "curved display bench",
+        "smiling satisfied figure",
+        "crossed arms",
+        "fine garments"
+      ],
+      "yes_no": "Yes",
+      "image": "nineofcups.jpeg"
+    },
+    {
+      "id": 45,
+      "name": "Ten of Cups",
+      "arcana": "Minor",
+      "suit": "Cups",
+      "number": "10",
+      "roman_numeral": "X",
+      "element": "Water",
+      "astrological": "Pisces (Mars in Pisces)",
+      "hebrew_letter": null,
+      "keywords": [
+        "divine love",
+        "blissful relationships",
+        "harmony",
+        "alignment",
+        "happy family"
+      ],
+      "upright": {
+        "general": "Divine love, blissful relationships, harmony, alignment, happy family. Complete emotional fulfillment.",
+        "love": "A perfect loving relationship, family harmony, blissful domestic life.",
+        "career": "A fulfilling career within a harmonious team, emotional satisfaction at work.",
+        "finances": "Financial harmony at home, emotional fulfillment around finances.",
+        "spirituality": "Spiritual alignment, divine love, harmony with the universe."
+      },
+      "reversed": {
+        "general": "Shattered dreams, broken family, misalignment of values, struggle for happiness.",
+        "love": "Broken home, family unhappiness, relationship misalignment.",
+        "career": "Broken workplace harmony, shattered career dreams.",
+        "finances": "Financial stress affecting family harmony, misaligned financial values.",
+        "spirituality": "Shattered spiritual ideals, broken spiritual community."
+      },
+      "description": "A couple stands embracing, arms outstretched toward a rainbow arc of ten cups in the sky. Two children dance nearby. A lush green house sits in the background, the scene radiating joy and completeness.",
+      "imagery_symbols": [
+        "rainbow of ten cups",
+        "embracing couple",
+        "dancing children",
+        "green house",
+        "rainbow arc",
+        "joyful scene"
+      ],
+      "yes_no": "Yes",
+      "image": "tenofcups.jpeg"
+    },
+    {
+      "id": 46,
+      "name": "Page of Cups",
+      "arcana": "Minor",
+      "suit": "Cups",
+      "number": "11",
+      "roman_numeral": "Page",
+      "element": "Earth of Water",
+      "astrological": "Earth of Water",
+      "hebrew_letter": null,
+      "keywords": [
+        "creative opportunities",
+        "curiosity",
+        "possibility",
+        "daydreaming",
+        "sensitivity"
+      ],
+      "upright": {
+        "general": "Creative opportunities, curiosity, possibility, sensitivity. A dreamy, imaginative spirit full of wonder.",
+        "love": "A romantic dreamer, sensitive lover, creative new romance, a love message received.",
+        "career": "Creative career inspiration, new artistic opportunity, sensitive work approach.",
+        "finances": "Creative financial ideas, new financial opportunities, sensitivity around money.",
+        "spirituality": "Intuitive spiritual messages, creative spiritual exploration, wonder and openness."
+      },
+      "reversed": {
+        "general": "New idea, doubting intuition, creative blocks, emotional immaturity.",
+        "love": "Emotional immaturity in love, doubting romantic intuition, blocked feelings.",
+        "career": "Creative blocks, doubting professional intuition, immature creative approach.",
+        "finances": "Doubting financial intuition, immature financial ideas.",
+        "spirituality": "Doubting spiritual intuition, creative spiritual blocks."
+      },
+      "description": "A dreamy young figure in a floral tunic stands by the sea, holding a cup from which a fish emerges. The youth gazes at the fish with delight and surprise, appearing open and imaginative.",
+      "imagery_symbols": [
+        "fish in cup",
+        "floral tunic",
+        "sea",
+        "dreamy expression",
+        "surprised wonder",
+        "youth"
+      ],
+      "yes_no": "Yes",
+      "image": "pageofcups.jpeg"
+    },
+    {
+      "id": 47,
+      "name": "Knight of Cups",
+      "arcana": "Minor",
+      "suit": "Cups",
+      "number": "12",
+      "roman_numeral": "Knight",
+      "element": "Fire of Water",
+      "astrological": "Pisces / Aquarius",
+      "hebrew_letter": null,
+      "keywords": [
+        "romance",
+        "charm",
+        "imagination",
+        "beauty",
+        "idealism"
+      ],
+      "upright": {
+        "general": "Romance, charm, imagination, beauty, idealism. A romantic dreamer riding gracefully toward you.",
+        "love": "A charming romantic arrival, romantic proposals, idealistic love.",
+        "career": "Creative and imaginative career approach, charming professional pursuit.",
+        "finances": "Idealistic financial approach, imaginative investment, charming financial opportunity.",
+        "spirituality": "Romantic spiritual quest, idealistic spiritual journey, charming spiritual energy."
+      },
+      "reversed": {
+        "general": "Overactive imagination, unrealistic, jealous, moody, disappointment.",
+        "love": "Unrealistic romantic expectations, jealousy, moody lover, disappointment.",
+        "career": "Unrealistic work expectations, moodiness professionally, creative disappointment.",
+        "finances": "Unrealistic financial expectations, moodiness about money.",
+        "spirituality": "Unrealistic spiritual expectations, moody spiritual pursuit."
+      },
+      "description": "A knight in silver armor decorated with fish and waves rides a white horse calmly forward, holding a cup carefully as if in offering. The scene is peaceful and graceful, lacking the urgency of other knights.",
+      "imagery_symbols": [
+        "fish-decorated armor",
+        "white horse",
+        "offered cup",
+        "calm movement",
+        "helmet wings",
+        "water imagery"
+      ],
+      "yes_no": "Yes",
+      "image": "knightofcups.jpeg"
+    },
+    {
+      "id": 48,
+      "name": "Queen of Cups",
+      "arcana": "Minor",
+      "suit": "Cups",
+      "number": "13",
+      "roman_numeral": "Queen",
+      "element": "Water of Water",
+      "astrological": "Cancer / Gemini",
+      "hebrew_letter": null,
+      "keywords": [
+        "compassionate",
+        "caring",
+        "emotionally stable",
+        "intuitive",
+        "deeply feeling"
+      ],
+      "upright": {
+        "general": "Compassionate, caring, emotionally stable, intuitive. A deeply empathetic and nurturing presence.",
+        "love": "Deeply emotional and caring partner, nurturing love, intuitive romantic connection.",
+        "career": "Compassionate leadership, emotionally supportive work, caring professional.",
+        "finances": "Emotionally stable approach to finances, compassionate financial decisions.",
+        "spirituality": "Deep emotional spirituality, intuitive spiritual gifts, compassionate devotion."
+      },
+      "reversed": {
+        "general": "Inner feelings, self-care, co-dependency, martyrdom, blocked feelings.",
+        "love": "Emotional codependence, martyrdom in love, blocked romantic feelings.",
+        "career": "Emotional blocks at work, codependence professionally, inner emotional work.",
+        "finances": "Emotional blocks around money, financial codependence, martyrdom.",
+        "spirituality": "Blocked emotional spirituality, codependence in spiritual relationships."
+      },
+      "description": "A woman sits on a throne at the water's edge, wearing a golden crown and holding an ornate closed cup with handles resembling angels. Her dress blends into the water around the throne, suggesting she is one with emotion.",
+      "imagery_symbols": [
+        "ornate closed cup",
+        "water throne",
+        "angel handles",
+        "golden crown",
+        "flowing robes",
+        "sea edge"
+      ],
+      "yes_no": "Yes",
+      "image": "queenofcups.jpeg"
+    },
+    {
+      "id": 49,
+      "name": "King of Cups",
+      "arcana": "Minor",
+      "suit": "Cups",
+      "number": "14",
+      "roman_numeral": "King",
+      "element": "Fire of Water",
+      "astrological": "Scorpio / Libra",
+      "hebrew_letter": null,
+      "keywords": [
+        "emotionally balanced",
+        "compassionate",
+        "diplomatic",
+        "devoted",
+        "calm"
+      ],
+      "upright": {
+        "general": "Emotionally balanced, compassionate, diplomatic, devoted. Masters emotions through wisdom and calm.",
+        "love": "Emotionally mature and balanced partner, compassionate and devoted love.",
+        "career": "Diplomatic and compassionate leadership, emotionally balanced professional.",
+        "finances": "Emotionally balanced financial decisions, compassionate financial approach.",
+        "spirituality": "Emotionally mature spiritual practice, diplomatic spiritual leadership."
+      },
+      "reversed": {
+        "general": "Self-compassion, inner feelings, moodiness, emotionally manipulative.",
+        "love": "Emotional manipulation in love, moodiness, self-compassion needed.",
+        "career": "Emotional manipulation at work, moodiness professionally, lack of emotional balance.",
+        "finances": "Emotional manipulation around money, moodiness about finances.",
+        "spirituality": "Emotional manipulation in spiritual life, lack of spiritual balance."
+      },
+      "description": "A king sits on a stone throne in the middle of a turbulent sea, wearing a crown with a small fish pendant. He holds a scepter in one hand and a cup in the other, remaining calm despite the rough water around him.",
+      "imagery_symbols": [
+        "fish pendant",
+        "turbulent sea",
+        "stone throne",
+        "scepter",
+        "cup",
+        "calm amid storm",
+        "crown"
+      ],
+      "yes_no": "Yes",
+      "image": "kingofcups.jpeg"
+    },
+    {
+      "id": 50,
+      "name": "Ace of Swords",
+      "arcana": "Minor",
+      "suit": "Swords",
+      "number": "1",
+      "roman_numeral": "Ace",
+      "element": "Air",
+      "astrological": "Libra, Aquarius, Gemini",
+      "hebrew_letter": null,
+      "keywords": [
+        "new ideas",
+        "mental clarity",
+        "success",
+        "truth",
+        "breakthrough"
+      ],
+      "upright": {
+        "general": "New ideas, mental clarity, success, truth, breakthrough. A moment of clarity cuts through confusion.",
+        "love": "Clarity in a relationship, a breakthrough in romantic understanding, truth in love.",
+        "career": "A new idea that cuts through problems, mental clarity at work, breakthrough.",
+        "finances": "Financial clarity, breakthrough in financial thinking, a clear financial decision.",
+        "spirituality": "Spiritual breakthrough, mental clarity about spiritual truth, clear spiritual vision."
+      },
+      "reversed": {
+        "general": "Inner clarity, re-thinking ideas, clouded judgment, confusion.",
+        "love": "Confusion in love, clouded romantic judgment, inner clarity needed.",
+        "career": "Clouded professional thinking, confusion about career direction.",
+        "finances": "Financial confusion, clouded judgment about money.",
+        "spirituality": "Spiritual confusion, clouded spiritual thinking, inner clarity needed."
+      },
+      "description": "A hand emerges from clouds gripping an upright sword. A crown adorned with a wreath encircles the tip of the sword. Mountain peaks rise in the background.",
+      "imagery_symbols": [
+        "hand from cloud",
+        "upright sword",
+        "crown with wreath",
+        "mountain peaks",
+        "clear sky"
+      ],
+      "yes_no": "Yes",
+      "image": "aceofswords.jpeg"
+    },
+    {
+      "id": 51,
+      "name": "Two of Swords",
+      "arcana": "Minor",
+      "suit": "Swords",
+      "number": "2",
+      "roman_numeral": "II",
+      "element": "Air",
+      "astrological": "Libra (Moon in Libra)",
+      "hebrew_letter": null,
+      "keywords": [
+        "difficult decisions",
+        "weighing options",
+        "an impasse",
+        "avoidance",
+        "stalemate"
+      ],
+      "upright": {
+        "general": "Difficult decisions, weighing options, impasse, avoidance. A decision must be made; you cannot remain neutral.",
+        "love": "An impasse in a relationship, indecision about love, avoiding a romantic decision.",
+        "career": "A difficult career decision, impasse at work, avoiding a professional choice.",
+        "finances": "Difficult financial decision, financial impasse, avoiding money decisions.",
+        "spirituality": "Spiritual indecision, impasse in spiritual path, avoidance of spiritual truth."
+      },
+      "reversed": {
+        "general": "Indecision, confusion, information overload, no right choice, release from stalemate.",
+        "love": "Release from romantic indecision, information overload about love.",
+        "career": "Release from career indecision, information overload professionally.",
+        "finances": "Release from financial indecision, overload of financial information.",
+        "spirituality": "Release from spiritual indecision, moving past spiritual stalemate."
+      },
+      "description": "A blindfolded woman sits on a bench with arms crossed, holding two swords crossed over her chest. The sea with rocky crags is visible behind her under a crescent moon.",
+      "imagery_symbols": [
+        "blindfolded woman",
+        "two crossed swords",
+        "crescent moon",
+        "rocky sea",
+        "stone bench",
+        "impasse"
+      ],
+      "yes_no": "Maybe",
+      "image": "twoofswords.jpeg"
+    },
+    {
+      "id": 52,
+      "name": "Three of Swords",
+      "arcana": "Minor",
+      "suit": "Swords",
+      "number": "3",
+      "roman_numeral": "III",
+      "element": "Air",
+      "astrological": "Libra (Saturn in Libra)",
+      "hebrew_letter": null,
+      "keywords": [
+        "heartbreak",
+        "grief",
+        "sorrow",
+        "emotional pain",
+        "rejection"
+      ],
+      "upright": {
+        "general": "Heartbreak, grief, sorrow, emotional pain. A painful truth or loss must be processed.",
+        "love": "Heartbreak, rejection, grief in a relationship, painful truth in love.",
+        "career": "Professional heartbreak, rejection, painful workplace truth.",
+        "finances": "Financial heartbreak, grief over financial loss, painful truth about money.",
+        "spirituality": "Spiritual heartbreak, grief in spiritual life, painful spiritual truth."
+      },
+      "reversed": {
+        "general": "Negative self-talk, releasing pain, optimism, forgiveness, healing.",
+        "love": "Healing from heartbreak, releasing romantic pain, forgiveness in love.",
+        "career": "Healing professional wounds, releasing work-related pain.",
+        "finances": "Healing from financial loss, releasing financial pain.",
+        "spirituality": "Healing spiritual wounds, releasing spiritual pain, forgiveness."
+      },
+      "description": "Three swords pierce a heart against a background of dark rain clouds. The image is stark and symbolic of pain, heartbreak, and emotional suffering.",
+      "imagery_symbols": [
+        "heart pierced by three swords",
+        "storm clouds",
+        "rain",
+        "stark imagery"
+      ],
+      "yes_no": "No",
+      "image": "threeofswords.jpeg"
+    },
+    {
+      "id": 53,
+      "name": "Four of Swords",
+      "arcana": "Minor",
+      "suit": "Swords",
+      "number": "4",
+      "roman_numeral": "IV",
+      "element": "Air",
+      "astrological": "Libra (Jupiter in Libra)",
+      "hebrew_letter": null,
+      "keywords": [
+        "rest",
+        "restoration",
+        "contemplation",
+        "meditation",
+        "recuperation"
+      ],
+      "upright": {
+        "general": "Rest, restoration, contemplation, meditation. A much-needed period of retreat and recuperation.",
+        "love": "Time out in a relationship, contemplating love, rest and retreat needed.",
+        "career": "Rest from work, recuperation from professional stress, contemplation.",
+        "finances": "Financial rest, step back from financial activity, recuperation.",
+        "spirituality": "Spiritual retreat, meditation, contemplative spiritual practice."
+      },
+      "reversed": {
+        "general": "Restlessness, burnout, stress, re-entering the world.",
+        "love": "Restlessness in a relationship, burnout from love, stress affecting romance.",
+        "career": "Burnout at work, restlessness, stress re-entering professional life.",
+        "finances": "Financial restlessness, burnout from financial stress, re-entering financial activity.",
+        "spirituality": "Restlessness in spiritual practice, stress affecting spiritual retreat."
+      },
+      "description": "A carved stone knight lies in a posture of rest on a tomb, hands clasped. Three swords hang on the wall above, a fourth sword rests on the tomb. A stained glass window shows a supplication scene.",
+      "imagery_symbols": [
+        "knight effigy",
+        "tomb",
+        "three swords on wall",
+        "fourth sword on tomb",
+        "stained glass",
+        "contemplation"
+      ],
+      "yes_no": "Maybe",
+      "image": "fourofswords.jpeg"
+    },
+    {
+      "id": 54,
+      "name": "Five of Swords",
+      "arcana": "Minor",
+      "suit": "Swords",
+      "number": "5",
+      "roman_numeral": "V",
+      "element": "Air",
+      "astrological": "Aquarius (Venus in Aquarius)",
+      "hebrew_letter": null,
+      "keywords": [
+        "conflict",
+        "defeat",
+        "winning at all costs",
+        "tension",
+        "hostility"
+      ],
+      "upright": {
+        "general": "Conflict, defeat, winning at all costs, tension, hostility. An empty or Pyrrhic victory.",
+        "love": "Conflict in a relationship, winning an argument at great cost, hostility.",
+        "career": "Workplace conflict, winning at the expense of others, hostility.",
+        "finances": "Financial conflict, hostile financial dealings, winning at all costs.",
+        "spirituality": "Spiritual conflict, hostility in spiritual community, empty victory."
+      },
+      "reversed": {
+        "general": "Reconciliation, making amends, past resentments, conflict avoidance.",
+        "love": "Reconciliation after conflict, making amends in love, releasing past resentments.",
+        "career": "Professional reconciliation, making amends at work, ending workplace conflict.",
+        "finances": "Financial reconciliation, making financial amends, ending financial hostility.",
+        "spirituality": "Spiritual reconciliation, making amends in spiritual community."
+      },
+      "description": "A smirking figure collects three swords while two dejected figures walk away. The scene conveys a hollow victory \u2014 the winner has prevailed but at the cost of relationships. Storm clouds hang above.",
+      "imagery_symbols": [
+        "smirking victor",
+        "collected swords",
+        "defeated figures",
+        "storm clouds",
+        "hollow victory"
+      ],
+      "yes_no": "No",
+      "image": "fiveofswords.jpeg"
+    },
+    {
+      "id": 55,
+      "name": "Six of Swords",
+      "arcana": "Minor",
+      "suit": "Swords",
+      "number": "6",
+      "roman_numeral": "VI",
+      "element": "Air",
+      "astrological": "Aquarius (Mercury in Aquarius)",
+      "hebrew_letter": null,
+      "keywords": [
+        "transition",
+        "change",
+        "rite of passage",
+        "releasing baggage",
+        "moving on"
+      ],
+      "upright": {
+        "general": "Transition, change, rite of passage, releasing baggage. Moving from troubled waters toward calmer ones.",
+        "love": "Moving away from romantic difficulties, transition in love, a necessary journey.",
+        "career": "Career transition, moving away from workplace difficulties, progress.",
+        "finances": "Financial transition, moving away from financial troubles, progress.",
+        "spirituality": "Spiritual transition, moving toward calmer spiritual waters, letting go."
+      },
+      "reversed": {
+        "general": "Personal transition, resistance to change, unfinished business, stuck.",
+        "love": "Resisting romantic transition, stuck in relationship difficulties.",
+        "career": "Resisting career change, stuck in workplace difficulties, unfinished business.",
+        "finances": "Resisting financial transition, stuck in financial difficulties.",
+        "spirituality": "Resisting spiritual transition, stuck in spiritual difficulties."
+      },
+      "description": "A ferryman poles a small boat carrying a cloaked woman and child. Six swords stand upright in the prow of the boat. They move from choppy water on one side to calmer water on the other.",
+      "imagery_symbols": [
+        "ferryman",
+        "six upright swords",
+        "cloaked passengers",
+        "choppy to calm water",
+        "transition"
+      ],
+      "yes_no": "Maybe",
+      "image": "sixofswords.jpeg"
+    },
+    {
+      "id": 56,
+      "name": "Seven of Swords",
+      "arcana": "Minor",
+      "suit": "Swords",
+      "number": "7",
+      "roman_numeral": "VII",
+      "element": "Air",
+      "astrological": "Aquarius (Moon in Aquarius)",
+      "hebrew_letter": null,
+      "keywords": [
+        "betrayal",
+        "deception",
+        "getting away with something",
+        "stealth",
+        "strategy"
+      ],
+      "upright": {
+        "general": "Betrayal, deception, getting away with something, stealth, strategy. Someone may be acting dishonestly.",
+        "love": "Deception in a relationship, infidelity, someone not being fully honest.",
+        "career": "Deception at work, stealing credit, acting in stealth, hidden agendas.",
+        "finances": "Financial deception, theft, acting in stealth around money.",
+        "spirituality": "Spiritual deception, stealth in spiritual matters, hidden spiritual agendas."
+      },
+      "reversed": {
+        "general": "Imposter syndrome, self-deceit, keeping secrets, coming clean.",
+        "love": "Coming clean in love, self-deception in romance, secrets surfacing.",
+        "career": "Coming clean at work, self-deception professionally, secrets surfacing.",
+        "finances": "Coming clean about money, self-deception financially, financial secrets.",
+        "spirituality": "Coming clean spiritually, self-deception in spiritual life."
+      },
+      "description": "A cunning figure tiptoes away from a military encampment carrying five swords, glancing back with a sly expression. Two swords remain upright behind them. The scene suggests theft and craftiness.",
+      "imagery_symbols": [
+        "figure stealing swords",
+        "military camp",
+        "sly expression",
+        "sneaking away",
+        "tents in background"
+      ],
+      "yes_no": "No",
+      "image": "sevenofswords.jpeg"
+    },
+    {
+      "id": 57,
+      "name": "Eight of Swords",
+      "arcana": "Minor",
+      "suit": "Swords",
+      "number": "8",
+      "roman_numeral": "VIII",
+      "element": "Air",
+      "astrological": "Gemini (Jupiter in Gemini)",
+      "hebrew_letter": null,
+      "keywords": [
+        "negative thinking",
+        "trapped",
+        "victim mentality",
+        "self-imposed restriction",
+        "fear"
+      ],
+      "upright": {
+        "general": "Negative thinking, trapped, victim mentality, self-imposed restriction. The prison is largely one of the mind.",
+        "love": "Feeling trapped in a relationship, victim mindset in love, self-imposed romantic limits.",
+        "career": "Feeling trapped at work, victim mentality professionally, self-imposed career limits.",
+        "finances": "Feeling trapped financially, victim mindset about money, self-imposed limits.",
+        "spirituality": "Feeling trapped spiritually, victim mindset, self-imposed spiritual limits."
+      },
+      "reversed": {
+        "general": "Self-acceptance, new perspective, freedom, releasing negative thinking.",
+        "love": "Freedom from romantic traps, new perspective on love, releasing victim mentality.",
+        "career": "Freedom from career traps, new professional perspective, releasing limitations.",
+        "finances": "Freedom from financial traps, new financial perspective, releasing limits.",
+        "spirituality": "Spiritual freedom, releasing spiritual traps, new perspective."
+      },
+      "description": "A bound and blindfolded woman stands surrounded by eight upright swords planted in the ground. She is not physically imprisoned \u2014 she could walk away \u2014 but her blindfold and mental state keep her trapped.",
+      "imagery_symbols": [
+        "bound figure",
+        "blindfold",
+        "eight surrounding swords",
+        "open path behind",
+        "self-imprisonment"
+      ],
+      "yes_no": "No",
+      "image": "eightofswords.jpeg"
+    },
+    {
+      "id": 58,
+      "name": "Nine of Swords",
+      "arcana": "Minor",
+      "suit": "Swords",
+      "number": "9",
+      "roman_numeral": "IX",
+      "element": "Air",
+      "astrological": "Gemini (Mars in Gemini)",
+      "hebrew_letter": null,
+      "keywords": [
+        "anxiety",
+        "worry",
+        "fear",
+        "depression",
+        "nightmares"
+      ],
+      "upright": {
+        "general": "Anxiety, worry, fear, depression, nightmares. The worst fears of the mind; most worries are not real.",
+        "love": "Anxiety about a relationship, fear, nightmares about love, depression in romance.",
+        "career": "Anxiety about work, professional fears, nightmares about career.",
+        "finances": "Financial anxiety, fear about money, nightmares about finances.",
+        "spirituality": "Spiritual anxiety, dark night of the soul, fear about spiritual path."
+      },
+      "reversed": {
+        "general": "Inner turmoil, deep-seated fears, secrets, releasing worry.",
+        "love": "Releasing romantic anxiety, inner turmoil in love, deep fears about romance.",
+        "career": "Releasing professional anxiety, deep fears about career surfacing.",
+        "finances": "Releasing financial anxiety, deep financial fears surfacing.",
+        "spirituality": "Releasing spiritual anxiety, deep spiritual fears surfacing."
+      },
+      "description": "A person sits up in bed in the night, head in hands in apparent despair. Nine swords hang on the wall behind them. A quilt decorated with roses and planetary symbols covers the bed.",
+      "imagery_symbols": [
+        "nine swords on wall",
+        "figure in bed",
+        "head in hands",
+        "nighttime",
+        "despair",
+        "decorated quilt"
+      ],
+      "yes_no": "No",
+      "image": "nineofswords.jpeg"
+    },
+    {
+      "id": 59,
+      "name": "Ten of Swords",
+      "arcana": "Minor",
+      "suit": "Swords",
+      "number": "10",
+      "roman_numeral": "X",
+      "element": "Air",
+      "astrological": "Gemini (Sun in Gemini)",
+      "hebrew_letter": null,
+      "keywords": [
+        "painful endings",
+        "deep wounds",
+        "betrayal",
+        "loss",
+        "transition"
+      ],
+      "upright": {
+        "general": "Painful endings, deep wounds, betrayal, loss, transition. Rock bottom has been reached; it can only get better.",
+        "love": "Painful end of a relationship, deep romantic wound, betrayal in love.",
+        "career": "Painful end of a job, deep professional wound, betrayal at work.",
+        "finances": "Painful financial ending, deep financial loss, financial betrayal.",
+        "spirituality": "Painful spiritual ending, dark night of the soul, spiritual rock bottom."
+      },
+      "reversed": {
+        "general": "Recovery, regeneration, resistance to an inevitable end, healing.",
+        "love": "Recovery from romantic wound, resisting relationship's end, healing.",
+        "career": "Recovery from career wound, resisting end of a job, professional healing.",
+        "finances": "Recovery from financial loss, resisting financial end, healing.",
+        "spirituality": "Recovery from spiritual wound, healing after dark night of the soul."
+      },
+      "description": "A figure lies face-down on the ground, ten swords plunging into their back. Ominous dark clouds fill the sky on the left, but on the right the horizon glows a golden dawn.",
+      "imagery_symbols": [
+        "ten swords in back",
+        "prone figure",
+        "dark clouds",
+        "golden dawn",
+        "sea in background",
+        "finality"
+      ],
+      "yes_no": "No",
+      "image": "tenofswords.jpeg"
+    },
+    {
+      "id": 60,
+      "name": "Page of Swords",
+      "arcana": "Minor",
+      "suit": "Swords",
+      "number": "11",
+      "roman_numeral": "Page",
+      "element": "Earth of Air",
+      "astrological": "Earth of Air",
+      "hebrew_letter": null,
+      "keywords": [
+        "curiosity",
+        "communication",
+        "mental alertness",
+        "news",
+        "vigilance"
+      ],
+      "upright": {
+        "general": "Curiosity, communication, mental alertness, news, vigilance. An energetic and eager young intellect.",
+        "love": "Direct communication in love, curiosity about a new romance, sharp mind in relationship.",
+        "career": "Curiosity at work, communicative and alert career approach, news about job.",
+        "finances": "Curious and sharp approach to finances, news about money.",
+        "spirituality": "Curious and alert spiritual approach, vigilance in spiritual matters."
+      },
+      "reversed": {
+        "general": "Cunning, deception, manipulation, gossip, self-expression.",
+        "love": "Deception in romantic communication, gossip, manipulation in love.",
+        "career": "Deceptive communication at work, gossip, manipulation.",
+        "finances": "Deceptive financial communication, manipulation around money.",
+        "spirituality": "Deceptive spiritual communication, manipulation in spiritual matters."
+      },
+      "description": "A youth stands on a hilltop in a windswept landscape, holding a sword aloft with two hands. They appear alert and ready for action. Birds fly in the cloudy sky around them.",
+      "imagery_symbols": [
+        "raised sword",
+        "windswept youth",
+        "hilltop",
+        "birds",
+        "wind-blown clouds",
+        "alert stance"
+      ],
+      "yes_no": "Maybe",
+      "image": "pageofswords.jpeg"
+    },
+    {
+      "id": 61,
+      "name": "Knight of Swords",
+      "arcana": "Minor",
+      "suit": "Swords",
+      "number": "12",
+      "roman_numeral": "Knight",
+      "element": "Fire of Air",
+      "astrological": "Gemini / Taurus",
+      "hebrew_letter": null,
+      "keywords": [
+        "ambitious",
+        "action-oriented",
+        "driven",
+        "fast-thinking",
+        "direct"
+      ],
+      "upright": {
+        "general": "Ambitious, action-oriented, driven, fast-thinking, direct. Charging forward with unstoppable mental energy.",
+        "love": "Direct and fast-moving pursuit in love, an intellectual lover, direct communication.",
+        "career": "Charging ahead in career, fast and direct action, ambitious pursuit.",
+        "finances": "Fast and direct financial action, ambitious financial pursuit.",
+        "spirituality": "Direct spiritual action, ambitious spiritual pursuit, fast spiritual movement."
+      },
+      "reversed": {
+        "general": "Restless, unfocused, impulsive, burn-out, aggressive communication.",
+        "love": "Impulsive romantic decisions, aggressive communication in love, burn-out.",
+        "career": "Impulsive career decisions, aggression at work, professional burn-out.",
+        "finances": "Impulsive financial decisions, aggression around money, financial burn-out.",
+        "spirituality": "Impulsive spiritual decisions, aggression in spiritual matters."
+      },
+      "description": "A knight in ornate armor charges forward on a horse at full gallop, sword raised high overhead. The horse charges into the wind and the knight appears utterly fearless and driven.",
+      "imagery_symbols": [
+        "charging horse",
+        "raised sword",
+        "full gallop",
+        "ornate armor",
+        "wind and birds",
+        "forward momentum"
+      ],
+      "yes_no": "Yes",
+      "image": "knightofswords.jpeg"
+    },
+    {
+      "id": 62,
+      "name": "Queen of Swords",
+      "arcana": "Minor",
+      "suit": "Swords",
+      "number": "13",
+      "roman_numeral": "Queen",
+      "element": "Water of Air",
+      "astrological": "Libra / Virgo",
+      "hebrew_letter": null,
+      "keywords": [
+        "complex",
+        "quick thinking",
+        "independent",
+        "unbiased",
+        "communicative"
+      ],
+      "upright": {
+        "general": "Complex, quick thinking, independent, unbiased, communicative. Sharp intellect combined with direct but fair judgment.",
+        "love": "Direct communication in love, intellectual independence in romance, unbiased view.",
+        "career": "Sharp intellectual leadership, independent and direct at work.",
+        "finances": "Unbiased, direct financial thinking, sharp financial intellect.",
+        "spirituality": "Clear and unbiased spiritual thinking, direct spiritual communication."
+      },
+      "reversed": {
+        "general": "Overly emotional, easily influenced, bitchy, cold-hearted, cruel.",
+        "love": "Cold and cruel in love, overly emotional, easily influenced in romance.",
+        "career": "Cold and cruel at work, overly emotional, easily influenced professionally.",
+        "finances": "Cold and cruel approach to money, overly emotional financial decisions.",
+        "spirituality": "Cold and unfeeling spiritual approach, cruel spiritual judgment."
+      },
+      "description": "A crowned queen sits on a stone throne, right hand raised with one finger pointing upward, and left hand slightly extended. A sword is held upright in her right hand. Her expression is stern and direct.",
+      "imagery_symbols": [
+        "pointed finger",
+        "upright sword",
+        "stern expression",
+        "cloud throne",
+        "butterfly crown",
+        "barren tree"
+      ],
+      "yes_no": "Maybe",
+      "image": "queenofswords.jpeg"
+    },
+    {
+      "id": 63,
+      "name": "King of Swords",
+      "arcana": "Minor",
+      "suit": "Swords",
+      "number": "14",
+      "roman_numeral": "King",
+      "element": "Fire of Air",
+      "astrological": "Aquarius / Capricorn",
+      "hebrew_letter": null,
+      "keywords": [
+        "clear thinking",
+        "authority",
+        "truth",
+        "intellectual power",
+        "ethical"
+      ],
+      "upright": {
+        "general": "Clear thinking, authority, truth, intellectual power, ethical. A master of the mind who judges with precision.",
+        "love": "Intellectual authority in love, clear thinking about romance, truth in relationship.",
+        "career": "Intellectual leadership, clear and authoritative career approach.",
+        "finances": "Clear-thinking financial authority, ethical financial leadership.",
+        "spirituality": "Intellectual spiritual authority, clear and ethical spiritual thinking."
+      },
+      "reversed": {
+        "general": "Quiet power, inner truth, misuse of power, manipulative.",
+        "love": "Misuse of intellectual power in love, manipulation in romance.",
+        "career": "Misuse of professional authority, manipulation at work.",
+        "finances": "Misuse of financial authority, manipulation around money.",
+        "spirituality": "Misuse of spiritual authority, manipulation in spiritual leadership."
+      },
+      "description": "A king sits upright on a throne decorated with butterflies and sylphs, holding a sword pointing upright. His gaze is direct and intense. He wears blue robes and a crown, conveying intellectual authority.",
+      "imagery_symbols": [
+        "upright sword",
+        "butterfly throne",
+        "blue robes",
+        "direct gaze",
+        "sylphs on throne",
+        "intellectual power"
+      ],
+      "yes_no": "Maybe",
+      "image": "kingofswords.jpeg"
+    },
+    {
+      "id": 64,
+      "name": "Ace of Pentacles",
+      "arcana": "Minor",
+      "suit": "Pentacles",
+      "number": "1",
+      "roman_numeral": "Ace",
+      "element": "Earth",
+      "astrological": "Capricorn, Taurus, Virgo",
+      "hebrew_letter": null,
+      "keywords": [
+        "opportunity",
+        "prosperity",
+        "new venture",
+        "security",
+        "abundance"
+      ],
+      "upright": {
+        "general": "Opportunity, prosperity, new venture, security, abundance. A new financial or material beginning blessed by the universe.",
+        "love": "New romantic opportunity grounded in stability, a secure relationship beginning.",
+        "career": "A new material opportunity, a new job or business, financial career opportunity.",
+        "finances": "A new financial opportunity, prosperity beginning, seed money.",
+        "spirituality": "Grounded spiritual opportunity, material manifestation of spiritual ideals."
+      },
+      "reversed": {
+        "general": "Lost opportunity, lack of planning and foresight, financial instability.",
+        "love": "Lost romantic opportunity, lack of stability in love, financial issues in romance.",
+        "career": "Lost career opportunity, lack of planning, financial career instability.",
+        "finances": "Lost financial opportunity, lack of planning, financial instability.",
+        "spirituality": "Lost spiritual opportunity, lack of grounded spiritual practice."
+      },
+      "description": "A hand emerges from a cloud holding a large golden pentacle. Below, a beautiful garden with an arch of flowers frames a path leading to distant mountains.",
+      "imagery_symbols": [
+        "hand from cloud",
+        "golden pentacle",
+        "flower arch",
+        "garden path",
+        "mountains",
+        "cultivated garden"
+      ],
+      "yes_no": "Yes",
+      "image": "aceofpentacles.jpeg"
+    },
+    {
+      "id": 65,
+      "name": "Two of Pentacles",
+      "arcana": "Minor",
+      "suit": "Pentacles",
+      "number": "2",
+      "roman_numeral": "II",
+      "element": "Earth",
+      "astrological": "Capricorn (Jupiter in Capricorn)",
+      "hebrew_letter": null,
+      "keywords": [
+        "multiple priorities",
+        "time management",
+        "prioritization",
+        "adaptability",
+        "balance"
+      ],
+      "upright": {
+        "general": "Multiple priorities, time management, prioritization, adaptability. Juggling life's demands with grace.",
+        "love": "Balancing a relationship with other priorities, time management in romance.",
+        "career": "Managing multiple projects, juggling work priorities, adapting at work.",
+        "finances": "Managing multiple financial priorities, juggling income and expenses.",
+        "spirituality": "Balancing spiritual practice with daily life, adaptable spirituality."
+      },
+      "reversed": {
+        "general": "Over-committed, disorganized, reprioritization needed, financial disarray.",
+        "love": "Over-committed affecting romance, disorganized in relationship, reprioritization.",
+        "career": "Over-committed at work, disorganized professionally, financial work disarray.",
+        "finances": "Financial disorganization, over-committed financially, disarray.",
+        "spirituality": "Over-committed spiritually, disorganized spiritual practice."
+      },
+      "description": "A young man dances while juggling two pentacles connected by an infinity symbol ribbon. In the background, ships rise and fall on turbulent waves.",
+      "imagery_symbols": [
+        "two pentacles",
+        "infinity ribbon",
+        "juggling figure",
+        "dancing stance",
+        "ships on waves"
+      ],
+      "yes_no": "Maybe",
+      "image": "twoofpentacles.jpeg"
+    },
+    {
+      "id": 66,
+      "name": "Three of Pentacles",
+      "arcana": "Minor",
+      "suit": "Pentacles",
+      "number": "3",
+      "roman_numeral": "III",
+      "element": "Earth",
+      "astrological": "Capricorn (Mars in Capricorn)",
+      "hebrew_letter": null,
+      "keywords": [
+        "teamwork",
+        "collaboration",
+        "learning",
+        "implementation",
+        "skill"
+      ],
+      "upright": {
+        "general": "Teamwork, collaboration, learning, implementation, skill. Working together to build something of lasting value.",
+        "love": "Working together in a relationship, collaborative love, building something together.",
+        "career": "Excellent teamwork, skilled collaboration, learning and growth at work.",
+        "finances": "Collaborative financial building, skilled financial teamwork.",
+        "spirituality": "Collaborative spiritual growth, learning from spiritual community."
+      },
+      "reversed": {
+        "general": "Disorganization, lack of teamwork, poor planning, ego conflicts.",
+        "love": "Lack of teamwork in relationship, ego conflicts, poor relationship planning.",
+        "career": "Lack of teamwork, ego conflicts at work, disorganized projects.",
+        "finances": "Lack of financial teamwork, ego conflicts over money, poor planning.",
+        "spirituality": "Lack of spiritual teamwork, ego conflicts in spiritual community."
+      },
+      "description": "An apprentice works on a cathedral arch while an architect and a monk consult a plan. The scene conveys expert craftsmanship, collaboration, and the pride of skilled work.",
+      "imagery_symbols": [
+        "cathedral arch",
+        "three pentacles in arch",
+        "craftsman",
+        "architect",
+        "monk",
+        "blueprints"
+      ],
+      "yes_no": "Yes",
+      "image": "threeofpentacles.jpeg"
+    },
+    {
+      "id": 67,
+      "name": "Four of Pentacles",
+      "arcana": "Minor",
+      "suit": "Pentacles",
+      "number": "4",
+      "roman_numeral": "IV",
+      "element": "Earth",
+      "astrological": "Capricorn (Sun in Capricorn)",
+      "hebrew_letter": null,
+      "keywords": [
+        "saving money",
+        "security",
+        "stability",
+        "control",
+        "scarcity"
+      ],
+      "upright": {
+        "general": "Saving money, security, stability, control, conservatism. Holding tightly to what you have.",
+        "love": "Holding tightly to a relationship, possessiveness, stable but guarded love.",
+        "career": "Holding tightly to a position, stable but controlling work approach.",
+        "finances": "Saving money, financial security, hoarding, controlled finances.",
+        "spirituality": "Holding tightly to spiritual beliefs, controlled spiritual practice."
+      },
+      "reversed": {
+        "general": "Over-spending, greed, self-protection, generosity, releasing control.",
+        "love": "Releasing control in love, generosity in romance, over-possessiveness releasing.",
+        "career": "Releasing control at work, generosity professionally, over-spending.",
+        "finances": "Releasing financial control, generosity with money, over-spending.",
+        "spirituality": "Releasing spiritual control, generosity in spiritual life."
+      },
+      "description": "A crowned figure sits hunched in front of a city, clutching one pentacle to their chest, balancing one on their head, and standing on two more. Their posture is protective and miserly.",
+      "imagery_symbols": [
+        "clutched pentacle",
+        "pentacle on crown",
+        "feet on pentacles",
+        "hunched posture",
+        "city in background"
+      ],
+      "yes_no": "No",
+      "image": "fourofpentacles.jpeg"
+    },
+    {
+      "id": 68,
+      "name": "Five of Pentacles",
+      "arcana": "Minor",
+      "suit": "Pentacles",
+      "number": "5",
+      "roman_numeral": "V",
+      "element": "Earth",
+      "astrological": "Taurus (Mercury in Taurus)",
+      "hebrew_letter": null,
+      "keywords": [
+        "financial loss",
+        "poverty",
+        "insecurity",
+        "worry",
+        "isolation"
+      ],
+      "upright": {
+        "general": "Financial loss, poverty, insecurity, worry, isolation. Hardship and material lack; help is available if sought.",
+        "love": "Feeling left out in the cold romantically, poverty mindset in love, isolation.",
+        "career": "Career hardship, financial worry at work, professional isolation.",
+        "finances": "Financial hardship, poverty, insecurity, material loss.",
+        "spirituality": "Spiritual poverty, feeling alone spiritually, isolation from spiritual community."
+      },
+      "reversed": {
+        "general": "Recovery from financial loss, spiritual poverty, overcoming hardship.",
+        "love": "Recovery from romantic hardship, overcoming isolation in love.",
+        "career": "Recovery from career hardship, overcoming professional poverty.",
+        "finances": "Recovery from financial loss, improvement after hardship.",
+        "spirituality": "Spiritual recovery, reconnecting after spiritual isolation."
+      },
+      "description": "Two destitute figures trudge through snow past a church window glowing warmly with light. One walks on crutches, the other is barefoot. The contrast highlights their exclusion from comfort.",
+      "imagery_symbols": [
+        "snow",
+        "church window",
+        "crutches",
+        "poverty",
+        "two figures",
+        "warm light inside",
+        "exclusion"
+      ],
+      "yes_no": "No",
+      "image": "fiveofpentacles.jpeg"
+    },
+    {
+      "id": 69,
+      "name": "Six of Pentacles",
+      "arcana": "Minor",
+      "suit": "Pentacles",
+      "number": "6",
+      "roman_numeral": "VI",
+      "element": "Earth",
+      "astrological": "Taurus (Moon in Taurus)",
+      "hebrew_letter": null,
+      "keywords": [
+        "giving",
+        "receiving",
+        "sharing wealth",
+        "generosity",
+        "charity"
+      ],
+      "upright": {
+        "general": "Giving, receiving, sharing wealth, generosity, charity. Wealth and resources flowing freely.",
+        "love": "Generosity in a relationship, giving and receiving love equally, balanced romance.",
+        "career": "Sharing professional knowledge, generosity at work, receiving career support.",
+        "finances": "Sharing wealth, generosity with money, receiving financial support.",
+        "spirituality": "Spiritual generosity, sharing spiritual gifts, giving and receiving spiritually."
+      },
+      "reversed": {
+        "general": "Self-care, unpaid debts, one-sided charity, power dynamics in giving.",
+        "love": "One-sided giving in love, power dynamics in romance, self-care needed.",
+        "career": "One-sided professional generosity, power dynamics at work.",
+        "finances": "One-sided financial generosity, unpaid debts, power dynamics.",
+        "spirituality": "One-sided spiritual generosity, power dynamics in spiritual giving."
+      },
+      "description": "A wealthy merchant holds a scale in one hand and gives coins to two kneeling beggars with the other. The scale symbolizes fair distribution. He appears generous but also in a position of power.",
+      "imagery_symbols": [
+        "balanced scale",
+        "coins given",
+        "two beggars",
+        "wealthy merchant",
+        "distribution",
+        "power dynamic"
+      ],
+      "yes_no": "Yes",
+      "image": "sixofpentacles.jpeg"
+    },
+    {
+      "id": 70,
+      "name": "Seven of Pentacles",
+      "arcana": "Minor",
+      "suit": "Pentacles",
+      "number": "7",
+      "roman_numeral": "VII",
+      "element": "Earth",
+      "astrological": "Taurus (Saturn in Taurus)",
+      "hebrew_letter": null,
+      "keywords": [
+        "long-term vision",
+        "sustainable results",
+        "perseverance",
+        "investment",
+        "harvest"
+      ],
+      "upright": {
+        "general": "Long-term vision, sustainable results, perseverance, investment, harvest. Pausing to assess progress.",
+        "love": "Reflecting on relationship progress, investing in long-term love, patient romance.",
+        "career": "Assessing career progress, long-term career investment, patient work.",
+        "finances": "Long-term financial investment, patient financial growth, assessing returns.",
+        "spirituality": "Long-term spiritual investment, assessing spiritual growth, patience."
+      },
+      "reversed": {
+        "general": "Lack of long-term vision, limited success, laziness, impatience.",
+        "love": "Impatience in love, lack of romantic long-term vision, limited progress.",
+        "career": "Impatience at work, lack of long-term career vision, limited professional success.",
+        "finances": "Impatience with finances, lack of long-term vision, limited financial returns.",
+        "spirituality": "Impatience in spiritual growth, limited spiritual progress."
+      },
+      "description": "A farmer leans on a hoe, pausing to contemplate seven pentacles growing on a lush vine. His expression is thoughtful and assessing, reflecting on the fruits of his labor.",
+      "imagery_symbols": [
+        "seven pentacles on vine",
+        "farmer with hoe",
+        "contemplation",
+        "harvest assessment",
+        "lush growth"
+      ],
+      "yes_no": "Maybe",
+      "image": "sevenofpentacles.jpeg"
+    },
+    {
+      "id": 71,
+      "name": "Eight of Pentacles",
+      "arcana": "Minor",
+      "suit": "Pentacles",
+      "number": "8",
+      "roman_numeral": "VIII",
+      "element": "Earth",
+      "astrological": "Virgo (Sun in Virgo)",
+      "hebrew_letter": null,
+      "keywords": [
+        "apprenticeship",
+        "repetitive tasks",
+        "mastery",
+        "skill development",
+        "diligence"
+      ],
+      "upright": {
+        "general": "Apprenticeship, repetitive tasks, mastery, skill development, diligence. The craftsman honing their art.",
+        "love": "Working on a relationship, diligent love, skill and care put into romance.",
+        "career": "Mastering a skill at work, diligent career development, apprenticeship.",
+        "finances": "Diligently building financial skills, mastering financial craft.",
+        "spirituality": "Diligent spiritual practice, mastering spiritual skills, spiritual craftsmanship."
+      },
+      "reversed": {
+        "general": "Self-development, perfectionism, misdirected activity, lack of focus.",
+        "love": "Perfectionism in love, misdirected romantic effort, lack of focus.",
+        "career": "Perfectionism at work, misdirected work effort, lack of career focus.",
+        "finances": "Perfectionism around money, misdirected financial effort, lack of focus.",
+        "spirituality": "Perfectionism in spiritual practice, misdirected spiritual effort."
+      },
+      "description": "A craftsman sits on a bench carving pentacles, with six completed and mounted behind him and one in his hand. He is fully absorbed in his work in a diligent and focused manner.",
+      "imagery_symbols": [
+        "craftsman at work",
+        "eight pentacles",
+        "absorbed focus",
+        "bench",
+        "completed work",
+        "diligence"
+      ],
+      "yes_no": "Yes",
+      "image": "eightofpentacles.jpeg"
+    },
+    {
+      "id": 72,
+      "name": "Nine of Pentacles",
+      "arcana": "Minor",
+      "suit": "Pentacles",
+      "number": "9",
+      "roman_numeral": "IX",
+      "element": "Earth",
+      "astrological": "Virgo (Venus in Virgo)",
+      "hebrew_letter": null,
+      "keywords": [
+        "abundance",
+        "luxury",
+        "self-sufficiency",
+        "financial independence",
+        "success"
+      ],
+      "upright": {
+        "general": "Abundance, luxury, self-sufficiency, financial independence, success. Enjoying the fruits of your labor.",
+        "love": "Self-sufficient in love, enjoying romantic abundance, independent and fulfilled.",
+        "career": "Career success enjoyed alone, self-sufficient professional, abundant career.",
+        "finances": "Financial independence, abundant wealth, enjoying financial success.",
+        "spirituality": "Abundant spiritual life, self-sufficient spirituality, enjoying spiritual fruits."
+      },
+      "reversed": {
+        "general": "Working too hard, over-investment in work, financial setbacks, superficiality.",
+        "love": "Over-investment in romance, superficial love, financial setbacks affecting love.",
+        "career": "Working too hard, over-investment in career, superficial work success.",
+        "finances": "Financial setbacks, over-investment, working too hard for money.",
+        "spirituality": "Over-investment in spiritual work, superficial spiritual abundance."
+      },
+      "description": "An elegantly dressed woman walks through a vineyard, her hand resting on a hooded falcon. Nine pentacles surround her. Her estate is rich and beautiful. A snail crawls at her feet.",
+      "imagery_symbols": [
+        "hooded falcon",
+        "vineyard",
+        "nine pentacles",
+        "elegant robes",
+        "luxurious estate",
+        "snail"
+      ],
+      "yes_no": "Yes",
+      "image": "nineofpentacles.jpeg"
+    },
+    {
+      "id": 73,
+      "name": "Ten of Pentacles",
+      "arcana": "Minor",
+      "suit": "Pentacles",
+      "number": "10",
+      "roman_numeral": "X",
+      "element": "Earth",
+      "astrological": "Virgo (Mercury in Virgo)",
+      "hebrew_letter": null,
+      "keywords": [
+        "wealth",
+        "legacy",
+        "inheritance",
+        "stability",
+        "family"
+      ],
+      "upright": {
+        "general": "Wealth, legacy, inheritance, stability, family. Lasting material and family abundance across generations.",
+        "love": "A lasting and wealthy family life, stable long-term relationship, family harmony.",
+        "career": "Career legacy, lasting professional success, family business.",
+        "finances": "Wealth, inheritance, lasting financial legacy, financial stability.",
+        "spirituality": "Spiritual legacy, passing on spiritual tradition, lasting spiritual stability."
+      },
+      "reversed": {
+        "general": "The dark side of wealth, financial failure, loss of family legacy, bankruptcy.",
+        "love": "Family conflict over wealth, financial strain on relationship, loss of legacy.",
+        "career": "Career legacy lost, financial failure professionally, family business trouble.",
+        "finances": "Financial failure, loss of inheritance, bankruptcy, dark side of wealth.",
+        "spirituality": "Loss of spiritual legacy, financial problems affecting spiritual life."
+      },
+      "description": "An elderly patriarch sits surrounded by his family in a wealthy courtyard. Two dogs play nearby, and pentacles are arranged in the kabbalistic Tree of Life pattern. Young and old generations are present together.",
+      "imagery_symbols": [
+        "family generations",
+        "ten pentacles in Tree of Life",
+        "two dogs",
+        "archway",
+        "wealthy estate",
+        "elder patriarch"
+      ],
+      "yes_no": "Yes",
+      "image": "tenofpentacles.jpeg"
+    },
+    {
+      "id": 74,
+      "name": "Page of Pentacles",
+      "arcana": "Minor",
+      "suit": "Pentacles",
+      "number": "11",
+      "roman_numeral": "Page",
+      "element": "Earth of Earth",
+      "astrological": "Earth of Earth",
+      "hebrew_letter": null,
+      "keywords": [
+        "manifestation",
+        "financial opportunity",
+        "skill development",
+        "new beginnings",
+        "study"
+      ],
+      "upright": {
+        "general": "Manifestation, financial opportunity, skill development, study, new beginnings. An eager and grounded young learner.",
+        "love": "A practical and grounded new romance, financial stability attracting love.",
+        "career": "New practical career opportunity, studying a skill, grounded new start.",
+        "finances": "New financial opportunity, studying finances, practical new start.",
+        "spirituality": "Grounded spiritual study, manifesting spiritual practice, practical spirituality."
+      },
+      "reversed": {
+        "general": "Lack of progress, procrastination, learn from failure, perfectionism.",
+        "love": "Lack of progress in romance, procrastination in love, perfectionism.",
+        "career": "Lack of career progress, procrastination professionally, learning from failure.",
+        "finances": "Lack of financial progress, procrastination around money, perfectionism.",
+        "spirituality": "Lack of spiritual progress, procrastination in spiritual practice."
+      },
+      "description": "A young person stands in a flowering field, gazing with intense concentration at a large pentacle held before them at eye level. Their posture conveys focus and earnest study.",
+      "imagery_symbols": [
+        "pentacle at eye level",
+        "concentrated gaze",
+        "flowering field",
+        "practical youth",
+        "grounded stance"
+      ],
+      "yes_no": "Yes",
+      "image": "pageofpentacles.jpeg"
+    },
+    {
+      "id": 75,
+      "name": "Knight of Pentacles",
+      "arcana": "Minor",
+      "suit": "Pentacles",
+      "number": "12",
+      "roman_numeral": "Knight",
+      "element": "Fire of Earth",
+      "astrological": "Virgo / Leo",
+      "hebrew_letter": null,
+      "keywords": [
+        "hard work",
+        "efficiency",
+        "routine",
+        "conservatism",
+        "methodical"
+      ],
+      "upright": {
+        "general": "Hard work, efficiency, routine, conservatism, methodical. Steady and reliable progress toward goals.",
+        "love": "Reliable and steady partner, methodical approach to love, conservative romance.",
+        "career": "Hard-working and methodical career approach, efficient professional.",
+        "finances": "Hard work paying off financially, methodical financial approach.",
+        "spirituality": "Steady and methodical spiritual practice, reliable spiritual growth."
+      },
+      "reversed": {
+        "general": "Self-discipline, boredom, laziness, feeling stuck, perfectionism.",
+        "love": "Boredom in romance, laziness in love, feeling stuck in relationship.",
+        "career": "Boredom at work, laziness professionally, feeling stuck in career.",
+        "finances": "Laziness about finances, boredom with financial routine, feeling stuck.",
+        "spirituality": "Boredom in spiritual practice, laziness spiritually, feeling stuck."
+      },
+      "description": "A knight on a heavy black horse stands still in an open field, holding a pentacle and gazing at it steadily. The horse does not charge forward but stands patient and immovable, conveying reliability.",
+      "imagery_symbols": [
+        "black horse standing still",
+        "held pentacle",
+        "patient stance",
+        "plowed field",
+        "oak trees",
+        "methodical energy"
+      ],
+      "yes_no": "Yes",
+      "image": "knightofpentacles.jpeg"
+    },
+    {
+      "id": 76,
+      "name": "Queen of Pentacles",
+      "arcana": "Minor",
+      "suit": "Pentacles",
+      "number": "13",
+      "roman_numeral": "Queen",
+      "element": "Water of Earth",
+      "astrological": "Capricorn / Sagittarius",
+      "hebrew_letter": null,
+      "keywords": [
+        "practical",
+        "homebody",
+        "down-to-earth",
+        "security",
+        "nurturing"
+      ],
+      "upright": {
+        "general": "Practical, homebody, down-to-earth, security, nurturing. A warm provider who creates abundance through care.",
+        "love": "Nurturing and practical partner, homebody romance, financially secure love.",
+        "career": "Practical and nurturing professional, down-to-earth career approach.",
+        "finances": "Practical financial nurturing, down-to-earth financial security.",
+        "spirituality": "Practical and nurturing spirituality, grounded spiritual security."
+      },
+      "reversed": {
+        "general": "Self-care, over-dependence on others for security, smothering, lack of practicality.",
+        "love": "Smothering in love, over-dependence, lack of practical romance.",
+        "career": "Smothering at work, over-dependence professionally, lack of practicality.",
+        "finances": "Lack of practical financial care, over-dependence on others for security.",
+        "spirituality": "Over-dependence in spiritual community, smothering in spirituality."
+      },
+      "description": "A queenly woman sits on a throne decorated with fruit and goats, in a lush and cultivated garden. She cradles a large pentacle in her lap, gazing at it lovingly. A rabbit hops nearby.",
+      "imagery_symbols": [
+        "fruitful throne",
+        "pentacle in lap",
+        "garden setting",
+        "rabbit",
+        "goat carvings",
+        "abundant flowers"
+      ],
+      "yes_no": "Yes",
+      "image": "queenofpentacles.jpeg"
+    },
+    {
+      "id": 77,
+      "name": "King of Pentacles",
+      "arcana": "Minor",
+      "suit": "Pentacles",
+      "number": "14",
+      "roman_numeral": "King",
+      "element": "Fire of Earth",
+      "astrological": "Taurus / Aries",
+      "hebrew_letter": null,
+      "keywords": [
+        "abundance",
+        "prosperity",
+        "security",
+        "ambition",
+        "status"
+      ],
+      "upright": {
+        "general": "Abundance, prosperity, security, ambition, leadership. A master of the material world who leads with wealth.",
+        "love": "Stable and prosperous partner, financially secure and grounded love.",
+        "career": "Successful and ambitious professional, prosperous business leader.",
+        "finances": "Abundant financial mastery, prosperity and security achieved.",
+        "spirituality": "Prosperous spiritual leadership, material and spiritual abundance united."
+      },
+      "reversed": {
+        "general": "Financially inept, obsessed with wealth, stubborn, status-seeking.",
+        "love": "Obsession with wealth over love, stubbornness in romance, status-seeking.",
+        "career": "Obsessed with status at work, financially inept leadership, stubbornness.",
+        "finances": "Obsession with wealth, financially inept, status-seeking over stability.",
+        "spirituality": "Obsession with material wealth over spiritual growth, stubborn spiritual approach."
+      },
+      "description": "A powerful king sits on a throne covered in carved bulls and vines, wearing a robe decorated with grapes. He holds a scepter and a pentacle, and his throne is set against a castle backdrop. Bulls and garden symbols surround him.",
+      "imagery_symbols": [
+        "bull throne",
+        "grape robe",
+        "scepter and pentacle",
+        "castle background",
+        "garden abundance",
+        "materially rich"
+      ],
+      "yes_no": "Yes",
+      "image": "kingofpentacles.jpeg"
+    }
+  ]
+}
