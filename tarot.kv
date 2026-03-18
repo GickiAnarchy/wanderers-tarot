@@ -50,7 +50,7 @@
                 MDNavigationDrawerItem:
                     text: "Exit"
                     icon: "exit"
-                    on_release: app.stop()
+                    on_release: root.app.stop()
                     text_color: 0.8,0,0.2,1
 
 
@@ -209,3 +209,64 @@
     
     MDBoxLayout:
         orientation: "vertical"
+        
+        MDScrollView:
+            MDList:
+                id: history_list
+
+
+<PastReading>:
+    past_inquiry:past_inquiry
+    past_response:past_response
+    
+    name: "past"
+    
+    MDBoxLayout:
+        orientation: "vertical"
+        padding: dp(10)
+        spacing: dp(10)
+        
+        MDLabel:
+            id: past_inquiry
+            size_hint: 0.8,0.3
+            halign: "center"
+            text_color: 0.5, 0.5, 0.1, 1
+            pos_hint:{"center_x":0.5}
+        
+        MDScrollView:
+            size_hint: 0.9, 0.9
+            do_scroll_x: False
+            do_scroll_y: True
+            pos_hint:{"center_x":0.5}
+            
+            MDBoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                
+                MDLabel:
+                    id: past_response
+                    text_color: 0.5, 0.2, 0.3, 1
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    text_size: self.width, None
+                    halign: "left"
+                    valign: "top"
+        
+        MDBoxLayout:
+            orientation: "horizontal"
+            size_hint: 1, 0.2
+            padding: dp(10)
+            spacing: dp(10)
+        
+        MDRaisedButton:
+            text: "Back"
+            size_hint: 0.3, None
+            height: dp(50)
+            on_release: root.manager.current = "history"
+
+        MDRaisedButton:
+            text: "Delete"
+            size_hint: 0.3, None
+            height: dp(50)
+            on_release: root.delete_reading()

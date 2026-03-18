@@ -21,7 +21,6 @@ class RootController(MDBoxLayout):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
-        #self.cards = TarotCards()
         self.api_key = None
         self.current_inquiry = None
         self.current_reading = None
@@ -37,6 +36,12 @@ class RootController(MDBoxLayout):
         else:
             print("Need API Key")
             self.goto("settings")
+    
+    
+    def get_history(self):
+        hs = self.screen_manager.get_screen("history")
+        history = self.load_history()
+        return history
 
 
     def goto(self, screen_name):
@@ -55,7 +60,7 @@ class RootController(MDBoxLayout):
 
     def save_reading(self):
         if self.current_reading is None:
-            return
+            print("self.current_reading is None")
         timestamp = datetime.now().strftime("%Y%m%d%H%M")
         data = {
             "timestamp": timestamp,
@@ -81,6 +86,22 @@ class RootController(MDBoxLayout):
             print(f"Error loading history: {e}")
             history = []
         return history
+
+
+    def delete_history(self, pr):
+        history_list = self.load_history()
+        hl = []
+        for r in history_list:
+            if pr.get("timestamp") != r.get("timestamp"):
+                hl.append(r)
+        old_len = len(history_list)
+        new_len = len(hl)
+        print(f"{old_len} | {new_len}")
+        try:
+            with open("history.json", "w") as f:
+                json.dump(hl, f, indent=4)
+        except Exception as e:
+            print(e)
 
 
     @property

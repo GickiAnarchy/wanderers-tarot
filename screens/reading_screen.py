@@ -36,6 +36,7 @@ class ReadingScreen(MDScreen):
         except Exception as e:
             ee = e
             Clock.schedule_once(lambda dt: self.update_ui(f"ERROR:{ee}", "Its fuzzy.."))
+        self.app.rc.current_reading = response 
             
 
     def update_ui(self, text = "...", status = "Empty"):

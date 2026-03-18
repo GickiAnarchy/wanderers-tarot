@@ -2,24 +2,41 @@ import os
 import json
 
 from kivymd.app import MDApp
+from kivymd.uix.label import MDLabel
 from kivymd.uix.screen import MDScreen
+from kivymd.uix.list import OneLineListItem
+from kivy.properties import ObjectProperty,ListProperty
 
 
 class HistoryScreen(MDScreen):
-    HISTORY_FILE = "history.json"
+    history = ListProperty([])
     
     
-    def get_history(self):
-        if os.path.exists(self.HISTORY_FILE):
-            with open(self.HISTORY_FILE, "r") as f:
-                data = json.load(f)
-            return data
-
-
-    def save_history(self, newdata):
-        if newdata is None:
-            print("newdata is None. Nothing to add to history")
+    def on_pre_enter(self):
+        self.refresh()
+    
+    
+    def refresh(self):
+        history = self.app.rc.load_history()
+        
+        self.ids.history_list.clear_widgets()
+        if not history:
+            self.ids.history_list.add_widget(OneLineListItem(text="There is no past"))
             return
-        with open(self.HISTORY_FILE, "w") as f:
-            json.dump(newdata, f, indent=4)
-            
+        for reading in history:
+            inq = reading.get("inquiry")
+            label = MDLabel(text=inq)
+            item = OneLineListItem(text=inq,on_release=lambda x, r=reading: self.open_reading(r))
+            self.ids.history_list.add_widget(item)
+
+    
+    def open_reading(self, reading):
+        ps = self.manager.get_screen("past")
+        ps.update_screen(reading)
+        self.manager.current = "past"
+    
+    
+    @property
+    def app(self):
+        return MDApp.get_running_app()
+    
