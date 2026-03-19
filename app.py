@@ -11,7 +11,7 @@ from kivymd.uix.navigationdrawer import MDNavigationDrawerItem
 class TarotApp(MDApp):
     def build(self):
         self.theme_cls.theme_style = "Dark"
-        self.theme_cls.primary_palette = "Teal"
+        self.theme_cls.primary_palette = "DeepPurple"
         self.theme_cls.accent_palette = "Amber"
         self.rc = RootController()
         for cls,name in ALL_SCREENS:

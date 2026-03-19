@@ -1,10 +1,15 @@
 from pydoc import text
+from unittest.util import _MIN_COMMON_LEN
 
 from kivy.clock import Clock
 from kivy.animation import Animation
 from kivy.properties import NumericProperty
 from kivy.uix.behaviors import ButtonBehavior
 from kivy.uix.floatlayout import FloatLayout
+from kivymd.uix.boxlayout import MDBoxLayout
+from kivymd.uix.scrollview import MDScrollView
+from kivymd.uix.card import MDCard
+
 
 
 class FlippableCard(ButtonBehavior, FloatLayout):
@@ -25,7 +30,7 @@ class FlippableCard(ButtonBehavior, FloatLayout):
 
     def _finish_init(self, *args):
         self.build_front()
-        self.build_back()
+        #self.build_back()
 
     # -------------------------
     # FRONT
@@ -38,12 +43,20 @@ class FlippableCard(ButtonBehavior, FloatLayout):
 
         self.ids.card.clear_widgets()
 
+        container = MDBoxLayout(
+            size_hint=(None, None),
+            size=("250dp", "425dp"),  # 👈 tarot ratio
+            pos_hint={"center_x": 0.5, "center_y": 0.5},
+        )
+
         img = FitImage(
             source=self.image,
             radius=[20]
         )
 
-        self.ids.card.add_widget(img)
+        container.add_widget(img)
+
+        self.ids.card.add_widget(container)
 
     # -------------------------
     # BACK
@@ -71,12 +84,36 @@ class FlippableCard(ButtonBehavior, FloatLayout):
             size_hint_y=0.2
         )
 
+        meanings_scroll = MDScrollView(
+            id = "meanings_scroll",
+            do_scroll_x=False,
+            do_scroll_y=True,
+        )
+
+        mean_box = MDBoxLayout(
+            orientation='vertical',
+            size_hint_y=None,
+            padding="5dp"
+        )
+        mean_box.bind(minimum_height=mean_box.setter('height'))
+
         meaning = MDLabel(
             text=f"Meaning:\n{self.model_card.get_meanings()}",
-            halign="center",
-            font_size="14sp",
-            size_hint_y=0.8
-        )
+            halign="left",
+            valign="top",
+            size_hint_y=None
+            )
+        
+        """
+        meaning.height = meaning.texture_size[1]
+        meaning.text_size = meaning.width, None
+        """
+            
+        meaning.bind(width=lambda *x: setattr(meaning, "text_size", (meaning.width, None)))
+        meaning.bind(texture_size=lambda *x: setattr(meaning, "height", meaning.texture_size[1]))
+
+        mean_box.add_widget(meaning)
+        meanings_scroll.add_widget(mean_box)
 
         btn = MDRaisedButton(
             text="Show More",
@@ -85,7 +122,7 @@ class FlippableCard(ButtonBehavior, FloatLayout):
         btn.bind(on_release=self.show_more)
 
         layout.add_widget(title)
-        layout.add_widget(meaning)
+        layout.add_widget(meanings_scroll)
         layout.add_widget(btn)
 
         self.ids.card.add_widget(layout)
@@ -93,18 +130,20 @@ class FlippableCard(ButtonBehavior, FloatLayout):
     # -------------------------
     # FLIP
     # -------------------------
-    def on_touch_down(self, touch):
-        if self.collide_point(*touch.pos):
-            self.flip()
-            return True  # 👈 consume the touch
-    
-        return super().on_touch_down(touch)
-    
-    
     def on_press(self):
-        if self.animating:
-            return
-        self.flip()
+        # If the scrollview exists and the touch started inside it, ignore flip
+        if "meanings_scroll" in self.ids:
+            sv = self.ids.meanings_scroll
+            if sv.collide_point(*self.last_touch_pos):
+                return
+
+        if not self.animating:
+            self.flip()
+
+    def on_touch_down(self, touch):
+        # Save touch position so on_press can check it
+        self.last_touch_pos = touch.pos
+        return super().on_touch_down(touch)
 
     def flip(self):
         self.animating = True
