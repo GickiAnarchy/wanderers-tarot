@@ -33,19 +33,25 @@
                     text: "Tarot Reading"
                     icon: "cards"
                     on_release: root.goto("tarot")
-                    text_color: 0.2,0.1,0.6,1
+                    text_color: 0.1,0.3,0.6,1
                 
                 MDNavigationDrawerItem:
                     text: "Reading History"
                     icon: "history"
                     on_release: root.goto("history")
-                    text_color: 0.2,0.1,0.6,1
+                    text_color: 0.3,0.2,0.6,1
+                    
+                MDNavigationDrawerItem:
+                    text: "Explore"
+                    icon: "card"
+                    on_release: root.goto("deck")
+                    text_color: 0.4,0.1,0.6,1
 
                 MDNavigationDrawerItem:
                     text: "Settings"
                     icon: "cog"
                     on_release: root.goto("settings")
-                    text_color: 0.2,0.1,0.6,1
+                    text_color: 0.5,0.1,0.6,1
                 
                 MDNavigationDrawerItem:
                     text: "Exit"
@@ -272,27 +278,48 @@
             on_release: root.delete_reading()
 
 
+<DeckScreen>:
+    name: "deck"
+    
+    MDBoxLayout:
+        orientation: "vertical"
+        
+        MDCarousel:
+            id: tarot_carousel
+            scroll_timeout: 200
+            scroll_distance: dp(20)
+            direction: "right"
+            loop: True
+
+
 #
 #
 #
 #
 <FlippableCard>:
-    canvas.before:
-        PushMatrix
-        Scale:
-            x: root.scale_x
-            y: 1
-            z: 1
-            origin: self.center
-    canvas.after:
-        PopMatrix
+    on_release: root.flip()
 
-    MDCard:
-        id: card
-        orientation: "vertical"
-        padding: "16dp"
-        spacing: "10dp"
-        radius: [20]
-        elevation: 6
-        size_hint: 0.9, 0.9
-        pos_hint: {"center_x": 0.5, "center_y": 0.5}
+    FloatLayout:
+        id: container
+        size: root.size
+        pos: root.pos
+
+        canvas.before:
+            PushMatrix
+            Scale:
+                x: root.scale_x
+                y: 1
+                z: 1
+                origin: self.center
+        canvas.after:
+            PopMatrix
+
+        MDCard:
+            id: card
+            orientation: "vertical"
+            padding: "16dp"
+            spacing: "10dp"
+            radius: [20]
+            elevation: 6
+            size_hint: 0.9, 0.9
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}

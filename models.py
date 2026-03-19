@@ -98,6 +98,8 @@ class TarotCard:
 class RiderDeck:
     def __init__(self):
         self.deck = []
+        self.create_deck()
+        self.shuffle()
 
 
     def create_deck(self):
@@ -113,6 +115,10 @@ class RiderDeck:
             for c in self.deck:
                 c.is_reversed = random.choice([True,False])
             random.shuffle(self.deck)
+    
+    
+    def get_deck(self):
+        return self.deck
 
 
 
