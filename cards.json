@@ -3,7 +3,7 @@
     "name": "The Fool",
     "number": "0",
     "arcana": "Major Arcana",
-    "suit": "Trump",
+    "suit": "",
     "keywords": [
       "freedom",
       "faith",
@@ -39,7 +39,7 @@
     "name": "The Magician",
     "number": "1",
     "arcana": "Major Arcana",
-    "suit": "Trump",
+    "suit": "",
     "keywords": [
       "capability",
       "empowerment",
@@ -71,7 +71,7 @@
     "name": "The High Priestess",
     "number": "2",
     "arcana": "Major Arcana",
-    "suit": "Trump",
+    "suit": "",
     "keywords": [
       "intuition",
       "reflection",
@@ -105,7 +105,7 @@
     "name": "The Empress",
     "number": "3",
     "arcana": "Major Arcana",
-    "suit": "Trump",
+    "suit": "",
     "keywords": [
       "fertility",
       "productivity",
@@ -140,7 +140,7 @@
     "name": "The Emperor",
     "number": "4",
     "arcana": "Major Arcana",
-    "suit": "Trump",
+    "suit": "",
     "keywords": [
       "authority",
       "regulation",
@@ -172,7 +172,7 @@
     "name": "The Hierophant",
     "number": "5",
     "arcana": "Major Arcana",
-    "suit": "Trump",
+    "suit": "",
     "keywords": [
       "guidance",
       "knowledge",
@@ -206,7 +206,7 @@
     "name": "The Lovers",
     "number": "6",
     "arcana": "Major Arcana",
-    "suit": "Trump",
+    "suit": "",
     "keywords": [
       "love",
       "passion",
@@ -238,7 +238,7 @@
     "name": "The Chariot",
     "number": "7",
     "arcana": "Major Arcana",
-    "suit": "Trump",
+    "suit": "",
     "keywords": [
       "advancement",
       "victory",
@@ -269,7 +269,7 @@
     "name": "Strength",
     "number": "8",
     "arcana": "Major Arcana",
-    "suit": "Trump",
+    "suit": "",
     "keywords": [
       "discipline",
       "boldness",
@@ -299,7 +299,7 @@
     "name": "The Hermit",
     "number": "9",
     "arcana": "Major Arcana",
-    "suit": "Trump",
+    "suit": "",
     "keywords": [
       "solitude",
       "experience",
@@ -330,7 +330,7 @@
     "name": "Wheel of Fortune",
     "number": "10",
     "arcana": "Major Arcana",
-    "suit": "Trump",
+    "suit": "",
     "keywords": [
       "luck",
       "randomness",
@@ -362,7 +362,7 @@
     "name": "Justice",
     "number": "11",
     "arcana": "Major Arcana",
-    "suit": "Trump",
+    "suit": "",
     "keywords": [
       "balance",
       "law",
@@ -394,7 +394,7 @@
     "name": "The Hanged Man",
     "number": "12",
     "arcana": "Major Arcana",
-    "suit": "Trump",
+    "suit": "",
     "keywords": [
       "enlightenment",
       "sacrifice",
@@ -426,7 +426,7 @@
     "name": "Death",
     "number": "13",
     "arcana": "Major Arcana",
-    "suit": "Trump",
+    "suit": "",
     "keywords": [
       "ending",
       "conclusion",
@@ -458,7 +458,7 @@
     "name": "Temperance",
     "number": "14",
     "arcana": "Major Arcana",
-    "suit": "Trump",
+    "suit": "",
     "keywords": [
       "blending",
       "synthesis",
@@ -493,7 +493,7 @@
     "name": "The Devil",
     "number": "15",
     "arcana": "Major Arcana",
-    "suit": "Trump",
+    "suit": "",
     "keywords": [
       "shadow",
       "materialism",
@@ -526,7 +526,7 @@
     "name": "The Tower",
     "number": "16",
     "arcana": "Major Arcana",
-    "suit": "Trump",
+    "suit": "",
     "keywords": [
       "demolition",
       "upheaval",
@@ -559,7 +559,7 @@
     "name": "The Star",
     "number": "17",
     "arcana": "Major Arcana",
-    "suit": "Trump",
+    "suit": "",
     "keywords": [
       "hope",
       "optimism",
@@ -594,7 +594,7 @@
     "name": "The Moon",
     "number": "18",
     "arcana": "Major Arcana",
-    "suit": "Trump",
+    "suit": "",
     "keywords": [
       "mystery",
       "fantasy",
@@ -626,7 +626,7 @@
     "name": "The Sun",
     "number": "19",
     "arcana": "Major Arcana",
-    "suit": "Trump",
+    "suit": "",
     "keywords": [
       "joy",
       "brilliance",
@@ -658,7 +658,7 @@
     "name": "Judgement",
     "number": "20",
     "arcana": "Major Arcana",
-    "suit": "Trump",
+    "suit": "",
     "keywords": [
       "revival",
       "renewal",
@@ -691,7 +691,7 @@
     "name": "The World",
     "number": "21",
     "arcana": "Major Arcana",
-    "suit": "Trump",
+    "suit": ""  ,
     "keywords": [
       "wholeness",
       "integration",
@@ -2104,6 +2104,7 @@
     "Elemental": "Fire of Fire",
     "Affirmation": "\"I use my authority and experience to get things done faster.\""
   },
+  
   {
     "name": "Ace of Stones",
     "number": "1",

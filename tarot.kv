@@ -1,144 +1,324 @@
-<InputScreen>:
-    canvas.before:
-        Color:
-            rgba: 0.08, 0.08, 0.15, 1  # Midnight Blue
-        Rectangle:
-            pos: self.pos
-            size: self.size
+<RootController>:
+    screen_manager: screen_manager
+    toolbar:toolbar
+    nav_drawer: nav_drawer    
+    orientation: "vertical"
 
-    BoxLayout:
-        orientation: 'vertical'
-        padding: 40
-        spacing: 20
-      
-        Image:
-            #source: "data/logo.png"
-            source:root.get_tarot_image()
-            size_hint: None, None
-            size: dp(220), dp(220)
-            pos_hint: {"center_x": 0.5}
+    MDTopAppBar:
+        id: toolbar
+        title: "Digital Oracle"
+        left_action_items: [["menu", lambda x: nav_drawer.set_state("open")]]
+        elevation: 4
 
-        Label:
-            text: "Digital Oracle"
-            font_size: '30sp'
-            color: 0.8, 0.6, 1, 1  # Lavender
-            bold: True
-            size_hint_y: None
-            pos_hint:{"top":1.0}
-        
-        #Widget:
-            #size_hint_y:0.2
-    
-        TextInput:
-            id: user_q
-            hint_text: "What does the void whisper to you today?"
-            multiline: False
-            size_hint_y: 0.5
-            background_color: 0.1, 0.1, 0.2, 1
-            foreground_color: 1, 1, 1, 1
-            cursor_color: 0.8, 0.6, 1, 1
-        
-        #Widget:
-#            size_hint_y:0.2
+    MDNavigationLayout:
 
-        BoxLayout:
-            orientation:"horizontal"
-            spacing:15
-            size_hint_y: 0.3
-        
-            Button:
-                text: "Ask Question"
-                size_hint: (0.8,None)
-                height: dp(40)
-                background_normal: ''
-                background_color: 0.4, 0.2, 0.6, 1
-                on_press: root.submit(self)
-            
-            Button:
-                text: "API Key"
-                size_hint: (0.2,None)
-                height: dp(40)
-                background_normal: ''
-                background_color: 0.7, 0.2, 0.3, 1
-                on_press: root.manager.current = "key"
+        MDScreenManager:
+            id: screen_manager
+
+        MDNavigationDrawer:
+            id: nav_drawer
+
+            MDNavigationDrawerMenu:
+
+                MDNavigationDrawerLabel:
+                    text: "Navigation"
+
+                MDNavigationDrawerItem:
+                    text: "Home"
+                    icon: "home"
+                    on_release: root.goto("home")
+                    text_color: 0.2,0.1,0.6,1
+
+                MDNavigationDrawerItem:
+                    text: "Tarot Reading"
+                    icon: "cards"
+                    on_release: root.goto("tarot")
+                    text_color: 0.1,0.3,0.6,1
                 
+                MDNavigationDrawerItem:
+                    text: "Reading History"
+                    icon: "history"
+                    on_release: root.goto("history")
+                    text_color: 0.3,0.2,0.6,1
+                    
+                MDNavigationDrawerItem:
+                    text: "Explore"
+                    icon: "card"
+                    on_release: root.goto("deck")
+                    text_color: 0.4,0.1,0.6,1
 
-<ReadingScreen>:
-    canvas.before:
-        Color:
-            rgba: 0.05, 0.05, 0.1, 1
-        Rectangle:
-            pos: self.pos
-            size: self.size
+                MDNavigationDrawerItem:
+                    text: "Settings"
+                    icon: "cog"
+                    on_release: root.goto("settings")
+                    text_color: 0.5,0.1,0.6,1
+                
+                MDNavigationDrawerItem:
+                    text: "Exit"
+                    icon: "exit"
+                    on_release: root.app.stop()
+                    text_color: 0.8,0,0.2,1
 
-    BoxLayout:
-        orientation: 'vertical'
-        padding: 20
-        spacing: 10
 
-        Label:
-            id: status
-            text: "Aligning cosmic energies..."
-            size_hint_y: 0.1
-            color: 0.7, 0.7, 0.7, 1
-            italic: True
+<HomeScreen>:
+    name: "home"
+    
+    MDBoxLayout:
+        orientation: "vertical"
+        padding: dp(15)
+        spacing: dp(15)
 
-        ScrollView:
-            size_hint_y: 0.8
-            Label:
-                id: reading_label
-                text: ""
-                text_size: self.width, None
+        MDLabel:
+            text: "Welcome to the Digital Oracle!"
+            pos_hint: {"center_x": 0.5}
+            font_style: "H4"
+            halign: "center"
+            size_hint_y: None
+            height: self.texture_size[1]
+
+        MDLabel:
+            id: warning_label
+            pos_hint: {"center_x": 0.8}
+            halign: "center"
+            size_hint_y: None
+            height: self.texture_size[1]
+            text_color: 1,0,0,1
+        
+        Widget:
+            size_hint_y: None
+            height: dp(200)
+
+
+<SettingsScreen>:
+    name: "settings"
+
+    MDBoxLayout:
+        orientation: "vertical"
+        padding: dp(20)
+        spacing: dp(20)
+
+        Widget:
+            size_hint_y: None
+            height: dp(20)
+
+        MDBoxLayout:
+            orientation: "vertical"
+            padding: dp(10)
+            size_hint_y: 0.3
+
+            MDLabel:
+                text: "Google AI API Key"
+                font_style: "H6"
                 size_hint_y: None
                 height: self.texture_size[1]
-                halign: 'center'
-                valign: 'top'
-                padding: [10, 10]
-                font_size: '18sp'
-                line_height: 1.2
 
-        Button:
-            text: "RETURN TO DUST"
+            MDTextField:
+                id: api_key_input
+                hint_text: "Enter your Google AI API Key"
+                text: root.api_key or ""
+
+            MDBoxLayout:
+                orientation: "horizontal"
+                padding: dp(10)
+                spacing: dp(10)
+                size_hint_y: None
+                height: dp(50)
+                pos_hint: {"center_x": 0.5}
+
+                MDRaisedButton:
+                    text: "Reset API Key"
+                    on_release: root.reset_api_key()
+
+                MDRaisedButton:
+                    text: "Save API Key"
+                    on_release: root.save_api_key(api_key_input.text)
+        
+        Widget:
+
+
+<TarotScreen>:
+    in_field: in_field
+
+    name: "tarot"
+
+    MDBoxLayout:
+        orientation: "vertical"
+        spacing: dp(10)
+        padding: dp(10)
+        pos_hint:{"center_x":0.5}
+
+        MDLabel:
+            text: "What do you seek?"
+            font_syle: "H4"
+            halign: "center"
             size_hint_y: None
-            height: dp(40)
-            background_color: 0.2, 0.2, 0.3, 1
-            on_press: root.go_back(self)
+            height: self.texture_size[1]
+
+        MDTextField:
+            id: in_field
+            hint_text: "Ask the stars anything..."
+            size_hint: 0.7,None
+            height: dp(150)
+            pos_hint: {"center_x":0.5,"center_y":0.5}
+            multiline: True
+        
+        Widget:
+
+        MDRaisedButton:
+            text: "Ask..."
+            size_hint: 0.3, None
+            height: dp(30)
+            on_release: root.ask_pressed()
 
 
-<KeyScreen>:
-    BoxLayout:
-        orientation:"vertical"
-        padding: 10
-        spacing: 20
+<ReadingScreen>:
+    res_label:res_label
+    current_status: current_status
+
+    name: "reading"
+
+    MDBoxLayout:
+        orientation: "vertical"
         
-        TextInput:
-            id:keyfield
-            hint_text:"Enter Google API key here"
-            multiline:False
-            size_hint_x: 0.8
-            size_hint_y:None
-            height:self.height
-        
-        Label:
+        MDLabel:
+            id: current_status
+            size_hint_x: 1.0
+            pos_hint:{"center_x":0.5}
             halign:"center"
-            text:"API Key"
+            size_hint_y: None
+            height: dp(100)
+            theme_text_color: "Custom"
+            text_color: 0.85, 0.75, 0.45, 1
         
-        BoxLayout:
-            orientation:"horizontal"
-            padding:10
-            spacing:10
+        MDScrollView:
+            size_hint_y: 0.8
+            do_scroll_x: False
+            do_scroll_y: True
             
-            Button:
-                text: "Save Key"
-                size_hint_y: None
-                height: dp(40)
-                background_color: 0.2, 0.2, 0.3, 1
-                on_release:root.save_key()
+            MDLabel:
+                id: res_label
+                size_hint: 0.8, None
+                height: self.texture_size[1]
+                text_size: self.width, None
+                halign: "left"
+                valign: "top"
+        
+        MDRaisedButton:
+            text:"Ok"
+            size_hint: 0.3, None
+            height: dp(30)
+            on_release: root.ok_pressed()
 
-            Button:
-                text: "Reset Key"
-                size_hint_y: None
-                height: dp(40)
-                background_color: 0.2, 0.2, 0.3, 1
-                on_release:root.reset_key()
+
+<HistoryScreen>:
+    name: "history"
+    
+    MDBoxLayout:
+        orientation: "vertical"
+        
+        MDScrollView:
+            MDList:
+                id: history_list
+
+
+<PastReading>:
+    past_inquiry:past_inquiry
+    past_response:past_response
+    
+    name: "past"
+    
+    MDBoxLayout:
+        orientation: "vertical"
+        padding: dp(10)
+        spacing: dp(10)
+        
+        MDLabel:
+            id: past_inquiry
+            size_hint: 0.8,0.3
+            halign: "center"
+            text_color: 0.5, 0.5, 0.1, 1
+            pos_hint:{"center_x":0.5}
+        
+        MDScrollView:
+            size_hint: 0.9, 0.9
+            do_scroll_x: False
+            do_scroll_y: True
+            pos_hint:{"center_x":0.5}
             
+            MDBoxLayout:
+                orientation: 'vertical'
+                size_hint_y: None
+                height: self.minimum_height
+                
+                MDLabel:
+                    id: past_response
+                    text_color: 0.5, 0.2, 0.3, 1
+                    size_hint_y: None
+                    height: self.texture_size[1]
+                    text_size: self.width, None
+                    halign: "left"
+                    valign: "top"
+        
+        MDBoxLayout:
+            orientation: "horizontal"
+            size_hint: 1, 0.2
+            padding: dp(10)
+            spacing: dp(10)
+        
+        MDRaisedButton:
+            text: "Back"
+            size_hint: 0.3, None
+            height: dp(50)
+            on_release: root.manager.current = "history"
+
+        MDRaisedButton:
+            text: "Delete"
+            size_hint: 0.3, None
+            height: dp(50)
+            on_release: root.delete_reading()
+
+
+<DeckScreen>:
+    name: "deck"
+    
+    MDBoxLayout:
+        orientation: "vertical"
+        
+        MDCarousel:
+            id: tarot_carousel
+            scroll_timeout: 200
+            scroll_distance: dp(20)
+            direction: "right"
+            loop: True
+
+
+#
+#
+#
+#
+<FlippableCard>:
+    FloatLayout:
+        id: container
+        size: root.size
+        pos: root.pos
+
+        canvas.before:
+            PushMatrix
+            Scale:
+                x: root.scale_x
+                y: 1
+                z: 1
+                origin: self.center
+        canvas.after:
+            PopMatrix
+
+        MDCard:
+            id: card
+            orientation: "vertical"
+            padding: "16dp"
+            spacing: "10dp"
+            radius: [20]
+            elevation: 6
+            size_hint: 0.9, 0.9
+            pos_hint: {"center_x": 0.5, "center_y": 0.5}
+            on_press: root.flip()

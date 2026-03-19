@@ -1,0 +1,28 @@
+{
+    "Tarot Spreads":
+        {
+            "Celtic Cross":
+                {
+                    "card amount":10,
+                    "spread":{
+                        "The Present":"The central card representing the current state of the querent or the primary atmosphere of the situation.",
+                        "The Challenge":"This represents the immediate obstacle or the force acting against (or for) the querent.  ",
+                        "The Goal":"This represents the best possible outcome or the conscious thoughts and aspirations regarding the situation.",
+                        "The Foundation":"This represents the subconscious, the distant past, or the underlying factors that created the current reality.",
+                        "The Past":"This shows recent events or influences that are passing out of the querent's life.",
+                        "The Near Future":"This indicates what is likely to occur in the immediate short-term (days or weeks).",
+                        "The Self":"Your internal attitude, how you view yourself in the situation, and your current level of personal power.",
+                        "The Environment":"External influences—friends, family, work culture, or any outside energy that is impacting the situation.",
+                        "Hopes and Fears":"This card highlights your psychological state. It can reveal what you are secretly wishing for or what you are afraid might happen.",
+                        "The Final Outcome":"The long-term resolution. This is the likely result if you continue on your current path without making significant changes."
+                    }
+                },
+            "5-pointed Star":
+                {
+                    "card amount":5,
+                    "spread":{
+                        
+                    }
+                }
+        }
+}

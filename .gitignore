@@ -7,8 +7,9 @@
 NewTarot/
 __pycache__/
 .kivy/
+md_version/
 
-
+keyfile.*
 .env
 *.env
 .key.key
