@@ -62,6 +62,7 @@ class TarotCards:
 
 
 
+
 class TarotCard:
     def __init__(self, **kwargs):
         self.reversed = True
@@ -94,7 +95,6 @@ class TarotCard:
 
 
 
-
 class RiderDeck:
     def __init__(self):
         self.deck = []
@@ -122,7 +122,6 @@ class RiderDeck:
 
 
 
-#################
 
 class RiderTarotCard:
     def __init__(self, **kwargs):
@@ -144,3 +143,11 @@ class RiderTarotCard:
         self.image          = kwargs.get("image", "")
         
         self.is_reversed = None
+
+    def get_meanings(self):
+        ret = ""
+        for k,v in self.upright.items():
+            ret += f"{k.title()}:\n{v}\n"
+        for k,v in self.reversed.items():
+            ret += f"{k.title()} (Reversed):\n{v}\n"
+        return ret

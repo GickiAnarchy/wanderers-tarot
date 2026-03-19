@@ -1,3 +1,5 @@
+from pydoc import text
+
 from kivy.clock import Clock
 from kivy.animation import Animation
 from kivy.properties import NumericProperty
@@ -23,6 +25,7 @@ class FlippableCard(ButtonBehavior, FloatLayout):
 
     def _finish_init(self, *args):
         self.build_front()
+        self.build_back()
 
     # -------------------------
     # FRONT
@@ -69,8 +72,10 @@ class FlippableCard(ButtonBehavior, FloatLayout):
         )
 
         meaning = MDLabel(
-            text=f"Meaning of {self.name}...",
-            halign="center"
+            text=f"Meaning:\n{self.model_card.get_meanings()}",
+            halign="center",
+            font_size="14sp",
+            size_hint_y=0.8
         )
 
         btn = MDRaisedButton(
