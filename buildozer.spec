@@ -23,7 +23,7 @@ android.add_resources = android_res
 presplash.filename = %(source.dir)s/data/splash.png
 
 # (list) Source files to include (let's include .kv files!)
-source.include_exts = py,png,jpg,kv,atlas,json,txt,json
+source.include_exts = py,png,jpg,jpeg,kv,atlas,json,txt
 
 # (list) Application requirements
 # REMOVED: lzma, uuid, grp - these are not supported on Android
@@ -31,7 +31,7 @@ source.include_exts = py,png,jpg,kv,atlas,json,txt,json
 # - lzma: missing lzma.h header
 # - uuid: missing libuuid library  
 # - grp: POSIX functions not available on Android
-requirements = python3,kivy,kivymd,requests,certifi,python-dotenv,openssl
+requirements = python3,kivy,kivymd,requests,certifi,python-dotenv,openssl,pillow
 
 # (str) Application versioning (method 2)
 #version.filename = %(source.dir)s/main.py
