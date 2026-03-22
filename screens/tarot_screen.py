@@ -16,6 +16,12 @@ class TarotScreen(MDScreen):
             self.inquiry = self.in_field.text
             self.app.rc.ask_question()
     
+
+    def ask_yn(self, instance=None):
+        if self.in_field.text:
+            self.inquiry = self.in_field.text
+            self.app.rc.ask_question()
+
     def on_inquiry(self, instance, value):
         print(f"current_inquiry is now {value}")
         self.app.rc.current_inquiry = self.inquiry

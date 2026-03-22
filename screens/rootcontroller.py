@@ -18,6 +18,7 @@ class RootController(MDBoxLayout):
     screen_manager = ObjectProperty()
     nav_drawer = ObjectProperty()
     toolbar = ObjectProperty()
+    riderdeck = ObjectProperty()
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)

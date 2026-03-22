@@ -1,1 +1,20 @@
-[]
+[
+    {
+        "timestamp": "202603220915",
+        "inquiry": "Will today be a good day?",
+        "spread": "Celtic Cross",
+        "reading": "Error contacting the cosmic realm: HTTPSConnectionPool(host='generativelanguage.googleapis.com', port=443): Max retries exceeded with url: /v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCCoA8IWSkMEQrEsJa97rEbl_enV6yV4Uc (Caused by NameResolutionError(\"HTTPSConnection(host='generativelanguage.googleapis.com', port=443): Failed to resolve 'generativelanguage.googleapis.com' ([Errno 11001] getaddrinfo failed)\"))"
+    },
+    {
+        "timestamp": "202603220916",
+        "inquiry": "will today be a good day?",
+        "spread": "Celtic Cross",
+        "reading": "Error contacting the cosmic realm: 400 Client Error: Bad Request for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCCoA8IWSkMEQrEsJa97rEbl_enV6yV4Uc"
+    },
+    {
+        "timestamp": "202603220917",
+        "inquiry": "WIll today be good?",
+        "spread": "Celtic Cross",
+        "reading": "Error contacting the cosmic realm: 400 Client Error: Bad Request for url: https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyCCoA8IWSkMEQrEsJa97rEbl_enV6yV4Uc"
+    }
+]

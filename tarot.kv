@@ -190,12 +190,24 @@
             #height: dp(150)
             pos_hint: {"center_x":0.5}
             multiline: True
+        
+        MDBoxLayout:
+            orientation:"horizontal"
+            pos_hint:{"center_x":0.5}
+            padding: 15
+            spacing: 15
 
-        MDRaisedButton:
-            text: "Ask..."
-            size_hint: 0.3, None
-            height: dp(30)
-            on_release: root.ask_pressed()
+            MDRaisedButton:
+                text: "Ask (Full)"
+                size_hint: 0.3, None
+                height: dp(30)
+                on_release: root.ask_pressed()
+            
+            MDRaisedButton:
+                text: "Yes, No, Maybe?"
+                size_hint: 0.3, None
+                height: dp(30)
+                on_release: root.ask_yn()
             
         Widget:
 
@@ -319,6 +331,19 @@
             scroll_distance: dp(70)
             direction: "right"
             loop: True
+
+
+<YesOrNoScreen>:
+    name: "yn"
+
+    MDBoxLayout:
+        orientation:"vertical"
+        padding: 10
+        spacing: 10
+
+
+
+
 
 
 #

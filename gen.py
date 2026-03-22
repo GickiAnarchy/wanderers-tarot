@@ -1,5 +1,5 @@
 ### GEN.PY
-from models import TarotCards
+from models import TarotCards, RiderDeck, RiderTarotCard
 
 import os
 import requests
@@ -100,3 +100,50 @@ def generate_celtic_cross(api_key = None, inquiry = None):
     except Exception as e:
         return f"Error contacting the cosmic realm: {str(e)}"
 
+
+def generate_yes_no(api_key = None, inquiry = None):
+    if inquiry is None:
+        print("no inquiry in generate.")
+        return
+    if api_key is None:
+        print("no api_key in generate.")
+        return "NO API KEY"
+
+    tc = RiderDeck()
+    card = tc.get_random_card()
+    meanings = card.yes_no
+    
+
+    model_name = "gemini-2.5-flash" 
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={api_key}"
+
+
+    headers = {'Content-Type': 'application/json'}
+
+
+    payload = {
+        "contents": [{
+            "role": "user",
+            "parts": [{"text": inquiry}]
+        }],
+        "systemInstruction": {
+            "parts": [{"text": f"Provide a simple yes or no answer to the users inquiry. Keep the response no more than one paragraph. Here are the card drawn with it's yes/no answer: {card.name}:{meanings}"}]
+        },
+        "generationConfig": {
+            "temperature": 0.9,
+            "maxOutputTokens": 3500
+        }
+    }
+
+    try:
+        response = requests.post(url, headers=headers, json=payload, timeout=30)
+        response.raise_for_status()
+        data = response.json()
+
+        if 'candidates' in data and len(data['candidates']) > 0:
+            return data['candidates'][0]['content']['parts'][0]['text']
+        else:
+            return "The Oracle is silent. (No response content)"
+
+    except Exception as e:
+        return f"Error contacting the cosmic realm: {str(e)}"

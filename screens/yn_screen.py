@@ -8,5 +8,8 @@ from kivy.properties import ObjectProperty, StringProperty, NumericProperty
 
 
 
-class CardScreen(MDScreen):
-    pass
+class YesOrNoScreen(MDScreen):
+    
+    @property
+    def app(self):
+        return MDApp.get_running_app()

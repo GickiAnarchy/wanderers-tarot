@@ -1,5 +1,5 @@
 import threading
-from gen import generate_celtic_cross
+from gen import generate_celtic_cross, generate_yes_no
 from kivymd.app import MDApp
 from kivy.animation import Animation
 from kivy.clock import Clock
@@ -26,16 +26,35 @@ class ReadingScreen(MDScreen):
         if self.app.rc.has_api_key:
             akey = self.app.rc.api_key
             inq = self.app.rc.current_inquiry
-            threading.Thread(target=self.generate_request, args=(akey, inq)). start()
+            threading.Thread(target=self.generate_request, args=(akey, inq, "celtic")). start()
+    
+
+    def ask_yn(self, instance=None):
+        self.current_status.text = "Asking the void.."
+        self.start_label_glow()
+        if self.app.rc.has_api_key:
+            akey = self.app.rc.api_key
+            inq = self.app.rc.current_inquiry
+            threading.Thread(target=self.generate_request, args=(akey, inq, "yn")). start()
         
 
-    def generate_request(self, akey, inq):
-        response = generate_celtic_cross(akey,inq)
-        try:
-            Clock.schedule_once(lambda dt: self.update_ui(response, "The oracle has spoken.."))
-        except Exception as e:
-            ee = e
-            Clock.schedule_once(lambda dt: self.update_ui(f"ERROR:{ee}", "Its fuzzy.."))
+    def generate_request(self, akey, inq, spread):
+        if spread == "celtic":
+            response = generate_celtic_cross(akey,inq)
+            try:
+                Clock.schedule_once(lambda dt: self.update_ui(response, "The oracle has spoken.."))
+            except Exception as e:
+                ee = e
+                Clock.schedule_once(lambda dt: self.update_ui(f"ERROR:{ee}", "Its fuzzy.."))
+            
+        if spread == "yn":
+            response = generate_yes_no(akey,inq)
+            try:
+                Clock.schedule_once(lambda dt: self.update_ui(response, "The oracle has spoken.."))
+            except Exception as e:
+                ee = e
+                Clock.schedule_once(lambda dt: self.update_ui(f"ERROR:{ee}", "Its fuzzy.."))    
+
         self.app.rc.current_reading = response 
             
 
