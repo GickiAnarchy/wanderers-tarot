@@ -121,6 +121,12 @@ class RiderDeck:
         return self.deck
 
 
+    def get_random_card(self):
+        if self.deck is []:
+            return
+        return random.choice(self.deck)
+
+
 
 
 class RiderTarotCard:
@@ -153,3 +159,7 @@ class RiderTarotCard:
         for k,v in self.reversed.items():
             ret += f"{k.title()} (Reversed):\n{v}\n"
         return ret
+
+
+    def get_info(self):
+        return f"{self.name}\n{self.astrological}\n{self.element}"

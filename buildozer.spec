@@ -1,7 +1,7 @@
 [app]
 
 # (str) Application versioning (method 1)
-version = 1.0
+version = 1.1
 
 # (str) Title of your application
 title = The Tarot Oracle

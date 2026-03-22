@@ -7,7 +7,7 @@ from kivymd.uix.boxlayout import MDBoxLayout
 from kivy.properties import ObjectProperty
 from kivymd.uix.screenmanager import MDScreenManager
 from kivy.clock import Clock
-from models import TarotCards
+from models import TarotCards, RiderDeck
 from gen import generate_celtic_cross
 from kivymd.uix.toolbar import MDTopAppBar
 
@@ -21,6 +21,7 @@ class RootController(MDBoxLayout):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
+        self.riderdeck = RiderDeck()
         self.api_key = None
         self.current_inquiry = None
         self.current_reading = None
@@ -102,6 +103,11 @@ class RootController(MDBoxLayout):
                 json.dump(hl, f, indent=4)
         except Exception as e:
             print(e)
+
+
+    def cotd(self):
+        card = self.riderdeck.get_random_card()
+        return card.get_info()
 
 
     @property

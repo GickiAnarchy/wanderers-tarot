@@ -1,4 +1,4 @@
-from app import TarotApp    
+from app import TarotApp
 #import kivy_pydroid
 
 if __name__ == "__main__":

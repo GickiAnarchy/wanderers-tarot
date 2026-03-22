@@ -45,13 +45,14 @@ class FlippableCard(ButtonBehavior, FloatLayout):
 
         container = MDBoxLayout(
             size_hint=(None, None),
-            size=("250dp", "425dp"),  # 👈 tarot ratio
+            size=("250dp", "425dp"),
             pos_hint={"center_x": 0.5, "center_y": 0.5},
         )
 
         img = FitImage(
             source=self.image,
-            radius=[20]
+            radius=[20],
+            
         )
 
         container.add_widget(img)

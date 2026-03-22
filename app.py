@@ -31,6 +31,7 @@ class TarotApp(MDApp):
         return self.rc
 
 
+
 if __name__ == "__main__":
     ta = TarotApp()
     ta.run()

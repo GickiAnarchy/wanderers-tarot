@@ -61,32 +61,46 @@
 
 
 <HomeScreen>:
+    logo:logo
+    app_title:app_title
+    
     name: "home"
     
     MDBoxLayout:
         orientation: "vertical"
-        padding: dp(15)
-        spacing: dp(15)
 
-        MDLabel:
-            text: "Welcome to the Digital Oracle!"
-            pos_hint: {"center_x": 0.5}
-            font_style: "H4"
-            halign: "center"
-            size_hint_y: None
-            height: self.texture_size[1]
+        MDBoxLayout:
+            orientation: "vertical"
+            size_hint_y: 0.4
+            padding: "10dp"
+            spacing: "10dp"
 
-        MDLabel:
-            id: warning_label
-            pos_hint: {"center_x": 0.8}
-            halign: "center"
-            size_hint_y: None
-            height: self.texture_size[1]
-            text_color: 1,0,0,1
-        
-        Widget:
-            size_hint_y: None
-            height: dp(200)
+            SpinningLogo:
+                id: logo
+                source: "data/logo.png"
+                size_hint_y: 0.7
+                pos_hint: {"center_x": 0.5}
+
+            MDLabel:
+                id: app_title
+                text: f"The\nDigital Oracle"
+                font_style: "H3"
+                halign: "center"
+                valign: "middle"
+                size_hint_y: 0.3
+                text_size: self.size
+                theme_text_color: "Custom"
+                text_color: 0.5, 0, 1, 1
+
+        MDBoxLayout:
+            orientation: "vertical"
+            size_hint_y: 0.6
+
+            MDLabel:
+                text:root.get_cotd()
+                halign: "center"
+                theme_text_color: "Custom"
+                text_color: 0.5,0.1,0.5,1
 
 
 <SettingsScreen>:
@@ -96,6 +110,7 @@
         orientation: "vertical"
         padding: dp(20)
         spacing: dp(20)
+        pos_hint:{"center_x":0.5}
 
         Widget:
             size_hint_y: None
@@ -105,6 +120,7 @@
             orientation: "vertical"
             padding: dp(10)
             size_hint_y: 0.3
+            pos_hint:{"center_x":0.5}
 
             MDLabel:
                 text: "Google AI API Key"
@@ -115,13 +131,13 @@
             MDTextField:
                 id: api_key_input
                 hint_text: "Enter your Google AI API Key"
-                text: root.api_key or ""
 
             MDBoxLayout:
                 orientation: "horizontal"
                 padding: dp(10)
                 spacing: dp(10)
                 size_hint_y: None
+                size_hint_x:1
                 height: dp(50)
                 pos_hint: {"center_x": 0.5}
 
@@ -132,8 +148,20 @@
                 MDRaisedButton:
                     text: "Save API Key"
                     on_release: root.save_api_key(api_key_input.text)
-        
-        Widget:
+
+            Widget:
+
+            MDBoxLayout:
+                orientation: "vertical"
+                size_hint_y:0.7
+                padding: 10
+                spacing: 10
+                
+                MDLabel:
+                    text:"version 1.1"
+                    halign:"center"
+                    valign:"bottom"
+                    font_size:"10sp"
 
 
 <TarotScreen>:
@@ -142,7 +170,7 @@
     name: "tarot"
 
     MDBoxLayout:
-        orientation: "vertical"
+        orientation: "horizontal"
         spacing: dp(10)
         padding: dp(10)
         pos_hint:{"center_x":0.5}
@@ -287,7 +315,7 @@
         MDCarousel:
             id: tarot_carousel
             scroll_timeout: 200
-            scroll_distance: dp(20)
+            scroll_distance: dp(70)
             direction: "right"
             loop: True
 
@@ -322,3 +350,13 @@
             size_hint: 0.9, 0.9
             pos_hint: {"center_x": 0.5, "center_y": 0.5}
             on_press: root.flip()
+
+
+<SpinningLogo>:
+    canvas.before:
+        PushMatrix
+        Rotate:
+            angle: self.angle
+            origin: self.center
+    canvas.after:
+        PopMatrix
