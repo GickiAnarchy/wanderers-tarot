@@ -170,7 +170,7 @@
     name: "tarot"
 
     MDBoxLayout:
-        orientation: "horizontal"
+        orientation: "vertical"
         spacing: dp(10)
         padding: dp(10)
         pos_hint:{"center_x":0.5}
@@ -179,24 +179,25 @@
             text: "What do you seek?"
             font_syle: "H4"
             halign: "center"
+            valign:"top"
             size_hint_y: None
             height: self.texture_size[1]
 
         MDTextField:
             id: in_field
             hint_text: "Ask the stars anything..."
-            size_hint: 0.7,None
-            height: dp(150)
-            pos_hint: {"center_x":0.5,"center_y":0.5}
+            size_hint: 0.7,0.7
+            #height: dp(150)
+            pos_hint: {"center_x":0.5}
             multiline: True
-        
-        Widget:
 
         MDRaisedButton:
             text: "Ask..."
             size_hint: 0.3, None
             height: dp(30)
             on_release: root.ask_pressed()
+            
+        Widget:
 
 
 <ReadingScreen>:
