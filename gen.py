@@ -7,6 +7,9 @@ import json
 
 
 
+
+
+
 def generate(api_key = None, inquiry = None):
     if inquiry is None:
         print("no inquiry in generate.")
@@ -54,6 +57,7 @@ def generate(api_key = None, inquiry = None):
 
 
 def generate_celtic_cross(api_key = None, inquiry = None):
+    print("generate_celtic_cross()")
     if inquiry is None:
         print("no inquiry in generate.")
         return
@@ -64,14 +68,11 @@ def generate_celtic_cross(api_key = None, inquiry = None):
     tc = TarotCards()
     cards = tc.draw_cards(10)
     meanings = tc.get_meanings(cards)
-    
 
     model_name = "gemini-2.5-flash" 
     url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={api_key}"
 
-
     headers = {'Content-Type': 'application/json'}
-
 
     payload = {
         "contents": [{
@@ -102,6 +103,7 @@ def generate_celtic_cross(api_key = None, inquiry = None):
 
 
 def generate_yes_no(api_key = None, inquiry = None):
+    print("generate_yes_no()")
     if inquiry is None:
         print("no inquiry in generate.")
         return
@@ -113,13 +115,14 @@ def generate_yes_no(api_key = None, inquiry = None):
     card = tc.get_random_card()
     meanings = card.yes_no
     
+    return f"{card.name} would indicate {meanings}"
 
+
+def check_inquiry(api_key, inquiry):
     model_name = "gemini-2.5-flash" 
     url = f"https://generativelanguage.googleapis.com/v1beta/models/{model_name}:generateContent?key={api_key}"
 
-
     headers = {'Content-Type': 'application/json'}
-
 
     payload = {
         "contents": [{
@@ -127,7 +130,7 @@ def generate_yes_no(api_key = None, inquiry = None):
             "parts": [{"text": inquiry}]
         }],
         "systemInstruction": {
-            "parts": [{"text": f"Provide a simple yes or no answer to the users inquiry. Keep the response no more than one paragraph. Here are the card drawn with it's yes/no answer: {card.name}:{meanings}"}]
+            "parts": [{"text": f"Can the following inquiry be answered with a simple yes or no?: \n```{inquiry}```\nAnswer with only one word: Just a 'yes' or a 'no'. Nothing more. This is internal and users will not see this response. "}]
         },
         "generationConfig": {
             "temperature": 0.9,
@@ -141,9 +144,15 @@ def generate_yes_no(api_key = None, inquiry = None):
         data = response.json()
 
         if 'candidates' in data and len(data['candidates']) > 0:
-            return data['candidates'][0]['content']['parts'][0]['text']
-        else:
-            return "The Oracle is silent. (No response content)"
-
+            answer = data['candidates'][0]['content']['parts'][0]['text']
+            
+            if answer.lower() == "yes":
+                return generate_yes_no(api_key,inquiry)
+            if answer.lower() == "no":
+                return generate_celtic_cross(api_key, inquiry)
+            else:
+                return f"Something strange happened.\n\n{answer}"
+            
     except Exception as e:
-        return f"Error contacting the cosmic realm: {str(e)}"
+        print(f"Error: {str(e)}")
+

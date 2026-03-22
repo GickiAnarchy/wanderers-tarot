@@ -1,5 +1,5 @@
 import threading
-from gen import generate_celtic_cross, generate_yes_no
+from gen import check_inquiry
 from kivymd.app import MDApp
 from kivy.animation import Animation
 from kivy.clock import Clock
@@ -17,6 +17,8 @@ class ReadingScreen(MDScreen):
     
     def ok_pressed(self, instance=None):
         self.app.rc.save_reading()
+        self.res_label.text = ""
+        self.current_status.text = ""
         self.manager.current = "home"
 
 
@@ -26,7 +28,7 @@ class ReadingScreen(MDScreen):
         if self.app.rc.has_api_key:
             akey = self.app.rc.api_key
             inq = self.app.rc.current_inquiry
-            threading.Thread(target=self.generate_request, args=(akey, inq, "celtic")). start()
+            threading.Thread(target=self.generate_request, args=(akey, inq)). start()
     
 
     def ask_yn(self, instance=None):
@@ -35,26 +37,18 @@ class ReadingScreen(MDScreen):
         if self.app.rc.has_api_key:
             akey = self.app.rc.api_key
             inq = self.app.rc.current_inquiry
-            threading.Thread(target=self.generate_request, args=(akey, inq, "yn")). start()
+            threading.Thread(target=self.generate_request, args=(akey, inq)). start()
         
 
-    def generate_request(self, akey, inq, spread):
-        if spread == "celtic":
-            response = generate_celtic_cross(akey,inq)
+    def generate_request(self, akey, inq):
+        if 1 is 1:
+            response = check_inquiry(akey,inq)
             try:
                 Clock.schedule_once(lambda dt: self.update_ui(response, "The oracle has spoken.."))
             except Exception as e:
                 ee = e
                 Clock.schedule_once(lambda dt: self.update_ui(f"ERROR:{ee}", "Its fuzzy.."))
-            
-        if spread == "yn":
-            response = generate_yes_no(akey,inq)
-            try:
-                Clock.schedule_once(lambda dt: self.update_ui(response, "The oracle has spoken.."))
-            except Exception as e:
-                ee = e
-                Clock.schedule_once(lambda dt: self.update_ui(f"ERROR:{ee}", "Its fuzzy.."))    
-
+          
         self.app.rc.current_reading = response 
             
 
